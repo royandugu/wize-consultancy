@@ -15,3 +15,5 @@ Folder structuring
         details
 
 3. userComponents are the components that can be viewed by users
+4. Inside each individual component folder the componentnameDisplay is the one that displays to the front end
+5. The very parent container div have a class same as the class name

@@ -1,4 +1,7 @@
+import MenuDisplay from "../primaryComponents/menuComponents/menuDisplay";
+
 const Home=()=>{
-    return <h5> This is the user Home </h5>
+    return <MenuDisplay/>
 }
+
 export default Home;

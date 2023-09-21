@@ -2,15 +2,15 @@ import Link from "next/link";
 
 const NavigationContainer=()=>{
     return (
-        <ul className="flex justify-around">
+        <ul className="flex navigationContainer">
             <li>
-                <Link href="/"> Home </Link>
+                <Link href="/" className="mr-20"> Home </Link>
             </li>
             <li>
-                <Link href="/events"> About </Link>
+                <Link href="/events" className="mr-20"> About </Link>
             </li>
             <li>
-                <Link href="/"> Events </Link>
+                <Link href="/" className="mr-20"> Events </Link>
             </li>
             <li>
                 <Link href="/"> Migration </Link>

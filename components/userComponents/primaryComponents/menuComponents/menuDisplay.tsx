@@ -1,9 +1,10 @@
 import {HiMiniBars3} from "react-icons/hi2";
 
 import NavigationContainer from "./navigationContainer";
-import MiniMenu from "./miniMenu";
+import MiniMenu from "./miniMenu/miniMenu";
 
 import "./menuDisplay.css";
+import "../../../systemComponents/commonDesgins/commonDesigns.css";
 
 const MenuDisplay = () => {
     return (
@@ -22,7 +23,7 @@ const MenuDisplay = () => {
                             <input type="text" className="border border-black mr-10" />
                         </div>
                         <div className="contactUs lg:block hidden">
-                            <button> Contact Us </button>
+                            <button className="mainGradient h-10 w-32 text-white rounded-md"> Contact Us </button>
                         </div>
                     </>
 

@@ -1,0 +1,16 @@
+.miniMenu>*{
+    color:white;
+    font-weight: bold;
+}
+
+.miniMenu .icon{
+    margin-right:5px;
+}
+.miniMenu .socialIcon{
+    margin-right:15px;
+}
+
+/* Common CSS */
+.miniMenu .icon, .miniMenu .socialIcon{
+    cursor:pointer;
+}

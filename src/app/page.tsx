@@ -1,7 +1,7 @@
-import Home from "../../components/userComponents/secondaryComponents/home";
+import HomeDisplay from "../../components/userComponents/secondaryComponents/homeComponents/homeDisplay";
 
 const Page = () => {
-  return  <Home />
+  return  <HomeDisplay />
 }
 
 export default Page;

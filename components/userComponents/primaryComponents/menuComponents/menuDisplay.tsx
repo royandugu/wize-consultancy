@@ -1,4 +1,5 @@
 import {HiMiniBars3} from "react-icons/hi2";
+import {AiOutlineSearch, AiOutlineArrowRight} from "react-icons/ai";
 
 import NavigationContainer from "./navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
@@ -19,11 +20,17 @@ const MenuDisplay = () => {
                         <div className="navigationContainer lg:block hidden px-20 ml-20">
                             <NavigationContainer />
                         </div>
-                        <div className="searchBar lg:block hidden ">
-                            <input type="text" className="border border-black mr-10" />
+                        <div className="searchBar lg:block hidden xl:ml-10">
+                            <div className="flex relative">
+                                <AiOutlineSearch className="absolute top-1"/>
+                                <input type="text" className="border border-t-0 border-l-0 border-r-0 outline-none border-b-black mr-10 pl-10" placeholder="Enter name"/>
+                            </div>
                         </div>
                         <div className="contactUs lg:block hidden">
-                            <button className="mainGradient h-10 w-32 text-white rounded-md"> Contact Us </button>
+                            <div className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
+                                 <p> Contact Us </p> 
+                                 <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight/> </button> 
+                            </div>
                         </div>
                     </>
 

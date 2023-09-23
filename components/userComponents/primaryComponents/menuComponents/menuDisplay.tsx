@@ -1,7 +1,7 @@
 import {HiMiniBars3} from "react-icons/hi2";
 import {AiOutlineSearch, AiOutlineArrowRight} from "react-icons/ai";
 
-import NavigationContainer from "./navigationContainer";
+import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
 
 import "./menuDisplay.css";
@@ -17,7 +17,7 @@ const MenuDisplay = () => {
                     </div>
 
                     <>
-                        <div className="navigationContainer lg:block hidden px-20 ml-20">
+                        <div className="navigationContainer lg:block hidden px-20">
                             <NavigationContainer />
                         </div>
                         <div className="searchBar lg:block hidden xl:ml-10">

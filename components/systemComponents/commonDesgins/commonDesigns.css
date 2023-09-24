@@ -1,3 +1,18 @@
+/* UI */
 .mainGradient{
     background: linear-gradient(to right, #ff637b 0%, #f7a77c 100%);
+}
+
+/* Functionalities */
+.scrollUp{
+    transform:scaleY(0);
+}
+.scrollDown{
+    transform:scaleY(1);
+}
+.scrollXVisible{
+    transform:scaleX(1);
+}
+.scrollXInvisible{
+    transform:scaleX(0);
 }

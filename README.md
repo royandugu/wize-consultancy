@@ -19,6 +19,9 @@ Folder structuring
         System components include the components that are
         common to both admin and the users. They can be like the 
         sky blue wrappers and all.
+        | - Static components : These are the static components
+        | - Common components : These are the components common to both user and admin
+        |
 
 3. userComponents are the components that can be viewed by users
 4. Inside each individual component folder the componentnameDisplay is the one that displays to the front end

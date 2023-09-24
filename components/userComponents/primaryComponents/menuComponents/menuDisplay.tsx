@@ -1,5 +1,8 @@
-import {HiMiniBars3} from "react-icons/hi2";
-import {AiOutlineSearch, AiOutlineArrowRight} from "react-icons/ai";
+"use client"
+
+import { useState } from "react";
+import { HiMiniBars3 } from "react-icons/hi2";
+import { AiOutlineSearch, AiOutlineArrowRight } from "react-icons/ai";
 
 import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
@@ -8,6 +11,10 @@ import "./menuDisplay.css";
 import "../../../systemComponents/commonDesgins/commonDesigns.css";
 
 const MenuDisplay = () => {
+
+    const [showDropDown,setShowDropDown]=useState<boolean>(false);
+    const [dispNumber,setDispNumber]=useState<number>(0);
+
     return (
         <>
             <div className="bg-white fixed top-20 lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20">
@@ -18,18 +25,18 @@ const MenuDisplay = () => {
 
                     <>
                         <div className="navigationContainer lg:block hidden px-20">
-                            <NavigationContainer />
+                            <NavigationContainer dispNumber={dispNumber} showDropDown={showDropDown} setDispNumber={setDispNumber} setShowDropDown={setShowDropDown}/>
                         </div>
                         <div className="searchBar lg:block hidden xl:ml-10">
                             <div className="flex relative">
-                                <AiOutlineSearch className="absolute top-1"/>
-                                <input type="text" className="border border-t-0 border-l-0 border-r-0 outline-none border-b-black mr-10 pl-10" placeholder="Enter name"/>
+                                <AiOutlineSearch className="absolute top-1" />
+                                <input type="text" className="border border-t-0 border-l-0 border-r-0 outline-none border-b-black mr-10 pl-10" placeholder="Enter name" />
                             </div>
                         </div>
                         <div className="contactUs lg:block hidden">
                             <div className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
-                                 <p> Contact Us </p> 
-                                 <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight/> </button> 
+                                <p> Contact Us </p>
+                                <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </button>
                             </div>
                         </div>
                     </>
@@ -40,7 +47,7 @@ const MenuDisplay = () => {
 
                 </div>
             </div>
-            <MiniMenu/>
+            <MiniMenu />
         </>
     )
 }

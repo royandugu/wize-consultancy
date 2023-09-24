@@ -24,24 +24,24 @@ const MenuDisplay = () => {
                     </div>
 
                     <>
-                        <div className="navigationContainer lg:block hidden px-20">
+                        <div className="navigationContainer xlg:block hidden px-20">
                             <NavigationContainer dispNumber={dispNumber} showDropDown={showDropDown} setDispNumber={setDispNumber} setShowDropDown={setShowDropDown}/>
                         </div>
-                        <div className="searchBar lg:block hidden xl:ml-10">
+                        <div className="searchBar xlg:block hidden ml-[-50px] xl:ml-10">
                             <div className="flex relative">
                                 <AiOutlineSearch className="absolute top-1" />
                                 <input type="text" className="border border-t-0 border-l-0 border-r-0 outline-none border-b-black mr-10 pl-10" placeholder="Enter name" />
                             </div>
                         </div>
-                        <div className="contactUs lg:block hidden">
+                        <div className="contactUs xlg:block hidden">
                             <div className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
-                                <p> Contact Us </p>
+                                <p> Contact&nbsp;Us </p>
                                 <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </button>
                             </div>
                         </div>
                     </>
 
-                    <div className="lg:hidden">
+                    <div className="xlg:hidden">
                         <HiMiniBars3 className="text-lg" />
                     </div>
 

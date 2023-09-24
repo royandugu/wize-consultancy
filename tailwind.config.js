@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        'xlg':'1020px',
         'xs': '320px', // Define a custom breakpoint for screens smaller than sm
       },
       colors: {

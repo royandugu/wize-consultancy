@@ -49,3 +49,5 @@ export const migrationRoutes:Array<RouteType>=[
         url:"/migration/occupation"
     }
 ]
+
+

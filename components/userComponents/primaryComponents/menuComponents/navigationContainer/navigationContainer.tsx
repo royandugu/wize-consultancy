@@ -1,7 +1,7 @@
 import React from "react";
 
 import Link from "next/link";
-import DropDownMenu from "../dropDownMenu/dropDownMenu";
+import EducationAndMigrationDropDown from "../dropDownMenu/educationAndMigrationDropdown";
 
 import "./navigationContainer.css";
 
@@ -29,14 +29,14 @@ const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDow
                     setDispNumber(0);
                     setShowDropDown(true);
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns">Education</label> </Link>
-                <DropDownMenu dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={true}/>
+                <EducationAndMigrationDropDown dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={true}/>
             </li>
             <li>
                 <Link href="/" onMouseEnter={()=>{
                         setDispNumber(1);
                         setShowDropDown(true);    
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns"> Migration </label></Link>
-                <DropDownMenu  dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={false}/>
+                <EducationAndMigrationDropDown  dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={false}/>
             </li>
         </ul>
     )

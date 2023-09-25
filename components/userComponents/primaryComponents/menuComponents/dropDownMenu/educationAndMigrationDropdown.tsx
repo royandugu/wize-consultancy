@@ -13,7 +13,7 @@ interface DropDownMenuProps{
     showEducationPage: boolean
 }
 
-const DropDownMenu = ({ dispNumber, showDropDown, setShowDropDown, showEducationPage}:DropDownMenuProps) => {
+const EducationAndMigrationDropDown = ({ dispNumber, showDropDown, setShowDropDown, showEducationPage}:DropDownMenuProps) => {
     
     return (
         <div className={`bg-white rounded-md fixed top-[150px] z-20 transform origin-top transition duration-500 ease-in-out dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={()=>setShowDropDown(true)} onMouseLeave={()=>setShowDropDown(false)}>
@@ -40,4 +40,4 @@ const DropDownMenu = ({ dispNumber, showDropDown, setShowDropDown, showEducation
     );
 }
 
-export default DropDownMenu;
+export default EducationAndMigrationDropDown;

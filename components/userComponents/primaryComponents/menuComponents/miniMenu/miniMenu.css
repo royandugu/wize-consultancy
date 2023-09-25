@@ -14,3 +14,13 @@
 .miniMenu .icon, .miniMenu .socialIcon{
     cursor:pointer;
 }
+
+/*Media queries*/
+@media only screen and (max-width: 640px) {
+    .miniMenu .icon{
+        margin-right:15px;
+    }
+    .miniMenu .socialIcon, .miniMenu .icon{
+        margin-top:5px;
+    }
+}

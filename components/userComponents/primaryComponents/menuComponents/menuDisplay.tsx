@@ -6,43 +6,59 @@ import { AiOutlineSearch, AiOutlineArrowRight } from "react-icons/ai";
 
 import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
+import SearchAndContactDropDown from "./dropDownMenu/searchAndContactDropDown";
+import SearchBarDesign from "../../../systemComponents/staticComponents/searchBarDesgin";
+import ButtonDesign from "../../../systemComponents/staticComponents/buttonDesign";
 
 import "./menuDisplay.css";
 import "../../../systemComponents/commonDesgins/commonDesigns.css";
 
+//{ dispNumberOne, showDropDown, setShowDropDown, showEducationPage}:DropDownMenuProps
+
 const MenuDisplay = () => {
 
-    const [showDropDown,setShowDropDown]=useState<boolean>(false);
-    const [dispNumber,setDispNumber]=useState<number>(0);
+    const [showDropDownOne,setShowDropDownOne]=useState<boolean>(false);
+    const [showDropDownTwo,setShowDropDownTwo]=useState<boolean>(false);
+    
+    const [dispNumberOne,setDispNumberOne]=useState<number>(0);
+    const [dispNumberTwo,setDispNumberTwo]=useState<number>(0);
 
     return (
         <>
             <div className="bg-white fixed top-20 lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20">
-                <div className="flex flex-row items-center xs:justify-between lg:justify-start">
+                <div className="flex flex-row items-center xs:justify-between xlg:justify-start">
                     <div className="logoContainer">
                         <h5 className="title"> Logo </h5>
                     </div>
 
                     <>
-                        <div className="navigationContainer xlg:block hidden px-20">
-                            <NavigationContainer dispNumber={dispNumber} showDropDown={showDropDown} setDispNumber={setDispNumber} setShowDropDown={setShowDropDown}/>
+                        <div className="navigationContainer md:block hidden px-20">
+                            <NavigationContainer dispNumber={dispNumberOne} showDropDown={showDropDownOne} setDispNumber={setDispNumberOne} setShowDropDown={setShowDropDownOne}/>
                         </div>
                         <div className="searchBar xlg:block hidden ml-[-50px] xl:ml-10">
-                            <div className="flex relative">
-                                <AiOutlineSearch className="absolute top-1" />
-                                <input type="text" className="border border-t-0 border-l-0 border-r-0 outline-none border-b-black mr-10 pl-10" placeholder="Enter name" />
-                            </div>
+                            <SearchBarDesign/>
                         </div>
                         <div className="contactUs xlg:block hidden">
-                            <div className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
-                                <p> Contact&nbsp;Us </p>
-                                <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </button>
-                            </div>
+                            <ButtonDesign/>
                         </div>
                     </>
 
-                    <div className="xlg:hidden">
-                        <HiMiniBars3 className="text-lg" />
+                    {/* This part is for displaying the dropdown of contact us and search button */}
+                    <div className="xlg:hidden cursor-pointer smlContactAndSearchContainer">
+                        <HiMiniBars3 className="text-lg" onClick={()=>{
+                            setDispNumberTwo(0);
+                            setShowDropDownTwo(!showDropDownTwo);
+                        }}/>
+                        <SearchAndContactDropDown dispNumber={dispNumberTwo} setShowDropDown={setShowDropDownTwo} showDropDown={showDropDownTwo} showAllNavs={false}/>
+                    </div>
+
+                    {/* This part is for displaying the dropdown of menu */}
+                    <div className="md:hidden cursor-pointer">
+                        <HiMiniBars3 className="text-lg" onClick={()=>{
+                            setDispNumberTwo(1);
+                            setShowDropDownTwo(!showDropDownTwo);
+                        }}/>
+                        <SearchAndContactDropDown dispNumber={dispNumberTwo} setShowDropDown={setShowDropDownTwo} showDropDown={showDropDownTwo} showAllNavs={true}/>
                     </div>
 
                 </div>

@@ -1,7 +1,7 @@
 const WelcomePage=()=>{
     return(
-        <div className="welcomePage">
-            <div className="flex justify-center gap-20 pt-[200px]">
+        <div className="pt-40" style={{background:"skyBlue"}}>
+            <div className="flex justify-center gap-20">
                 <div>
                     <img src="./images/students.png"/>
                 </div>
@@ -15,4 +15,4 @@ const WelcomePage=()=>{
         </div>
     )
 }
-export default WelcomePage;
+export default WelcomePage; 

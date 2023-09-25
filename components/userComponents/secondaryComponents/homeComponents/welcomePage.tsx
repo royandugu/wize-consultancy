@@ -1,9 +1,9 @@
 const WelcomePage=()=>{
     return(
-        <div className="pt-40" style={{background:"skyBlue"}}>
-            <div className="flex justify-center gap-20">
+        <div className="welcomePage">
+            <div className="flex justify-center gap-20 pt-[200px]">
                 <div>
-                    <h5> Here will contain the image </h5>
+                    <img src="./images/students.png"/>
                 </div>
                 <div>
                     <h1> Welcome to wize </h1>

@@ -1,8 +1,7 @@
 "use client"
 
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import { HiMiniBars3 } from "react-icons/hi2";
-import { AiOutlineSearch, AiOutlineArrowRight } from "react-icons/ai";
 
 import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
@@ -22,6 +21,21 @@ const MenuDisplay = () => {
     
     const [dispNumberOne,setDispNumberOne]=useState<number>(0);
     const [dispNumberTwo,setDispNumberTwo]=useState<number>(0);
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const handleResize = () => {
+                setShowDropDownOne(false);
+                setShowDropDownTwo(false);
+            };
+
+            window.addEventListener('resize', handleResize);
+
+            return () => {
+                window.removeEventListener('resize', handleResize);
+            };
+        }
+    }, []); 
 
     return (
         <>

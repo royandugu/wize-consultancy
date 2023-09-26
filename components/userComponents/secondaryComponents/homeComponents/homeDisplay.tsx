@@ -1,5 +1,5 @@
 import MenuDisplay from "../../primaryComponents/menuComponents/menuDisplay";
-import WelcomePage from "./welcomePage";
+import WelcomePage from "./welcomePage/welcomeSection";
 
 const HomeDisplay=()=>{
     return (
@@ -8,6 +8,6 @@ const HomeDisplay=()=>{
             <WelcomePage/>
         </>
     )
-}
+} 
 
 export default HomeDisplay;

@@ -12,11 +12,11 @@ interface DropDownMenuProps {
 
 const SearchAndContactDropDown = ({ dispNumber, showDropDown, setShowDropDown, showAllNavs }: DropDownMenuProps) => {
     return (
-        <div className={`bg-white rounded-md fixed top-[150px] right-12 z-20 transform origin-top transition duration-500 ease-in-out dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `}>
+        <div className={`bg-white rounded-md fixed top-[150px] right-12 z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `}>
             {dispNumber === 0 ? (
                 <div className="flex px-5 p-5 mr-20">
                     <SearchBarDesign />
-                    <ButtonDesign />
+                    <ButtonDesign text={"Contact us"}/>
                 </div>
 
             ) : dispNumber === 1 && (
@@ -43,7 +43,7 @@ const SearchAndContactDropDown = ({ dispNumber, showDropDown, setShowDropDown, s
                         </div>
                     </div>
                     <div className="mt-5">
-                        <ButtonDesign />
+                        <ButtonDesign text={"Contact us"}/>
                     </div>
                 </ul>
             )}

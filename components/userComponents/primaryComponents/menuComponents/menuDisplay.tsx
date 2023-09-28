@@ -40,7 +40,7 @@ const MenuDisplay = () => {
     return (
         <>
             <div className="bg-white fixed top-20 lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20">
-                <div className="flex flex-row items-center xs:justify-between xlg:justify-start">
+                <div className="flex flex-row items-center sm-320:justify-between lg+196:justify-start">
                     <div className="logoContainer">
                         <h5 className="title"> Logo </h5>
                     </div>
@@ -49,16 +49,16 @@ const MenuDisplay = () => {
                         <div className="navigationContainer md:block hidden px-20">
                             <NavigationContainer dispNumber={dispNumberOne} showDropDown={showDropDownOne} setDispNumber={setDispNumberOne} setShowDropDown={setShowDropDownOne}/>
                         </div>
-                        <div className="searchBar xlg:block hidden ml-[-50px] xl:ml-10">
+                        <div className="searchBar lg+196:block hidden ml-[-50px] xl:ml-10">
                             <SearchBarDesign/>
                         </div>
-                        <div className="contactUs xlg:block hidden">
+                        <div className="contactUs lg+196:block hidden">
                             <ButtonDesign text={"Contact Us"}/>
                         </div>
                     </>
 
                     {/* This part is for displaying the dropdown of contact us and search button */}
-                    <div className="xlg:hidden cursor-pointer smlContactAndSearchContainer">
+                    <div className="lg+196:hidden cursor-pointer smlContactAndSearchContainer">
                         <HiMiniBars3 className="text-lg" onClick={()=>{
                             setDispNumberTwo(0);
                             setShowDropDownTwo(!showDropDownTwo);

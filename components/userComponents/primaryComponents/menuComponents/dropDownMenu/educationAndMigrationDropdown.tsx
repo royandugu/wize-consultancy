@@ -16,7 +16,7 @@ interface DropDownMenuProps {
 const EducationAndMigrationDropDown = ({ dispNumber, showDropDown, setShowDropDown, showEducationPage }: DropDownMenuProps) => {
 
     return (
-        <div className={`bg-white rounded-md fixed top-[150px] z-20 transform origin-top transition duration-500 ease-in-out dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
+        <div className={`bg-white rounded-md fixed top-[150px] z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
             {(dispNumber === 0 && showEducationPage) ? (
                 educationRoutes.map((route, i) => (
                     <li key={i} className="border-b border-gray-300 px-10 p-5">

@@ -5,3 +5,6 @@
 @import 'tailwindcss/utilities';
 
 /* Your custom styles go here */
+*{
+    transition:.5s ease-in-out;
+}

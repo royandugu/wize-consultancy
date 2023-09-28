@@ -1,11 +1,20 @@
 import { AiOutlineArrowRight } from "react-icons/ai"
 
-const ButtonDesign = () => {
+interface ButtonDesignProps{
+    text:string,
+}
+
+const ButtonDesign = ({text}:ButtonDesignProps) => {
     return (
-        <div className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
-            <p> Contact&nbsp;Us </p>
+        <button className="mainGradient pl-10 pr-3 pt-1 pb-1 text-white rounded-md flex align-center justify-between">
+            {(text) && text.split(' ').map((word, index) => (
+                <span key={index}>
+                    {word}
+                    {index < text.split(' ').length - 1 && <>&nbsp;</>}
+                </span>
+            ))}
             <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </button>
-        </div>
+        </button>
     )
 }
 

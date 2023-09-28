@@ -53,7 +53,7 @@ const MenuDisplay = () => {
                             <SearchBarDesign/>
                         </div>
                         <div className="contactUs xlg:block hidden">
-                            <ButtonDesign/>
+                            <ButtonDesign text={"Contact Us"}/>
                         </div>
                     </>
 

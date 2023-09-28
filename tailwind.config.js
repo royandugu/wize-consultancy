@@ -7,7 +7,10 @@ module.exports = {
     extend: {
       screens: {
         'xlg':'1220px',
-        'xs': '320px', // Define a custom breakpoint for screens smaller than sm
+        'xs': '320px',
+        'bp1':'1500px',
+
+        // Define a custom breakpoint for screens smaller than sm
       },
       colors: {
         'grad-one': '#ff637b',

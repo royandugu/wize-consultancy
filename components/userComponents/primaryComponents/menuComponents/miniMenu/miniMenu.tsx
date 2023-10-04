@@ -4,9 +4,12 @@ import {BiLogoFacebook,BiLogoLinkedin} from "react-icons/bi";
 
 import "./miniMenu.css";
 
-const MiniMenu=()=>{
+interface MiniMenuProp{
+    moveMenuUp:boolean
+}
+const MiniMenu=(props:MiniMenuProp)=>{
     return(
-        <div className="miniMenu fixed mt-10 lg:left-32 lg:right-32 left-12 right-12 p-15 rounded-md z-10 mainGradient">
+        <div className={`miniMenu fixed ${!props.moveMenuUp && 'mt-10'} lg:left-32 lg:right-32 left-12 right-12 p-15 rounded-md z-10 mainGradient`}>
             <div className="flex pb-10 pt-2 pl-10 justify-end sm:justify-between">
                 <div className="flex items-center">
                     <AiOutlineMail className="icon"/>

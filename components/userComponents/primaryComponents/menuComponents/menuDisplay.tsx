@@ -18,6 +18,7 @@ const MenuDisplay = () => {
 
     const [showDropDownOne,setShowDropDownOne]=useState<boolean>(false);
     const [showDropDownTwo,setShowDropDownTwo]=useState<boolean>(false);
+    const [moveMenuUp,setMoveMenuUp]=useState<boolean>(false);
     
     const [dispNumberOne,setDispNumberOne]=useState<number>(0);
     const [dispNumberTwo,setDispNumberTwo]=useState<number>(0);
@@ -29,7 +30,13 @@ const MenuDisplay = () => {
                 setShowDropDownTwo(false);
             };
 
+            const handleScroll = () =>{
+                if(window.scrollY>=20) setMoveMenuUp(true);
+                else setMoveMenuUp(false);
+            }
+
             window.addEventListener('resize', handleResize);
+            window.addEventListener('scroll', handleScroll);
 
             return () => {
                 window.removeEventListener('resize', handleResize);
@@ -39,7 +46,7 @@ const MenuDisplay = () => {
 
     return (
         <>
-            <div className="bg-white fixed top-20 lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20">
+            <div className={`bg-white fixed ${moveMenuUp ? 'top-10' : 'top-20'} lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20`}>
                 <div className="flex flex-row items-center sm-320:justify-between lg+196:justify-start">
                     <div className="logoContainer">
                         <h5 className="title"> Logo </h5>
@@ -77,7 +84,7 @@ const MenuDisplay = () => {
 
                 </div>
             </div>
-            <MiniMenu />
+            <MiniMenu moveMenuUp={moveMenuUp}/>
         </>
     )
 }

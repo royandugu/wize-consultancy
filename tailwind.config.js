@@ -8,7 +8,8 @@ module.exports = {
       screens: {
         'xl+70':'1350px', 
         'lg+196':'1220px',
-        'lg+100':'1124px',
+        'lg+100':'1124px',//1124-100 = 1024
+        'md+162':'930px',
         'sm-320': '320px',  
         // Define a custom breakpoint for screens smaller than sm
       },

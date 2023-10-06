@@ -9,6 +9,6 @@ const FeaturesSection = () => {
             <h1 className="text-[25px]"> Explore your options </h1> 
         </div>
     )
-}
+} 
 
 export default FeaturesSection;

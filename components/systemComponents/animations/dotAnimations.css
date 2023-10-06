@@ -1,0 +1,8 @@
+.dots {
+  animation: appear 2s ease-in-out;
+}
+.dot{
+  height:50px;
+  width:50px;
+  color:black;
+}

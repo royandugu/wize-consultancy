@@ -4,3 +4,15 @@
 .statsSection .icon{
     color:#f7a77c;
 }
+.clientRecords>div{
+    display:flex;
+}
+.clientRecords .icon{
+    font-size:60px;
+    color:#f7a77c;
+}
+.clientRecords h5{
+    font-weight:bold;
+    font-size:30px;
+    color:black;
+}

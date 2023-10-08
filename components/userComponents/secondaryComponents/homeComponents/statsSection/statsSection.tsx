@@ -5,6 +5,7 @@ import { TfiCup } from "react-icons/tfi";
 import { GoNote } from "react-icons/go";
 import { Circle } from "rc-progress";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { PiUsersThreeBold } from "react-icons/pi";
 
 import DotAnimations from "../../../../systemComponents/animations/dotAnimations";
 
@@ -97,32 +98,32 @@ const StatsSection = () => {
                 <h5 className="text-[13px]"> \\ COUNTER \\</h5>
                 <h1 className="text-[25px] text-black"> What we have achieve </h1>
                 <div className="bg-white absolute top-[80px] pt-7 pb-7 rounded-md z-10 left-[10%] right-[10%]  shadow-lg">
-                    <div className="flex justify-evenly items-center">
-                        <div className="flex">
-                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                    <div className="clientRecords flex justify-evenly items-center">
+                        <div>
+                            <AiOutlineUsergroupAdd className="icon" />
                             <div className="ml-1">
-                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <h5> 9999+ </h5>
                                 <p className="text-light-black"> Happy clients </p>
                             </div>
                         </div>
-                        <div className="flex">
-                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                        <div>
+                            <AiOutlineUsergroupAdd className="icon" />
                             <div className="ml-1">
-                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <h5> 9999+ </h5>
                                 <p className="text-light-black"> Happy clients </p>
                             </div>
                         </div>
-                        <div className="flex">
-                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                        <div>
+                            <AiOutlineUsergroupAdd className="icon" />
                             <div className="ml-1">
-                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <h5> 9999+ </h5>
                                 <p className="text-light-black"> Happy clients </p>
                             </div>
                         </div>
-                        <div className="flex">
-                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                        <div>
+                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two icon" />
                             <div className="ml-1">
-                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <h5> 9999+ </h5>
                                 <p className="text-light-black"> Happy clients </p>
                             </div>
                         </div>
@@ -132,7 +133,38 @@ const StatsSection = () => {
             </div>
 
             <div className="flex mt-72">
-                <h5> Other content </h5>
+                <div className="w-1/2 pl-[10%]">
+                    <div className="flex">
+                        <div className="bg-white rounded-md p-5 mr-5 h-[100px] shadow-lg">
+                            <div className="">
+                                <PiUsersThreeBold />
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-md p-5 mt-5 h-[100px] shadow-lg">
+                            <div className="">
+                                <PiUsersThreeBold />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex mt-5">
+                        <div className="bg-white rounded-md p-5 mr-5 h-[100px] shadow-lg">
+                            <div className="">
+                                <PiUsersThreeBold />
+                            </div>
+                        </div>
+                        <div className="bg-white rounded-md p-5 mt-5 h-[100px] shadow-lg">
+                            <div className="">
+                                <PiUsersThreeBold />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="w-1/2">
+                    <h5 className="text-[13px]"> \\ SERVICES \\</h5>
+                    <h1 className="text-[25px] text-black"> We Provide Services To Grow Your Buisness </h1>
+                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAA </p>
+                </div>
+
             </div>
 
         </div>

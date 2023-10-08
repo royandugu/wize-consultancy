@@ -2,8 +2,9 @@
 
 import { SiSemanticscholar } from "react-icons/si";
 import { TfiCup } from "react-icons/tfi";
-import {GoNote} from "react-icons/go";
+import { GoNote } from "react-icons/go";
 import { Circle } from "rc-progress";
+import {AiOutlineUsergroupAdd} from "react-icons/ai";
 
 import DotAnimations from "../../../../systemComponents/animations/dotAnimations";
 
@@ -62,12 +63,12 @@ const StatsSection = () => {
                             </p>
                         </div>
                     </div>
-                </div> 
+                </div>
             </div>
             <h5 className="text-center mt-6"> <span className="text-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
 
             {/* Find a new way to grow */}
-            <div className="flex justify-center gap-10 mt-20">
+            <div className="flex justify-center gap-10 mt-40">
                 <div>
                     <h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
                     <h1 className="text-[25px]"> WIZE WIZE WIZE WIZE </h1>
@@ -81,13 +82,55 @@ const StatsSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/5">
-                    <img src="./images/Helping_Cut.jpg" alt="Teaching"/> 
-                    <DotAnimations/>
+                <div className="w-1/5 relative z-10">
+                    <div className="absolute top-0 z-10">
+                        <img src="./images/Helping_Cut.jpg" alt="Teaching" />
+                    </div>
+                    <div className="z-0 absolute top-[-50px] right-[-50px]">
+                        <DotAnimations />
+                    </div>
                 </div>
             </div>
-            
+
+            {/* Counter */}
+            <div className="text-center mt-60 relative">
+                <h5 className="text-[13px]"> \\ COUNTER \\</h5>
+                <h1 className="text-[25px] text-black"> What we have achieve </h1>
+
+                <div className="bg-white flex justify-evenly items-center rounded-md mt-7 ml-[10%] mr-[10%] pt-7 pb-7 relative z-10">
+                    <div className="flex">
+                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
+                        <div className="ml-1">
+                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                            <p className="text-black"> Happy clients </p>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
+                        <div className="ml-1">
+                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                            <p className="text-black"> Happy clients </p>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
+                        <div className="ml-1">
+                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                            <p className="text-black"> Happy clients </p>
+                        </div>
+                    </div>
+                    <div className="flex">
+                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
+                        <div className="ml-1">
+                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                            <p className="text-black"> Happy clients </p>
+                        </div>
+                    </div>
+                    <div className="z-0 h-[120px] absolute rounded-md mainGradient bottom-[-30px] left-[30px] right-[-30px]"/>
+                </div>
+            </div>
+                    
         </div>
-    ) 
+    )
 }
 export default StatsSection;

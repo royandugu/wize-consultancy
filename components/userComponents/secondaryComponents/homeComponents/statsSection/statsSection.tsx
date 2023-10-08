@@ -4,7 +4,7 @@ import { SiSemanticscholar } from "react-icons/si";
 import { TfiCup } from "react-icons/tfi";
 import { GoNote } from "react-icons/go";
 import { Circle } from "rc-progress";
-import {AiOutlineUsergroupAdd} from "react-icons/ai";
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
 
 import DotAnimations from "../../../../systemComponents/animations/dotAnimations";
 
@@ -65,14 +65,14 @@ const StatsSection = () => {
                     </div>
                 </div>
             </div>
-            <h5 className="text-center mt-6"> <span className="text-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
+            <h5 className="text-center mt-6"> <span className="text-light-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
 
             {/* Find a new way to grow */}
             <div className="flex justify-center gap-10 mt-40">
                 <div>
                     <h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
                     <h1 className="text-[25px]"> WIZE WIZE WIZE WIZE </h1>
-                    <p className="text-black"> AAAAAAAAAAAAAAAA </p>
+                    <p className="text-light-black"> AAAAAAAAAAAAAAAA </p>
                     <div className="flex gap-5">
                         <div className="mainGradient relative text-white top-10 p-6 rounded-md h-[120px] w-[120px]">
                             <Circle percent={90} strokeWidth={10} strokeColor="#FFFFFF" />
@@ -96,40 +96,45 @@ const StatsSection = () => {
             <div className="text-center mt-60 relative">
                 <h5 className="text-[13px]"> \\ COUNTER \\</h5>
                 <h1 className="text-[25px] text-black"> What we have achieve </h1>
-
-                <div className="bg-white flex justify-evenly items-center rounded-md mt-7 ml-[10%] mr-[10%] pt-7 pb-7 relative z-10">
-                    <div className="flex">
-                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
-                        <div className="ml-1">
-                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
-                            <p className="text-black"> Happy clients </p>
+                <div className="bg-white absolute top-[80px] pt-7 pb-7 rounded-md z-10 left-[10%] right-[10%]  shadow-lg">
+                    <div className="flex justify-evenly items-center">
+                        <div className="flex">
+                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                            <div className="ml-1">
+                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <p className="text-light-black"> Happy clients </p>
+                            </div>
+                        </div>
+                        <div className="flex">
+                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                            <div className="ml-1">
+                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <p className="text-light-black"> Happy clients </p>
+                            </div>
+                        </div>
+                        <div className="flex">
+                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                            <div className="ml-1">
+                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <p className="text-light-black"> Happy clients </p>
+                            </div>
+                        </div>
+                        <div className="flex">
+                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two" />
+                            <div className="ml-1">
+                                <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
+                                <p className="text-light-black"> Happy clients </p>
+                            </div>
                         </div>
                     </div>
-                    <div className="flex">
-                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
-                        <div className="ml-1">
-                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
-                            <p className="text-black"> Happy clients </p>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
-                        <div className="ml-1">
-                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
-                            <p className="text-black"> Happy clients </p>
-                        </div>
-                    </div>
-                    <div className="flex">
-                        <AiOutlineUsergroupAdd className="text-[60px] text-grad-two"/>
-                        <div className="ml-1">
-                            <h5 className="font-bold text-[30px] text-black"> 9999+ </h5>
-                            <p className="text-black"> Happy clients </p>
-                        </div>
-                    </div>
-                    <div className="z-0 h-[120px] absolute rounded-md mainGradient bottom-[-30px] left-[30px] right-[-30px]"/>
                 </div>
+                <div className="z-0 h-[120px] absolute rounded-md mainGradient top-[120px] left-[12%] right-[115px]" />
             </div>
-                    
+
+            <div className="flex mt-72">
+                <h5> Other content </h5>
+            </div>
+
         </div>
     )
 }

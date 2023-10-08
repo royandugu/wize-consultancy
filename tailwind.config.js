@@ -16,6 +16,7 @@ module.exports = {
       colors: {
         'grad-one': '#ff637b',
         'grad-two': '#f7a77c',
+        'light-black':'rgb(150,150,150)',
         'sky-bg':'#c0eaff'
       },
     },

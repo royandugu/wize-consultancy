@@ -133,28 +133,51 @@ const StatsSection = () => {
             </div>
 
             <div className="flex mt-72">
-                <div className="w-1/2 pl-[10%]">
+                <div className="w-1/2 pl-10 pr-10">
                     <div className="flex">
-                        <div className="bg-white rounded-md p-5 mr-5 h-[100px] shadow-lg">
-                            <div className="">
-                                <PiUsersThreeBold />
+                        <div className="w-1/2">
+                            <div className="bg-white rounded-md p-5 mr-5 shadow-lg">
+                                <div className="iconContainer--statsSection w-[20%]">
+                                    <PiUsersThreeBold />
+                                </div>
+                                <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis flex-none">
+                                    <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
+                                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                                </div>
                             </div>
                         </div>
-                        <div className="bg-white rounded-md p-5 mt-5 h-[100px] shadow-lg">
-                            <div className="">
-                                <PiUsersThreeBold />
+                        <div className="w-1/2">
+                            <div className="bg-white rounded-md p-5 mt-5 shadow-lg">
+                                <div className="iconContainer--statsSection w-[20%]">
+                                    <PiUsersThreeBold />
+                                </div>
+                                <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis self-start">
+                                    <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
+                                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+
+                                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="flex mt-5">
-                        <div className="bg-white rounded-md p-5 mr-5 h-[100px] shadow-lg">
-                            <div className="">
+                    <div className="flex mt-10 pr-[50px]">
+                        <div className="bg-white rounded-md p-5 mr-5 shadow-lg w-1/2">
+                            <div className="iconContainer--statsSection w-[20%]">
                                 <PiUsersThreeBold />
                             </div>
+                            <div className="pt-5 overflow-hidden overflow-ellipsis">
+                                <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
+                                <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                            </div>
                         </div>
-                        <div className="bg-white rounded-md p-5 mt-5 h-[100px] shadow-lg">
-                            <div className="">
+                        <div className="bg-white rounded-md p-5 mt-5 shadow-lg w-1/2">
+                            <div className="iconContainer--statsSection w-[20%]">
                                 <PiUsersThreeBold />
+                            </div>
+                            <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis">
+                                <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
+                                <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
                             </div>
                         </div>
                     </div>

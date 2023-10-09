@@ -16,3 +16,15 @@
     font-size:30px;
     color:black;
 }
+.iconContainer--statsSection{
+    border-radius:5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffdecc;
+    padding:10px;
+}
+.iconContainer--statsSection>*{
+    color:#f7a77c;
+    font-size:30px;
+}

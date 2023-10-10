@@ -13,7 +13,7 @@ import "./statsSection.css";
 
 const StatsSection = () => {
     return (
-        <div className="statsSection bg-sky-bg">
+        <div className="statsSection bg-sky-bg mb-0">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
                 <div className={`bg-white shadow-lg w-[90%] lg:w-80 h-[430px] mt-[-130px]`}>
                     <img src="./images/Teaching.jpg" alt="Teaching" />
@@ -97,7 +97,7 @@ const StatsSection = () => {
             <div className="text-center mt-60 relative">
                 <h5 className="text-[13px]"> \\ COUNTER \\</h5>
                 <h1 className="text-[25px] text-black"> What we have achieve </h1>
-                <div className="bg-white absolute top-[80px] pt-7 pb-7 rounded-md z-10 left-[10%] right-[10%]  shadow-lg">
+                <div className="bg-white absolute top-[80px] pt-7 pb-7 rounded-md z-10 left-[20%] right-[20%]  shadow-lg">
                     <div className="clientRecords flex justify-evenly items-center">
                         <div>
                             <AiOutlineUsergroupAdd className="icon" />
@@ -129,11 +129,11 @@ const StatsSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="z-0 h-[120px] absolute rounded-md mainGradient top-[120px] left-[12%] right-[115px]" />
+                <div className="z-0 h-[120px] absolute rounded-md mainGradient top-[120px] left-[22%] right-[18%]" />
             </div>
 
-            <div className="flex mt-72">
-                <div className="w-1/2 pl-10 pr-10">
+            <div className="flex mt-72 pb-24">
+                <div className="w-1/2 pl-[20%] pr-10">
                     <div className="flex">
                         <div className="w-1/2">
                             <div className="bg-white rounded-md p-5 mr-5 shadow-lg">

@@ -2,6 +2,9 @@
 .mainGradient{
     background: linear-gradient(to right, #ff637b 0%, #f7a77c 100%);
 }
+.mainGradient-txt{
+    color: linear-gradient(to right, #ff637b 0%, #f7a77c 100%);
+}
 /* Functionalities */
 .scrollUp{
     transform:scaleY(0);

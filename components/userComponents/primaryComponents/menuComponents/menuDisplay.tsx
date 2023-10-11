@@ -49,7 +49,7 @@ const MenuDisplay = () => {
             <div className={`bg-white fixed ${moveMenuUp ? 'top-10' : 'top-20'} lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20`}>
                 <div className="flex flex-row items-center sm-320:justify-between lg+196:justify-start">
                     <div className="logoContainer">
-                        <h5 className="title"> Logo </h5>
+                        <img src="/images/logo.svg"/>
                     </div>
 
                     <>

@@ -14,14 +14,14 @@ import "./statsSection.css";
 const StatsSection = () => {
     return (
         <div className="statsSection bg-sky-bg mb-0">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
-                <div className={`bg-white shadow-lg w-[90%] lg:w-80 h-[430px] mt-[-130px]`}>
+            <div className="flex flex-col lg+100:flex-row justify-center items-center gap-10 sm:pl-20 sm:pr-20">
+                <div className={`bg-white shadow-lg w-[90%] lg+100:w-80 lg+100:h-[430px] mt-[-130px]`}>
                     <img src="./images/Teaching.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <GoNote className="icon text-[40px]" />
                         </div>
-                        <div className="text-left">
+                        <div className="text-left pt-5 pb-10 lg+100:p-0">
                             <h1 className="text-[20px]"> Personalized Guidance </h1>
                             <p className="mt-2 text-sm">
                                 In the ever-evolving world of consultancy, achieving success
@@ -32,13 +32,13 @@ const StatsSection = () => {
                     </div>
                 </div>
 
-                <div className={`bg-white shadow-lg w-[90%] lg:w-80 h-[430px] lg:mt-[-130px]`}>
+                <div className={`bg-white shadow-lg w-[90%] lg+100:w-80 lg+100:h-[430px] lg+100:mt-[-130px]`}>
                     <img src="./images/Scholarship.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <SiSemanticscholar className="icon text-[40px]" />
                         </div>
-                        <div className="text-left">
+                        <div className="text-left pt-5 pb-10 lg+100:p-0">
                             <h1 className="text-[20px]"> Scholarship Guidance </h1>
                             <p className="mt-2 text-sm">
                                 In the ever-evolving world of consultancy, achieving success
@@ -49,13 +49,13 @@ const StatsSection = () => {
                     </div>
                 </div>
 
-                <div className={`bg-white shadow-lg w-[90%] lg:w-80 h-[430px] lg:mt-[-130px]`}>
+                <div className={`bg-white shadow-lg w-[90%] lg+100:w-80 lg+100:h-[430px] lg+100:mt-[-130px]`}>
                     <img src="./images/Helping.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <TfiCup className="icon text-[40px]" />
                         </div>
-                        <div className="text-left">
+                        <div className="text-left pt-5 pb-10 lg+100:p-0">
                             <h1 className="text-[20px]"> Streamlined Support </h1>
                             <p className="mt-2 text-sm">
                                 In the ever-evolving world of consultancy, achieving success
@@ -69,21 +69,21 @@ const StatsSection = () => {
             <h5 className="text-center mt-6"> <span className="text-light-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
 
             {/* Find a new way to grow */}
-            <div className="flex justify-center gap-10 mt-40">
-                <div>
+            <div className="flex flex-col lg+100:flex-row justify-center lg+100:gap-10 mt-20 lg+100:mt-40">
+                <div className="text-center lg+100:text-left">
                     <h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
                     <h1 className="text-[25px]"> WIZE WIZE WIZE WIZE </h1>
                     <p className="text-light-black"> AAAAAAAAAAAAAAAA </p>
-                    <div className="flex gap-5">
-                        <div className="mainGradient relative text-white top-10 p-6 rounded-md h-[120px] w-[120px]">
+                    <div className="flex gap-5 justify-center pl-24 pr-24 lg+100:pl-0 lg+100:pr-0 lg+100:justify-start">
+                        <div className="mainGradient relative text-white top-10 p-6 w-full rounded-md lg+100:h-[120px] lg+100:w-[120px]">
                             <Circle percent={90} strokeWidth={10} strokeColor="#FFFFFF" />
                         </div>
-                        <div className="mainGradient relative text-white top-20 p-6 rounded-md h-[120px] w-[120px]">
+                        <div className="mainGradient relative text-white top-20 p-6 rounded-md w-full lg+100h-[120px] lg+100:w-[120px]">
                             <Circle percent={30} strokeWidth={10} strokeColor="#FFFFFF" />
                         </div>
                     </div>
                 </div>
-                <div className="w-1/5 relative z-10">
+                <div className="lg+100:w-1/5 relative z-10">
                     <div className="absolute top-0 z-10">
                         <img src="./images/Helping_Cut.jpg" alt="Teaching" />
                     </div>

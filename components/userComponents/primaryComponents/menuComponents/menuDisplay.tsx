@@ -46,12 +46,11 @@ const MenuDisplay = () => {
 
     return (
         <>
-            <div className={`bg-white fixed ${moveMenuUp ? 'top-10' : 'top-20'} lg:left-20 lg:right-20 left-5 right-5 p-5 rounded-md shadow-lg z-20`}>
+            <div className={`bg-white fixed ${moveMenuUp ? 'top-10 rounded-md rounded-tl-none rounded-tr-none' : 'top-20 rounded-md'} lg:left-20 lg:right-20 left-5 right-5 p-5 shadow-lg z-30`}>
                 <div className="flex flex-row items-center sm-320:justify-between lg+196:justify-start">
                     <div className="logoContainer">
                         <img src="/images/logo.svg"/>
                     </div>
-
                     <>
                         <div className="navigationContainer md:block hidden px-20">
                             <NavigationContainer dispNumber={dispNumberOne} showDropDown={showDropDownOne} setDispNumber={setDispNumberOne} setShowDropDown={setShowDropDownOne}/>

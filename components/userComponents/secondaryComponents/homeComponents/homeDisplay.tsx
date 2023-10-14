@@ -10,7 +10,7 @@ import "./homeDisplay.css";
 
 const HomeDisplay = () => {
     return (
-        <>
+        <div className="overflow-x-hidden">
             <MenuDisplay />
             <WelcomeSection />
             <FeaturesSection/>
@@ -18,7 +18,7 @@ const HomeDisplay = () => {
             <OptionSection/>
             <TestimonialSection/>
             <Footer/>
-        </>
+        </div>
     )
 }
 

@@ -28,3 +28,15 @@
     color:#f7a77c;
     font-size:30px;
 }
+
+@media (min-width:768px) and (max-width: 1000px) {
+    .para--statsSection{
+        font-size: 12px;
+    }
+    .title--statsSection{
+        font-size:18px;
+    }
+    .statsSection .icon{
+        display:none;
+    }
+}

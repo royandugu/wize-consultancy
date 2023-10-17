@@ -83,8 +83,8 @@ const StatsSection = () => {
                     </div>
                 </div>
                 <div className="md:w-1/5 relative z-10">
-                    <div className="absolute top-0 z-10 pl-28 pr-28 pt-48 md:pl-0 md:pr-0 md:pt-0">
-                        <img src="./images/Helping_Cut.jpg" alt="Teaching" className="w-full h-auto"/>
+                    <div className="md:absolute top-0 z-10 pl-28 pr-28 pt-48 md:pl-0 md:pr-0 md:pt-0">
+                        <img src="./images/Helping_Cut.jpg" alt="Teaching" className="w-full h-auto" />
                     </div>
                     <div className="z-0 absolute top-[120px] md:top-[-50px] right-[30px] md:right-[-50px]">
                         <DotAnimations />
@@ -93,61 +93,63 @@ const StatsSection = () => {
             </div>
 
             {/* Counter */}
-            <div className="text-center mt-60 relative">
+            <div className="text-center pt-[100px] md:pt-0 md:mt-60 relative">
                 <h5 className="text-[13px]"> \\ COUNTER \\</h5>
                 <h1 className="text-[25px] text-black"> What we have achieve </h1>
-                <div className="bg-white absolute top-[80px] pt-7 pb-7 rounded-md z-10 left-[20%] right-[20%]  shadow-lg">
-                    <div className="clientRecords flex flex-col md:flex-row justify-evenly items-center">
-                        <div>
-                            <AiOutlineUsergroupAdd className="icon" />
-                            <div className="ml-1">
-                                <h5> 9999+ </h5>
-                                <p className="text-light-black"> Happy clients </p>
+                <div className="pl-20 md:pl-0 pr-20 md:pr-0">
+                    <div className="bg-white md:absolute mt-5 md:mt-0 md:top-[80px] pt-7 pb-7 rounded-md z-10 left-[20%] right-[20%]  shadow-lg">
+                        <div className="clientRecords flex flex-col md:flex-row justify-evenly items-center">
+                            <div>
+                                <AiOutlineUsergroupAdd className="icon" />
+                                <div className="ml-1">
+                                    <h5> 9999+ </h5>
+                                    <p className="text-light-black"> Happy clients </p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <AiOutlineUsergroupAdd className="icon" />
-                            <div className="ml-1">
-                                <h5> 9999+ </h5>
-                                <p className="text-light-black"> Happy clients </p>
+                            <div>
+                                <AiOutlineUsergroupAdd className="icon" />
+                                <div className="ml-1">
+                                    <h5> 9999+ </h5>
+                                    <p className="text-light-black"> Happy clients </p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <AiOutlineUsergroupAdd className="icon" />
-                            <div className="ml-1">
-                                <h5> 9999+ </h5>
-                                <p className="text-light-black"> Happy clients </p>
+                            <div>
+                                <AiOutlineUsergroupAdd className="icon" />
+                                <div className="ml-1">
+                                    <h5> 9999+ </h5>
+                                    <p className="text-light-black"> Happy clients </p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <AiOutlineUsergroupAdd className="text-[60px] text-grad-two icon" />
-                            <div className="ml-1">
-                                <h5> 9999+ </h5>
-                                <p className="text-light-black"> Happy clients </p>
+                            <div>
+                                <AiOutlineUsergroupAdd className="text-[60px] text-grad-two icon" />
+                                <div className="ml-1">
+                                    <h5> 9999+ </h5>
+                                    <p className="text-light-black"> Happy clients </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="z-0 h-[120px] absolute rounded-md mainGradient top-[120px] left-[22%] right-[18%]" />
+                <div className="z-0 h-[120px] hidden md:block absolute rounded-md mainGradient top-[120px] left-[22%] right-[18%]" />
             </div>
 
-            <div className="flex mt-72 pb-24">
-                <div className="w-1/2 pl-[20%] pr-10">
-                    <div className="flex">
-                        <div className="w-1/2">
+            <div className="flex flex-col md:flex-row mt-10 md:mt-72 pb-24">
+                <div className="md:w-1/2 pl-[20%] pr-[20%] md:pr-10">
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-1/2">
                             <div className="bg-white rounded-md p-5 mr-5 shadow-lg">
-                                <div className="iconContainer--statsSection w-[20%]">
+                                <div className="iconContainer--statsSection md:w-[20%]">
                                     <PiUsersThreeBold />
                                 </div>
                                 <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis flex-none">
                                     <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
-                                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                                    <p className="text-light-black">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="w-1/2">
+                        <div className="md:w-1/2">
                             <div className="bg-white rounded-md p-5 mt-5 shadow-lg">
-                                <div className="iconContainer--statsSection w-[20%]">
+                                <div className="iconContainer--statsSection md:w-[20%]">
                                     <PiUsersThreeBold />
                                 </div>
                                 <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis self-start">
@@ -160,9 +162,9 @@ const StatsSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex mt-10 pr-[50px]">
-                        <div className="bg-white rounded-md p-5 mr-5 shadow-lg w-1/2">
-                            <div className="iconContainer--statsSection w-[20%]">
+                    <div className="flex flex-col md:flex-row mt-10 pr-[50px]">
+                        <div className="bg-white rounded-md p-5 mr-5 shadow-lg md:w-1/2">
+                            <div className="iconContainer--statsSection md:w-[20%]">
                                 <PiUsersThreeBold />
                             </div>
                             <div className="pt-5 overflow-hidden overflow-ellipsis">
@@ -170,8 +172,8 @@ const StatsSection = () => {
                                 <p className="text-light-black"> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
                             </div>
                         </div>
-                        <div className="bg-white rounded-md p-5 mt-5 shadow-lg w-1/2">
-                            <div className="iconContainer--statsSection w-[20%]">
+                        <div className="bg-white rounded-md p-5 mt-5 shadow-lg md:w-1/2">
+                            <div className="iconContainer--statsSection md:w-[20%]">
                                 <PiUsersThreeBold />
                             </div>
                             <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis">
@@ -181,10 +183,10 @@ const StatsSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2">
+                <div className="md:w-1/2 pt-14 text-center pl-[10%] pr-[10%] md:pt-0 md:text-left md:pl-0 md:pr-0">
                     <h5 className="text-[13px]"> \\ SERVICES \\</h5>
                     <h1 className="text-[25px] text-black"> We Provide Services To Grow Your Buisness </h1>
-                    <p className="text-light-black"> AAAAAAAAAAAAAAAAAA </p>
+                    <p className="text-light-black mt-5"> AAAAAAAAAAAAAAAAAA </p>
                 </div>
 
             </div>

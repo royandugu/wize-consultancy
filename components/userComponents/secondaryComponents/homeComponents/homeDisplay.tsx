@@ -10,7 +10,7 @@ import "./homeDisplay.css";
 
 const HomeDisplay = () => {
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden"> 
             <MenuDisplay />
             <WelcomeSection />
             <FeaturesSection/>

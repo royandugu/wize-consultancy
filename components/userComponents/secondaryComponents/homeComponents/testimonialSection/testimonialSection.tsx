@@ -13,7 +13,7 @@ const TestimonialSection = () => {
         <div className="bg-sky-bg pt-10 text-center">
             <h5 className="text-[13px] text-grad-one"> \\ FEATURES \\</h5>
             <h1 className="text-[25px]"> Our Testimonials </h1>
-            <div className="pl-[16.5%] pr-[16.5%]">
+            <div className="hidden md:block pl-[16.5%] pr-[16.5%]">
                 <Swiper
                     spaceBetween={10}
                     slidesPerView={3}
@@ -78,7 +78,7 @@ const TestimonialSection = () => {
                                     <h1> Name </h1>
                                 
                                 </div>
-                            </div>
+                        </div>
 
                         </div>
                     </SwiperSlide>

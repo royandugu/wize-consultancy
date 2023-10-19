@@ -3,19 +3,19 @@ import { BiSolidMessageDetail } from "react-icons/bi";
 const Footer = () => {
     return (
         <div className="footer bg-black text-white pt-20 pl-[10%] pr-[10%] ">
-            <div className="flex justify-between items-center">
-                <div>
+            <div className="flex flex-col md:flex-row justify-between items-center">
+                <div> 
                     <h1 className="text-white text-[30px]"> SUBSCRIBE TO OUR NEWS LETTER </h1>
                     <h1 className="text-white text-[30px]"> FOR LATEST UPDATE </h1>
                 </div>
-                <div className="flex">
+                <div className="flex mt-10 md:mt-0">
                     <input type="text" className="bg-white rounded-tl-md rounded-bl-md h-[50px]" />
                     <button className="mainGradient pl-3 pr-3 pt-3 pb-1 text-white rounded-tr-md rounded-br-md flex align-center justify-between">
                         Subscribe 
                     </button>
                 </div>
             </div>
-            <div className="flex gap-[20%] mt-10 border-t border-gray-300 border-dotted pt-10 text-white pb-10">
+            <div className="flex flex-col md:flex-row gap-[20%] mt-10 border-t border-gray-300 border-dotted pt-10 text-white pb-10">
                 <div>
                     <h1 className="underline text-[30px]"> Logo </h1>
                     <p className="text-white mt-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <h5 className="mt-4 ml-2"> Email </h5>
                     </div>
                 </div>
-                <div>
+                <div className="mt-10 md:mt-0">
                     <h1> Student&nbsp;services </h1>
                     <div className=" h-1 mainGradient"/>
                     <ul>
@@ -44,7 +44,7 @@ const Footer = () => {
                         <li className="mt-2"> Booking&nbsp;in&nbsp;Australia</li>
                     </ul>
                 </div>
-                <div>
+                <div className="mt-10 md:mt-0">
                     <h1> About </h1>
                     <div className=" h-1 mainGradient"/>
                     <ul>

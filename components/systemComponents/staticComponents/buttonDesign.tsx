@@ -13,7 +13,7 @@ const ButtonDesign = ({text}:ButtonDesignProps) => {
                     {index < text.split(' ').length - 1 && <>&nbsp;</>}
                 </span>
             ))}
-            <button className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </button>
+            <div className="bg-grad-two p-1 ml-3"> <AiOutlineArrowRight /> </div>
         </button>
     )
 }

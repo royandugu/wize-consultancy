@@ -5,6 +5,17 @@
 @import 'tailwindcss/utilities';
 
 /* Your custom styles go here */
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/font.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 *{
     transition:.5s ease-in-out;
 }
+*{
+    font-family: 'Proxima Nova';
+}
+  
+  

@@ -4,7 +4,7 @@ import "./welcomeSection.css";
 
 const WelcomePage = () => {
     return (
-        <div className="welcomeSection">
+        <div className="welcomeSection backgroundOne">
             <div className="flex pt-40 justify-center gap-0">
                 <div className="grid grid-cols-12 mt-5">
                     <div className="md+162:col-span-5 col-span-12 hidden md+162:block pb-0">

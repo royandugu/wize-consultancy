@@ -18,3 +18,10 @@
 .scrollXInvisible{
     transform:scaleX(0);
 }
+.backgroundOne{
+    background:url("../../../public/images/bgImages.jpg");
+    background-size: cover;   
+}
+.backgroundOne > .flex{
+    background:rgba(193,234,254,.9);
+}

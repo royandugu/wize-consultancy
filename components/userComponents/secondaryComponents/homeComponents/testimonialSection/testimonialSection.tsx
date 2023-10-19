@@ -1,96 +1,82 @@
 "use client"
 
-import SwiperCore, { Swiper, SwiperSlide } from "swiper/react";
+import Slider from "react-slick";
+
 import EventUpdatesSection from "../eventUpdatesSection/eventUpdatesSection";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
 const TestimonialSection = () => {
+
+    const settingsOne = {
+        slidesToShow: 3,
+        dots: true,
+        arrows: true,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 4000,
+        infinite: true,
+        cssEase: "linear",
+    };
+
 
     return (
         <div className="bg-sky-bg pt-10 text-center">
             <h5 className="text-[13px] text-grad-one"> \\ FEATURES \\</h5>
             <h1 className="text-[25px]"> Our Testimonials </h1>
             <div className="hidden md:block pl-[16.5%] pr-[16.5%]">
-                <Swiper
-                    spaceBetween={10}
-                    slidesPerView={3}
-                    pagination={{ clickable: true }}
-                    scrollbar={{ draggable: true }}
-                    autoplay={{
-                        delay: 5000
-                    }}
+                <Slider {...settingsOne}>
+                    <div className="p-5">
+                        <h5> Hello </h5>
+                        {/* <div className="flex bg-white shadow-lg p-5">
+                            <div className="w-1/3">
 
-                >
-                    <SwiperSlide>
-                        <div className="p-5">
-                            <div className="flex bg-white shadow-lg p-5">
-                                <div className="w-1/3">
-
-                                </div>
-                                <div className="w-2/3 text-left">
-                                    <p> adadfadfadf </p>
-                                    <h1> Name </h1>
-                                </div>
                             </div>
-
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="p-5">
-                            <div className="flex bg-white shadow-lg p-5">
-                                <div className="w-1/3">
-
-                                </div>
-                                <div className="w-2/3">
-                                    <p> adadfadfadf </p>
-                                    <h1> Name </h1>
-                                </div>
+                            <div className="w-2/3 text-left">
+                                <p> adadfadfadf </p>
+                                <h1> Name </h1>
                             </div>
+                        </div> */}
+                    </div>
+                    <div className="p-5">
+                        <h5> Hello 2 </h5>
+                        {/* <div className="flex bg-white shadow-lg p-5">
+                            <div className="w-1/3">
 
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="p-5">
-                            <div className="flex bg-white shadow-lg p-5">
-                                <div className="w-1/3">
-
-                                </div>
-                                <div className="w-2/3">
-                                    <p> adadfadfadf </p>
-                                    <h1> Name </h1>
-                                
-                                </div>
                             </div>
+                            <div className="w-2/3">
+                                <p> adadfadfadf </p>
+                                <h1> Name </h1>
+                            </div>
+                        </div> */}
 
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className="p-5">
-                            <div className="flex bg-white shadow-lg p-5">
-                                <div className="w-1/3">
+                    </div>
+                    <div className="p-5">
+                        {/* <div className="flex bg-white shadow-lg p-5">
+                            <div className="w-1/3">
 
-                                </div>
-                                <div className="w-2/3">
-                                    <p> adadfadfadf </p>
-                                    <h1> Name </h1>
-                                
-                                </div>
-                        </div>
+                            </div>
+                            <div className="w-2/3">
+                                <p> adadfadfadf </p>
+                                <h1> Name </h1>
 
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <h5> Test three </h5>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <h5> Test three </h5>
-                    </SwiperSlide>
-                </Swiper>
+                            </div>
+                        </div> */}
+                    </div>
+                    <div className="p-5">
+                        {/* <div className="flex bg-white shadow-lg p-5">
+                            <div className="w-1/3">
+
+                            </div>
+                            <div className="w-2/3">
+                                <p> adadfadfadf </p>
+                                <h1> Name </h1>
+
+                            </div>
+                        </div> */}
+                    </div>
+                </Slider>
             </div>
-            <EventUpdatesSection/>
+            <EventUpdatesSection />
         </div>
 
     )

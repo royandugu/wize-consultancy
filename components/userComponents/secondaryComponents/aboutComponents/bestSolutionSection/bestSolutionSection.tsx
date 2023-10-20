@@ -4,7 +4,7 @@ const BestSolutionSection = () => {
     return (
         <div className="flex justify-center items-center gap-10 pt-10 bg-sky-bg pr-[20%] pb-32">
             <div className="pl-[20%]">
-                <h5> This is an SVG image </h5>
+                <img src="/images/peopleWorking.jpeg"/>
             </div>
             <div>
                 <h5 className="text-[20px] text-grad-one mt-5"> \\About </h5>

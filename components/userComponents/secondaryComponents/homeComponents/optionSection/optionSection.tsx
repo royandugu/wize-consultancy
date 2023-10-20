@@ -10,7 +10,7 @@ const OptionSection=()=>{
                 </div>
                 <div className="hidden md:block w-1/2">
                     <h5> CEO picture </h5>
-                </div>
+                </div> 
             </div>
             
         </div>

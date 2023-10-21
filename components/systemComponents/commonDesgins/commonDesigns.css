@@ -25,3 +25,10 @@
 .backgroundOne > .flex{
     background:rgba(193,234,254,.9);
 }
+.backgroundTwo{
+    background:url("../../../public/images/sydney-cbd-from-ferry-boat2.jpg");
+    background-size: cover;
+}
+.backgroundTwo > .flex{
+    background:rgba(193,234,254,.8);
+}

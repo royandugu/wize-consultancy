@@ -6,6 +6,9 @@ import OptionSection from "./optionSection/optionSection";
 import TestimonialSection from "./testimonialSection/testimonialSection";
 import Footer from "../../primaryComponents/footerComponents/footer";
 
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 import "./homeDisplay.css";
 
 const HomeDisplay = () => {

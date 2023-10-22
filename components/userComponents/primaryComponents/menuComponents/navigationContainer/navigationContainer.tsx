@@ -9,10 +9,11 @@ interface NavigationContainerProps{
     dispNumber:number,
     setDispNumber:React.Dispatch<React.SetStateAction<number>>,
     showDropDown:boolean,
-    setShowDropDown:React.Dispatch<React.SetStateAction<boolean>>
+    setShowDropDown:React.Dispatch<React.SetStateAction<boolean>>,
+    moveMenuUp:boolean
 }
 
-const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDown}:NavigationContainerProps)=>{
+const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDown,moveMenuUp}:NavigationContainerProps)=>{
     return (
         <ul className="flex navigationContainer">
             <li className="navigationContainer--noDropDowns">
@@ -25,18 +26,18 @@ const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDow
                 <Link href="/events" className="mr-12"> Events </Link>
             </li>
             <li>
-                <Link href="/education" className="mr-12 relative" onMouseEnter={()=>{
+                <Link href="#" className="mr-12 relative" onMouseEnter={()=>{
                     setDispNumber(0);
                     setShowDropDown(true);
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns">Education</label> </Link>
-                <EducationAndMigrationDropDown dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={true}/>
+                <EducationAndMigrationDropDown dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={true} moveMenuUp={moveMenuUp}/>
             </li>
             <li>
-                <Link href="/migration" onMouseEnter={()=>{
+                <Link href="#" onMouseEnter={()=>{
                         setDispNumber(1);
                         setShowDropDown(true);    
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns"> Migration </label></Link>
-                <EducationAndMigrationDropDown  dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={false}/>
+                <EducationAndMigrationDropDown  dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={false} moveMenuUp={moveMenuUp}/>
             </li>
         </ul>
     )

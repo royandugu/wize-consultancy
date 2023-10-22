@@ -10,13 +10,14 @@ interface DropDownMenuProps {
     dispNumber: number,
     showDropDown: boolean,
     setShowDropDown: React.Dispatch<React.SetStateAction<boolean>>,
-    showEducationPage: boolean
+    showEducationPage: boolean,
+    moveMenuUp:boolean
 }
 
-const EducationAndMigrationDropDown = ({ dispNumber, showDropDown, setShowDropDown, showEducationPage }: DropDownMenuProps) => {
+const EducationAndMigrationDropDown = ({ dispNumber, showDropDown, setShowDropDown, showEducationPage, moveMenuUp }: DropDownMenuProps) => {
 
     return (
-        <ul className={`bg-white rounded-md fixed top-[150px] z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
+        <ul className={`bg-white rounded-md fixed ${moveMenuUp? 'top-[110px]' : 'top-[150px]'} z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
             {(dispNumber === 0 && showEducationPage) ? (
                 educationRoutes.map((route, i) => (
                     <li key={i} className="border-b border-gray-300 px-10 p-5">

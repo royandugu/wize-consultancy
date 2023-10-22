@@ -7,12 +7,13 @@ interface DropDownMenuProps {
     dispNumber: number,
     showDropDown: boolean,
     setShowDropDown: React.Dispatch<React.SetStateAction<boolean>>,
-    showAllNavs: boolean
+    showAllNavs: boolean,
+    moveMenuUp:boolean
 }
 
-const SearchAndContactDropDown = ({ dispNumber, showDropDown, setShowDropDown, showAllNavs }: DropDownMenuProps) => {
+const SearchAndContactDropDown = ({ dispNumber, showDropDown, setShowDropDown, showAllNavs, moveMenuUp }: DropDownMenuProps) => {
     return (
-        <div className={`bg-white rounded-md fixed top-[150px] right-12 z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `}>
+        <div className={`bg-white rounded-md fixed ${moveMenuUp ? 'top-[95px]' : 'top-[135px]'} right-12 z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `}>
             {dispNumber === 0 ? (
                 <div className="flex px-5 p-5 mr-20">
                     <SearchBarDesign />

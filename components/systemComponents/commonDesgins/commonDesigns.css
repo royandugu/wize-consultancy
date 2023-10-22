@@ -18,6 +18,9 @@
 .scrollXInvisible{
     transform:scaleX(0);
 }
+.scrollDown,.scrollUp,.scrollXVisible,.scrollXInvisible{
+    transition: .5s ease-in-out;
+}
 .backgroundOne{
     background:url("../../../public/images/bgImages.jpg");
     background-size: cover;   

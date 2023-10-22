@@ -66,7 +66,9 @@ const StatsSection = () => {
                     </div>
                 </div>
             </div>
-            <h5 className="text-center mt-6"> <span className="text-light-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
+            <div className="pl-20 pr-20">
+                <h5 className="text-center mt-6"> <span className="text-light-black">Stop wasting time and money on technology.</span> <span className="underline">Explore our company</span> </h5>
+            </div>
 
             {/* Find a new way to grow */}
             <div className="flex flex-col md:flex-row justify-center md:gap-10 mt-20 md:mt-40">

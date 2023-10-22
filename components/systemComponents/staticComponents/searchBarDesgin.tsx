@@ -1,5 +1,6 @@
 import { AiOutlineSearch } from "react-icons/ai"
 
+
 const SearchBarDesign = () => {
     return (
         <div className="flex relative">

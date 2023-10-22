@@ -1,4 +1,6 @@
+
 import { AiOutlineSearch } from "react-icons/ai"
+
 import SearchBarDesign from "../../../../systemComponents/staticComponents/searchBarDesgin"
 import ButtonDesign from "../../../../systemComponents/staticComponents/buttonDesign"
 import Link from "next/link"
@@ -12,6 +14,7 @@ interface DropDownMenuProps {
 }
 
 const SearchAndContactDropDown = ({ dispNumber, showDropDown, setShowDropDown, showAllNavs, moveMenuUp }: DropDownMenuProps) => {
+    
     return (
         <div className={`bg-white rounded-md fixed ${moveMenuUp ? 'top-[95px]' : 'top-[135px]'} right-12 z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `}>
             {dispNumber === 0 ? (

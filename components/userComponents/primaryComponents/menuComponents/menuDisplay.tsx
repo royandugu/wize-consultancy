@@ -10,7 +10,6 @@ import SearchBarDesign from "../../../systemComponents/staticComponents/searchBa
 import ButtonDesign from "../../../systemComponents/staticComponents/buttonDesign";
 
 import "./menuDisplay.css";
-import "../../../systemComponents/commonDesgins/commonDesigns.css";
 
 //{ dispNumberOne, showDropDown, setShowDropDown, showEducationPage}:DropDownMenuProps
 

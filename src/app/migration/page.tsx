@@ -1,4 +1,6 @@
+import MigrationDisplay from "../../../components/userComponents/secondaryComponents/migrationComponents/migrationDisplay";
+
 const Page=()=>{   
-    return <h5> This is migration page </h5>
+    return <MigrationDisplay/>
 }
 export default Page;

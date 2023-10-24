@@ -8,7 +8,7 @@ const SecondaryTitleDesign = (props: SecondaryTitleDesignProps) => {
         <div className={props.changeBg ? 'backgroundTwo' : 'backgroundOne'}>
             <div className="flex flex-col md:flex-row justify-center items-center gap-24 pt-48 md:pt-72 pb-20 pr-[20%]">
                 <div className="pl-[20%]">
-                    <h1 className="uppercase text-[25px] xl+70:text-[45px] md:leading-3 mt-5"> {props.page === "about" ? 'About us': props.page==="events" ? 'EVENTS' : props.page === "ielts" ? 'IELTS CLASSES IN NEPAL' : props.page === "py" ? "PY CLASSES IN NEPAL" : props.page === "pte" ? 'PTE CLASSESS IN NEPAL' : props.page === "Student" ? "STUDENT VISA" : props.page==="Partner" ? 'PARTNER VISA' : props.page === "TR" ? 'TEMPORARY RESIDENCE' : props.page === "Visitor" ? "VISITOR VISA" : props.page === "Occupation" && "OCCUPATION VISA"}</h1>
+                    <h1 className="uppercase text-[25px] xl+70:text-[45px] md:leading-3 mt-5"> {props.page === "about" ? 'About us': props.page==="events" ? 'EVENTS' : props.page === "ielts" ? 'IELTS CLASSES IN NEPAL' : props.page === "py" ? "PY CLASSES IN NEPAL" : props.page === "pte" ? 'PTE CLASSESS IN NEPAL' : props.page === "Student" ? "STUDENT VISA" : props.page==="Partner" ? 'PARTNER VISA' : props.page === "TR" ? 'TEMPORARY RESIDENCE' : props.page === "Visitor" ? "VISITOR VISA" : props.page === "Occupation" ? "OCCUPATION VISA" : props.page}</h1>
                     <p className=" mt-10 text-light-black uppercase text-[15px]"> {props.para} </p>
                 </div>
                 <div className="flex gap-5">

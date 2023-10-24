@@ -1,4 +1,6 @@
+import EducationDisplay from "../../../components/userComponents/secondaryComponents/educationComponents/educationDisplay";
+
 const Page=()=>{
-    return <h5> Eduction </h5>
+    return <EducationDisplay/>
 }
 export default Page;

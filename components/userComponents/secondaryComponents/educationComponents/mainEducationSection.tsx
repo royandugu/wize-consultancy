@@ -7,7 +7,7 @@ const MainEducationSection = () => {
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h1 className="font-bold"> Why Choose Australia for Education? </h1>
-                    <img src="/images/young-girl-reading-book-headphones.jpg" className="w-full mt-5 mb-5" />
+                    <img src="/images/Student potrait.jpg" className="w-full mt-5 mb-5" />
                     
                     <p className="mt-5">Australia is renowned for its excellence in education, and here's why it stands out:</p>
                     <ul className="list-disc list-inside pt-2">
@@ -32,23 +32,36 @@ const MainEducationSection = () => {
                             <span className="text-[rgb(90,90,90)]">Australia provides opportunities for international students to gain practical work experience during and after their studies.</span>
                         </div>
                     </ul>
-                    <h1 className="font-bold text-[20px]"> Why Choose IELTS ?</h1>
-                    <ul className="list-disc list-inside pt-5">
-                        <li className="mb-2"><span className="text-light-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-                        <li className="mb-2"><span className="text-light-black"> <span className="text-black font-bold">Sed do eiusmod</span> tempor incididunt ut labore et dolore magna aliqua.</span></li>
-                        <li className="mb-2"><span className="text-light-black">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span></li>
-                        <li className="mb-2"><span className="text-light-black">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</span></li>
+                    <h5 className="mt-5"> Our Education Services : </h5>
+                    <img src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
+                    <p className="mt-5"> We are committed to guiding you through every aspect of your educational journey in Australia:</p>
+                    
+                    <ul className="list-disc list-inside pt-2">
+                        <li className="mb-2">Course Selection: </li>
+                        <div className="pl-4 mt-[-5px]">
+                            <span className="text-[rgb(90,90,90)]">We help you find the right course and institution that aligns with your career goals and interests.</span>
+                        </div>
+                        <li className="mb-2 mt-3">Admissions Assistance: </li>
+                        <div className="pl-4 mt-[-5px]">
+                            <span className="text-[rgb(90,90,90)]">Our experts assist you in the application process, ensuring all documents are correctly prepared and submitted.</span>
+                        </div>
+                        <li className="mb-2 mt-3">Visa Guidance:  </li>
+                        <div className="pl-4 mt-[-5px]">
+                            <span className="text-[rgb(90,90,90)]">Navigating the visa process can be complex. We provide step-by-step guidance to streamline your visa application.</span>
+                        </div>
+                        <li className="mb-2 mt-3">Pre-Departure Support: </li>
+                        <div className="pl-4 mt-[-5px]">
+                            <span className="text-[rgb(90,90,90)]">We equip you with essential information about living in Australia, from accommodation options to local culture and lifestyle.</span>
+                        </div>
+                        <li className="mb-2 mt-3">Post-Arrival Assistance:</li>
+                        <div className="pl-4 mt-[-5px]">
+                            <span className="text-[rgb(90,90,90)]">Our support doesn't end when you land in Australia. We continue to assist you in settling into your new environment.</span>
+                        </div>
                     </ul>
-                    <img src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
-                    <h1 className="font-bold text-[20px]"> Our IELTS Services </h1>
-                    <ul className="list-disc list-inside pt-5">
-                        <li className="mb-2"><span className="text-light-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
-                        <li className="mb-2"><span className="text-light-black">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></li>
-                        <li className="mb-2"><span className="text-light-black">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span></li>
-                        <li className="mb-2"><span className="text-light-black">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</span></li>
-                    </ul>
-                    <h1 className="font-bold text-[20px] mt-5"> Your IELTS Story Begins Here </h1>
-                    <h5> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.  </h5>
+                    
+                    <h1 className="font-bold text-[20px] mt-5"> Study in Australia - Your Future Awaits </h1>
+                    <p className="mt-2">Australia is not just a destination for education; it's a destination for personal growth, cultural enrichment, and exciting opportunities.  Wize Consult will guide you towards your first step for a fulfilling and enriching academic experience in this beautiful country.</p>
+                    <p className="mt-2">Begin your educational journey with us, and let's pave the way to a brighter future together. Explore our website for more information or get in touch with our dedicated team for personalized guidance. Your educational adventure in Australia starts here.</p>
                 </div>
             </div>
         </div>

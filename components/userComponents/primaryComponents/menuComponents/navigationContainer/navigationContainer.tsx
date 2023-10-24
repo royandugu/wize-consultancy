@@ -26,14 +26,14 @@ const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDow
                 <Link href="/events" className="mr-12"> Events </Link>
             </li>
             <li>
-                <Link href="#" className="mr-12 relative" onMouseEnter={()=>{
+                <Link href="/education" className="mr-12 relative" onMouseEnter={()=>{
                     setDispNumber(0);
                     setShowDropDown(true);
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns">Education</label> </Link>
                 <EducationAndMigrationDropDown dispNumber={dispNumber} showDropDown={showDropDown} setShowDropDown={setShowDropDown} showEducationPage={true} moveMenuUp={moveMenuUp}/>
             </li>
             <li>
-                <Link href="#" onMouseEnter={()=>{
+                <Link href="/migration" onMouseEnter={()=>{
                         setDispNumber(1);
                         setShowDropDown(true);    
                 }} onMouseLeave={()=>setShowDropDown(false)}> <label className="navigationContainer--dropDowns"> Migration </label></Link>

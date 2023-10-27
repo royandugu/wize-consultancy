@@ -89,7 +89,7 @@ const OurTeamMembersSection = () => {
 
     return (
         <div className="pl-[18%] pr-[18%] pt-20 bg-sky-bg">
-            <h1 className="text-center text-[40px] mb-10"> Our&nbsp;Team&nbsp;Members </h1>
+            <h1 className="text-center text-[30px] mb-10 sm:text-[40px]"> Our Team Members </h1>
             <div className="hidden md:block">
                 <Slider {...settingsOne}>
                     <SliderOne />

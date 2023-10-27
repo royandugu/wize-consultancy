@@ -75,8 +75,8 @@ const NewsFeedSection = () => {
     
     return (
         <div className="text-center pt-20 pb-20">
-            <h1 className="text-[25px] text-grad-one"> // NEWS //</h1>
-            <h1 className="text-[40px] mb-5"> NEWS FEED </h1>
+            <h1 className="text-[20px] sm:text-[25px] text-grad-one"> // NEWS //</h1>
+            <h1 className="text-center text-[30px] mb-10 sm:text-[40px]"> NEWS FEED </h1>
             <div className="hidden md:block">
                 <Slider {...settingsOne}>
                     <SliderOne />

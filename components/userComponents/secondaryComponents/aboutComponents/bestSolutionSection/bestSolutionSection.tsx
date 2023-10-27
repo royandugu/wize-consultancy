@@ -4,7 +4,7 @@ const BestSolutionSection = () => {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center gap-10 pt-10 bg-sky-bg pr-[20%] pb-32">
             <div className="pl-[20%]">
-                <img src="/images/peopleWorking.jpeg"/>
+                <img src="/images/peopleWorking.png"/>
             </div>
             <div className="pl-[20%] lg:pl-0">
                 <h5 className="text-[20px] text-grad-one mt-5"> \\About </h5>

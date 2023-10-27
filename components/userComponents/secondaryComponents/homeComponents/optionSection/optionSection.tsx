@@ -1,6 +1,6 @@
 const OptionSection=()=>{
     return(
-        <div className="bg-black text-grad-one pt-10 pb-10">
+        <div className="bg-black text-grad-one pt-10">
             <div className="flex">
                 <div className="md:w-1/2 pl-[18%]">
                     <h5 className="text-[13px]">// FEATURES //</h5>
@@ -8,8 +8,8 @@ const OptionSection=()=>{
                     <p className="text-white"> Explore Your Options Something </p>
                     <p className="text-white"> Something aaaaaaaaaaaaaaaaaa</p>
                 </div>
-                <div className="hidden md:block w-1/2">
-                    <h5> CEO picture </h5>
+                <div className="hidden md:block w-1/2 relative">
+                    <img src="/images/CEO.png" className="mt-[-130px]"/>
                 </div> 
             </div>
             

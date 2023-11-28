@@ -15,7 +15,7 @@ const StatsSection = () => {
     return (
         <div className="statsSection bg-sky-bg mb-0">
             <div className="flex flex-col md:flex-row justify-center items-center gap-10 sm:pl-20 sm:pr-20">
-                <div className={`bg-white shadow-lg w-[90%] md:w-80 mt-[-130px] statCard pb-3`}>
+                <div className={`bg-white shadow-lg w-[90%] md:w-80 mt-[-130px] statCard pb-3`} data-aos="fade-up">
                     <img src="./images/Teaching.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
@@ -32,7 +32,7 @@ const StatsSection = () => {
                     </div>
                 </div>
 
-                <div className={`bg-white shadow-lg w-[90%] md:w-80 md:mt-[-130px] statCard pb-3`}>
+                <div className={`bg-white shadow-lg w-[90%] md:w-80 md:mt-[-130px] statCard pb-3`} data-aos="fade-up">
                     <img src="./images/Scholarship.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
@@ -49,7 +49,7 @@ const StatsSection = () => {
                     </div>
                 </div>
 
-                <div className={`bg-white shadow-lg w-[90%] md:w-80 pb-3 md:mt-[-130px] statCard`}>
+                <div className={`bg-white shadow-lg w-[90%] md:w-80 pb-3 md:mt-[-130px] statCard`} data-aos="fade-up">
                     <img src="./images/Helping.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
@@ -72,7 +72,8 @@ const StatsSection = () => {
 
             {/* Find a new way to grow */}
             <div className="flex flex-col md:flex-row justify-center md:gap-10 mt-20 md:mt-40">
-                <div className="text-center md:text-left"><h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
+                <div className="text-center md:text-left"  data-aos="fade-right">
+                    <h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
                     <h1 className="text-[25px]"> WIZE WIZE WIZE WIZE </h1>
                     <p className="text-light-black"> AAAAAAAAAAAAAAAA </p>
                     <div className="flex gap-5 justify-center pl-24 pr-24 md:pl-0 md:pr-0 md:justify-start">
@@ -84,7 +85,7 @@ const StatsSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:w-1/5 relative z-10">
+                <div className="md:w-1/5 relative z-10" data-aos="fade-left">
                     <div className="md:absolute top-0 z-10 pl-28 pr-28 pt-48 md:pl-0 md:pr-0 md:pt-0">
                         <img src="./images/Helping_Cut.jpg" alt="Teaching" className="w-full h-auto" />
                     </div>
@@ -95,7 +96,7 @@ const StatsSection = () => {
             </div>
 
             {/* Counter */}
-            <div className="text-center pt-[100px] md:pt-0 md:mt-60 relative">
+            <div className="text-center md:pt-0 md:mt-[300px] relative">
                 <h5 className="text-[13px]"> \\ COUNTER \\</h5>
                 <h1 className="text-[25px] text-black"> What we have achieve </h1>
                 <div className="pl-20 md:pl-0 pr-20 md:pr-0">
@@ -136,7 +137,7 @@ const StatsSection = () => {
             </div>
 
             <div className="flex flex-col md:flex-row mt-10 md:mt-72 pb-24">
-                <div className="md:w-1/2 pl-[20%] pr-[20%] md:pr-10">
+                <div className="md:w-1/2 pl-[20%] pr-[20%] md:pr-10" data-aos="fade-left">
                     <div className="flex flex-col md:flex-row">
                         <div className="md:w-1/2">
                             <div className="bg-white rounded-md p-5 mr-5 shadow-lg">
@@ -185,7 +186,7 @@ const StatsSection = () => {
                         </div>
                     </div>
                 </div>
-                <div className="md:w-1/2 pt-14 text-center pl-[10%] pr-[10%] md:pt-0 md:text-left md:pl-0 md:pr-0">
+                <div className="md:w-1/2 pt-14 text-center pl-[10%] pr-[10%] md:pt-0 md:text-left md:pl-0 md:pr-0" data-aos="fade-right">
                     <h5 className="text-[13px]"> \\ SERVICES \\</h5>
                     <h1 className="text-[25px] text-black"> We Provide Services To Grow Your Buisness </h1>
                     <p className="text-light-black mt-5"> AAAAAAAAAAAAAAAAAA </p>

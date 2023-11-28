@@ -1,6 +1,6 @@
 const StudyAbroadForm = () => {
   return (
-    <form className=" pl-10 pr-10 md:pl-20 md:pr-0">
+    <form className=" pl-10 pr-10 md:pl-20 md:pr-0" data-aos="fade-up">
       <div className="bg-[rgba(240,240,240,.5)] p-10">
         <div className="flex flex-col">
           <h1 className="text-3xl font-bold text-grad-one">Interested to Study Abroad?</h1>

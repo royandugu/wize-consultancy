@@ -44,7 +44,7 @@
     background-size: cover;   
 }
 .backgroundOne > .flex{
-    background:rgba(193,234,254,.9);
+    background:rgba(193,234,254,.8);
 }
 .backgroundTwo{
     background:url("../../public/images/sydney-cbd-from-ferry-boat2.jpg");

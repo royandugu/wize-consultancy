@@ -2,7 +2,7 @@ import { BiSolidMessageDetail } from "react-icons/bi";
 
 const Footer = () => {
     return (
-        <div className="footer bg-black text-white pt-20 pl-[10%] pr-[10%] ">
+        <div className="footer bg-black text-white pt-20 pl-[10%] pr-[10%]">
             <div className="flex flex-col xl:flex-row justify-between items-center">
                 <div> 
                     <h1 className="text-white text-[30px]"> SUBSCRIBE TO OUR NEWS LETTER </h1>

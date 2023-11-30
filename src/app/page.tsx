@@ -2,8 +2,8 @@ import HomeDisplay from "../../components/userComponents/secondaryComponents/hom
 
 import "./page.css";
 
-const Page = () => {
-  return  <HomeDisplay />
+const Page = async () => {
+   return  <HomeDisplay />
 }
 
 export default Page;

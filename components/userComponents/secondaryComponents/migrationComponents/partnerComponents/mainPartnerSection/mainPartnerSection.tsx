@@ -2,7 +2,6 @@ const MainPartnerSection = () => {
     return (
         <div className="bg-sky-bg pt-10 pb-10 md:pl-[13.4%] md:pr-[13.4%]">
             <div className="pl-10 pr-10 md:pr-20">
-                <h1 className="font-bold text-[20px]">AUSTRALIA DEPENDENT VISA PROCESS -</h1>
                 <h1 className="text-[20px] mt-5"> 1.&nbsp;SUBCLASS 309 VISA (PARTNER PROVISIONAL VISA) </h1>
                 <img src="/images/joyful-couple-vacation.jpg" className="w-full mt-5 mb-5" />
 

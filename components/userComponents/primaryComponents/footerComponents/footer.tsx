@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col xl:flex-row gap-[20%] mt-10 border-t border-gray-300 border-dotted pt-10 text-white pb-10">
                 <div>
-                    <h1 className="underline text-[30px]"> Logo </h1>
+                    <img src="/images/logo.png" className="w-[200px]"/>
                     <p className="text-white mt-5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
                     <div className="flex items-center">
                         <div className="h-12 w-12 mainGradient rounded-[50%] relative mt-10">

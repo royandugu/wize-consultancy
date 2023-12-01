@@ -7,7 +7,7 @@ const MainStudentSection = () => {
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h5> Australia boasts world-renowned universities, a diverse range of courses, and a multicultural atmosphere that enriches your learning experience. Whether you're pursuing higher studies, vocational training, or English language courses, Australia has something for everyone. </h5>
-                    <img src="/images/cheerful-attractive-young-woman-with-black-hair-walking.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="cheerful-attractive-young-woman" src="/images/cheerful-attractive-young-woman-with-black-hair-walking.jpg" className="w-full mt-5 mb-5" />
                     <h1 className="font-bold text-[20px]"> Documents Required for a Student Visa </h1>
                     <h5 className="mt-2 text-[rgb(90,90,90)]"> Before embarking on your student visa application, it's essential to have a well-prepared collection of documents. Ensuring that all your paperwork is in order can significantly simplify the process and reduce any potential challenges.</h5>
                     <h5 className="mt-2 text-[rgb(90,90,90)]"> The documentation required for your student visa application encompasses: </h5>
@@ -23,7 +23,7 @@ const MainStudentSection = () => {
                         
                     </ul>
                     <h5 className="mt-2">The details outline the standard documentation needed for initiating a Student Visa application for Australia.</h5>
-                    <img src="/images/you-are-all-set-your-vacations-sales-representative-giving-passports-plane-tickets-young-woman-man-their-holiday-trip-travel-agency.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="you-are-all-set-your-vacations" src="/images/you-are-all-set-your-vacations-sales-representative-giving-passports-plane-tickets-young-woman-man-their-holiday-trip-travel-agency.jpg" className="w-full mt-5 mb-5" />
                     <h1 className="font-bold text-[20px]"> Our Services: </h1>
                     <ul className="list-disc list-inside pt-2">
                         <li className="mb-2">Course Selection: </li>

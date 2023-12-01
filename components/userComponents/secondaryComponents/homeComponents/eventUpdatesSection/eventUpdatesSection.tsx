@@ -3,14 +3,14 @@ import Slider from "react-slick";
 const SliderOne = () => {
     return (
         <div className="p-5">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img alt="Teaching" src="/images/Teaching.jpg"/>
         </div>
     )
 }
 const SliderTwo=()=>{
     return (
         <div className="p-5">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img alt="Teaching" src="/images/Teaching.jpg"/>
         </div>
     )
 
@@ -18,7 +18,7 @@ const SliderTwo=()=>{
 const SliderThree=()=>{
     return (
         <div className="p-5">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img alt="Teaching" src="/images/Teaching.jpg"/>
         </div>
     )
 
@@ -26,7 +26,7 @@ const SliderThree=()=>{
 const SliderFour=()=>{
     return (
         <div className="p-5">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img alt="Teaching" src="/images/Teaching.jpg"/>
         </div>
     )
 

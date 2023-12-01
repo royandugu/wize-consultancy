@@ -2,11 +2,10 @@
 
 import Slider from "react-slick";
 
-
 const SliderOne=()=>{
     return(
         <div className="pl-2 pr-2 text-center">
-        <img src="./images/Teaching.jpg" alt="Teaching" />
+        <img src="/images/Teaching.jpg" alt="Teaching"/>
         <div className="bg-white pt-5 pb-5">
             <h1> Some content </h1>
         </div>
@@ -16,7 +15,7 @@ const SliderOne=()=>{
 const SliderTwo=()=>{
     return(
         <div className="pl-2 pr-2 text-center">
-        <img src="./images/Teaching.jpg" alt="Teaching" />
+        <img src="/images/Teaching.jpg" alt="Teaching"/>
         <div className="bg-white pt-5 pb-5">
             <h1> Some content </h1>
         </div>
@@ -26,7 +25,7 @@ const SliderTwo=()=>{
 const SliderThree=()=>{
     return(
         <div className="pl-2 pr-2 text-center">
-        <img src="./images/Teaching.jpg" alt="Teaching" />
+        <img src="/images/Teaching.jpg" alt="Teaching"/>
         <div className="bg-white pt-5 pb-5">
             <h1> Some content </h1>
         </div>
@@ -36,7 +35,7 @@ const SliderThree=()=>{
 const SliderFour=()=>{
     return(
         <div className="pl-2 pr-2 text-center">
-        <img src="./images/Teaching.jpg" alt="Teaching" />
+        <img src="/images/Teaching.jpg" alt="Teaching"/>
         <div className="bg-white pt-5 pb-5">
             <h1> Some content </h1>
         </div>

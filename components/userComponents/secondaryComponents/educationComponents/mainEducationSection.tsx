@@ -7,7 +7,7 @@ const MainEducationSection = () => {
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h1 className="font-bold"> Why Choose Australia for Education? </h1>
-                    <img src="/images/Student potrait.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="student_potrait" src="/images/Student potrait.jpg" className="w-full mt-5 mb-5" />
                     
                     <p className="mt-5">Australia is renowned for its excellence in education, and here's why it stands out:</p>
                     <ul className="list-disc list-inside pt-2">
@@ -33,7 +33,7 @@ const MainEducationSection = () => {
                         </div>
                     </ul>
                     <h5 className="mt-5"> Our Education Services : </h5>
-                    <img src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="teaching" src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
                     <p className="mt-5"> We are committed to guiding you through every aspect of your educational journey in Australia:</p>
                     
                     <ul className="list-disc list-inside pt-2">

@@ -11,8 +11,8 @@ const WelcomePage = () => {
             <div className="flex pt-40 justify-center gap-0">
                 <div className="grid grid-cols-12 mt-5">
                     <div className="md+162:col-span-5 col-span-12 hidden md+162:block pb-0" data-aos="fade-left">
-                        <img src="./images/students.png" className="ml-10 hidden lg+196:block" />
-                        <img src="./images/students_small.png" className="md:mt-[-25px] ml-10 hidden md:block smallImage" />
+                        <img alt="students" src="/images/students.png" className="ml-10 hidden lg+196:block"/>
+                        <img alt="students_small" src="/images/students_small.png" className="md:mt-[-25px] ml-10 hidden md:block smallImage"/>
                     </div>
                     <div className="md+162:col-span-7 col-span-12 xl+70:mt-20 mt-[9%] pr-20 pl-20 lg:pr-32 lg:pl-0 lg:text-left" data-aos="fade-right">
                         <h1 className="text-grad-one uppercase xl+70:text-[25px] text-[15px]"> Welcome to wize </h1>

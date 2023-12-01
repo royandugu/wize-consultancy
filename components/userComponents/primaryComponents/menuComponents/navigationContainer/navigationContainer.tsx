@@ -1,5 +1,7 @@
 import React from "react";
 
+import { primaryRoute } from "../../../../systemComponents/staticComponents/dropDownMenus";
+
 import Link from "next/link";
 import EducationAndMigrationDropDown from "../dropDownMenu/educationAndMigrationDropdown";
 
@@ -17,13 +19,9 @@ const NavigationContainer=({dispNumber,showDropDown,setDispNumber,setShowDropDow
     return (
         <ul className="flex navigationContainer">
             <li className="navigationContainer--noDropDowns">
-                <Link href="/" className="mr-12"> Home </Link>
-            </li>
-            <li className="navigationContainer--noDropDowns">
-                <Link href="/about" className="mr-12"> About </Link>
-            </li>
-            <li className="navigationContainer--noDropDowns">
-                <Link href="/events" className="mr-12"> Events </Link>
+                {primaryRoute.map((route,i)=>(
+                    <Link href={route.url} className="mr-12" key={i}> {route.text} </Link>
+                ))}
             </li>
             <li>
                 <Link href="/education" className="mr-12 relative" onMouseEnter={()=>{

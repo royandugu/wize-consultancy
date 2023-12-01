@@ -3,7 +3,7 @@ const MainMigrationSection = () => {
         <div className="bg-sky-bg pt-10 pb-10 md:pl-[13.4%] md:pr-[13.4%]">
             <div className="pl-10 pr-10 md:pr-20">
                 <h1 className="font-bold text-[20px] mt-5"> Why Choose Us? </h1>
-                <img src="/images/Visa.jpg" className="w-full mt-5 mb-5" />
+                <img alt="visa" src="/images/Visa.jpg" className="w-full mt-5 mb-5" />
                 <ul className="list-disc list-inside pt-2">
                     <li className="mb-2">Expertise:  </li>
                     <div className="pl-4 mt-[-5px]">
@@ -23,7 +23,7 @@ const MainMigrationSection = () => {
                     </div>
                 </ul>
                 <h1 className="font-bold text-[20px] mt-5"> Our Migration Services: </h1>
-                <img src="/images/Visa giving.jpg" className="w-full mt-5 mb-5"/>
+                <img alt="visa" src="/images/Visa giving.jpg" className="w-full mt-5 mb-5"/>
                 <ul className="list-disc list-inside pt-2">
                     <li className="mb-2">Visa Assessment:  </li>
                     <div className="pl-4 mt-[-5px]">

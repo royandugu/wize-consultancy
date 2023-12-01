@@ -7,7 +7,7 @@ const MainIeltsSection = () => {
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h1 className="font-bold text-[20px] mt-5"> Why Choose IELTS? </h1>
-                    <img src="/images/young-girl-reading-book-headphones.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="girl-reading-book" src="/images/young-girl-reading-book-headphones.jpg" className="w-full mt-5 mb-5" />
                     <ul className="list-disc list-inside pt-2">
                          IELTS is one of the world's most recognized and respected English language proficiency tests. It's your passport to international study, work, and migration opportunities. Here's why IELTS is your pathway to success:
                         <li className="mb-2 mt-3">Global Recognition: </li>
@@ -28,7 +28,7 @@ const MainIeltsSection = () => {
                         </div>
                     </ul>
                     <h1 className="font-bold text-[20px] mt-5"> Our IELTS Services : </h1>
-                    <img src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="entrepreneurs-meeting" src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
                     <ul className="list-disc list-inside pt-2">
                         Wize Consult is your partner in IELTS success. We offer a range of services to help you excel in the IELTS examination:
                         <li className="mb-2 mt-3">Comprehensive Preparation: </li>

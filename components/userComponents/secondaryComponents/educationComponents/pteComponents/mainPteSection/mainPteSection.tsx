@@ -7,7 +7,7 @@ const MainPteSection = () => {
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h1 className="font-bold text-[20px]"> Why Choose PTE ?</h1>
-                    <img src="/images/Student.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="student" src="/images/Student.jpg" className="w-full mt-5 mb-5" />
                     <p className="mt-5"> PTE is a globally recognized English language proficiency test that opens doors to international study, employment, and immigration opportunities. Here's why PTE is the right choice for your journey: </p>
                     <ul className="list-disc list-inside pt-2">
                         <li className="mb-2 mt-3">Global Acceptance: </li>
@@ -28,7 +28,7 @@ const MainPteSection = () => {
                         </div>
                     </ul>
                     <h1 className="font-bold text-[20px] mt-5"> Our PTE Services </h1>
-                    <img src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="teaching" src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
                     <p className="mt-2"> Wize Consult is your dedicated partner in PTE success. We offer a range of services designed to help you excel in the PTE examination: </p>
                     <ul className="list-disc list-inside">
                         <li className="mb-2 mt-3">Comprehensive Preparation: </li>

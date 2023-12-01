@@ -16,7 +16,7 @@ const StatsSection = () => {
         <div className="statsSection bg-sky-bg mb-0">
             <div className="flex flex-col md:flex-row justify-center items-center gap-10 sm:pl-20 sm:pr-20">
                 <div className={`bg-white shadow-lg w-[90%] md:w-80 mt-[-130px] statCard pb-3`} data-aos="fade-up">
-                    <img src="./images/Teaching.jpg" alt="Teaching" />
+                    <img src="/images/Teaching.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <GoNote className="icon text-[40px]" />
@@ -28,12 +28,12 @@ const StatsSection = () => {
                                 requires more than just knowledge; it demands a strategic and
                                 personalized approach.
                             </p>
-                        </div>
+                        </div> 
                     </div>
                 </div>
 
                 <div className={`bg-white shadow-lg w-[90%] md:w-80 md:mt-[-130px] statCard pb-3`} data-aos="fade-up">
-                    <img src="./images/Scholarship.jpg" alt="Teaching" />
+                    <img src="/images/Scholarship.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <SiSemanticscholar className="icon text-[40px]" />
@@ -50,7 +50,7 @@ const StatsSection = () => {
                 </div>
 
                 <div className={`bg-white shadow-lg w-[90%] md:w-80 pb-3 md:mt-[-130px] statCard`} data-aos="fade-up">
-                    <img src="./images/Helping.jpg" alt="Teaching" />
+                    <img src="/images/Helping.jpg" alt="Teaching" />
                     <div className="flex gap-5 p-5 pr-2 items-center text-black">
                         <div>
                             <TfiCup className="icon text-[40px]" />
@@ -87,7 +87,7 @@ const StatsSection = () => {
                 </div>
                 <div className="md:w-1/5 relative z-10" data-aos="fade-left">
                     <div className="md:absolute top-0 z-10 pl-28 pr-28 pt-48 md:pl-0 md:pr-0 md:pt-0">
-                        <img src="./images/Helping_Cut.jpg" alt="Teaching" className="w-full h-auto" />
+                        <img src="/images/Helping_Cut.jpg" alt="Teaching" className="w-full h-auto" />
                     </div>
                     <div className="z-0 absolute top-[120px] md:top-[-50px] right-[30px] md:right-[-50px]">
                         <DotAnimations />

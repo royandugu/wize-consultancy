@@ -17,7 +17,7 @@ const OptionSection=()=>{
                     </div>
                 </div>
                 <div className="hidden md:block w-1/2 relative" data-aos="fade-up">
-                    <img src="/images/CEO.png" className="mt-[-130px]"/>
+                    <img alt="CEO" src="/images/CEO.png" className="mt-[-130px]"/>
                 </div> 
             </div>
             

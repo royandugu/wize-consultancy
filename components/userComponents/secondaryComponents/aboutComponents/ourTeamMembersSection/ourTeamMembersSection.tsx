@@ -10,7 +10,7 @@ import 'slick-carousel/slick/slick-theme.css'
 const SliderOne = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>
@@ -19,7 +19,7 @@ const SliderOne = () => {
 const SliderTwo = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>
@@ -29,7 +29,7 @@ const SliderTwo = () => {
 const SliderThree = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>
@@ -38,7 +38,7 @@ const SliderThree = () => {
 const SliderFour = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>
@@ -47,7 +47,7 @@ const SliderFour = () => {
 const SliderFive = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>
@@ -56,7 +56,7 @@ const SliderFive = () => {
 const SliderSix = () => {
     return (
         <div className="pl-2 pr-2 text-center">
-            <img src="./images/Teaching.jpg" alt="Teaching" />
+            <img src="images/Teaching.jpg" alt="Teaching"/>
             <h1 className="text-light-black mt-3 uppercase"> Name </h1>
             <h1 className="uppercase text-grad-one"> Position </h1>
         </div>

@@ -33,9 +33,9 @@ const EventListSection = () => {
                     <p className=" mt-10 xl:mb-10 "> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
                 </div>
                 <div className="xl:hidden p-5 xl:p-0">
-                    <img src="./images/Helping.jpg" alt="Teaching" className="w-full xl:ml-10 xl:mt-5 xl:mb-5 rounded-md" />
+                    <img src="./images/Helping.jpg" width={100} alt="Teaching" className="w-full xl:ml-10 xl:mt-5 xl:mb-5 rounded-md" />
                 </div>
-                <img src="./images/Helping.jpg" alt="Teaching" className="w-full hidden xl:block xl:ml-10 xl:mt-5 xl:mb-5 rounded-md" />
+                <img src="./images/Helping.jpg" width={100} alt="Teaching" className="w-full hidden xl:block xl:ml-10 xl:mt-5 xl:mb-5 rounded-md" />
             </div>
             <div>
 

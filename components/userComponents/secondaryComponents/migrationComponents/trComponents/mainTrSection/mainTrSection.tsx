@@ -15,7 +15,7 @@ const MainTrSection = () => {
                 </ul>
 
                 <h1 className="font-bold text-[20px] mt-10">Application Process:</h1>
-                <img src="/images/Couple.jpg" className="w-full mt-5 mb-5" />
+                <img alt="couple" src="/images/Couple.jpg" className="w-full mt-5 mb-5" />
                 <p> Once you meet the above criteria, the subsequent step involves assembling the necessary documentation to apply for the visa. Required documents encompass:</p>
                 <ul className="list-disc list-inside pt-5">
                     <li className="mb-2"><span className="text-light-black">Proof of identity such as <span className="text-black"> passport or national ID. </span></span></li>
@@ -26,7 +26,7 @@ const MainTrSection = () => {
                 <p className="mt-5"> If family members are included in the application, their identity documents and supporting materials must also be prepared.</p>
                 <p className="mt-2"> If you're seeking to embark on this visa journey, don't hesitate to get in touch with us. Our team is here to guide you through the application process and provide expert assistance at every step.</p>
                 <h1 className="font-bold text-[20px] mt-10">Our Services:</h1>
-                <img src="/images/Visa.jpg" className="w-full mt-5 mb-5" />
+                <img alt="visa" src="/images/Visa.jpg" className="w-full mt-5 mb-5" />
                 <ul className="list-disc list-inside pt-2">
                         <li className="mb-2">Visa Eligibility Assessment:  </li>
                         <div className="pl-4 mt-[-5px]">

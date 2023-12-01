@@ -7,7 +7,7 @@ const MainOccupationSection = () => {
                 <h5> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.  </h5>
                 
                 
-                <img src="/images/young-girl-reading-book-headphones.jpg" className="w-full mt-5 mb-5" />
+                <img alt="young-girl-reading-book" src="/images/young-girl-reading-book-headphones.jpg" className="w-full mt-5 mb-5" />
                 <h1 className="font-bold text-[20px]"> Why Choose IELTS ?</h1>
                 <ul className="list-disc list-inside pt-5">
                     <li className="mb-2"><span className="text-light-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>
@@ -15,7 +15,7 @@ const MainOccupationSection = () => {
                     <li className="mb-2"><span className="text-light-black">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</span></li>
                     <li className="mb-2"><span className="text-light-black">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</span></li>
                 </ul>
-                <img src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
+                <img alt="entrepreneurs-meeting" src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
                 <h1 className="font-bold text-[20px]"> Our IELTS Services </h1>
                 <ul className="list-disc list-inside pt-5">
                     <li className="mb-2"><span className="text-light-black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span></li>

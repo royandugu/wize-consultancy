@@ -1,11 +1,14 @@
-import { adminCredentials } from "../../../components/systemComponents/types/adminCredentials";
-import { NextResponse } from "next/server";
 import { defaultApiResponse } from "../../../components/systemComponents/types/apiResponse";
 import { StatusCodes } from "http-status-codes";
 
 import adminModel from "../../models/adminModel/adminModel";
 
 let response:defaultApiResponse={message:"",status:0}
+
+type adminCredentials={
+    email:string,
+    password:string
+}
 
 const setMessageAndResponse=(message:string,status:number)=>{
     response.message=message;

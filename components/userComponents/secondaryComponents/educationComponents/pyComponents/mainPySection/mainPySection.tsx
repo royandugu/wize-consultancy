@@ -1,13 +1,14 @@
 import StudyAbroadForm from "../../../../ternaryComponents/studyAbroadForm";
 
 const MainPySection = () => {
+    
     return (
         <div className="bg-sky-bg pt-10 pb-10">
             <div className="flex flex-col md:flex-row gap-5">
                 <StudyAbroadForm/>
                 <div className="pl-10 pr-10 md:pr-20">
                     <h1 className="font-bold text-[20px]">What is a Professional Year Program?</h1>
-                    <img src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="entrepreneurs-meeting" src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
                     <p className="mt-2">A Professional Year Program is a structured professional development program designed to equip international graduates with the practical skills, knowledge, and experience needed to excel in their chosen profession. These programs are specifically tailored to individual industries and are recognized by the Department of Home Affairs as an excellent pathway to permanent residency.</p>
                     <h5 className="font-bold mt-5">Why Choose a Professional Year Program?</h5>
                     <p className="mt-2"> Opting for a Professional Year Program through Wize Consult offers several advantages: </p>
@@ -15,7 +16,7 @@ const MainPySection = () => {
                         <li className="mb-2 mt-3">Career Readiness: </li>
                         <div className="pl-4 mt-[-5px]">
                             <span className="text-[rgb(90,90,90)]">These programs enhance your employability by providing industry-specific training, work experience, and networking opportunities.</span>
-                        </div>
+                        </div> 
                         <li className="mb-2 mt-3">Skilled Migration Pathway:  </li>
                         <div className="pl-4 mt-[-5px]">
                             <span className="text-[rgb(90,90,90)]">Completing a Professional Year can earn you valuable migration points, significantly increasing your chances of obtaining permanent residency in Australia.</span>
@@ -31,7 +32,7 @@ const MainPySection = () => {
                     </ul>
                     
                     <h1 className="font-bold text-[20px] mt-5"> Our PY Services </h1>
-                    <img src="/images/cheerful-attractive-young-woman-with-black-hair-walking.jpg" className="w-full mt-5 mb-5" />
+                    <img alt="cheerful-attractive-young-woman" src="/images/cheerful-attractive-young-woman-with-black-hair-walking.jpg" className="w-full mt-5 mb-5" />
                     <p className="mt-2"> Wize Consult is your trusted partner in embarking on a Professional Year journey in Australia:</p>
                     <ul className="list-disc list-inside">
                         <li className="mb-2 mt-3">Program Selection: </li>

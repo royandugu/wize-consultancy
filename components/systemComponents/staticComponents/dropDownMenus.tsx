@@ -3,6 +3,22 @@ interface RouteType{
     url:string
 }
 
+//Primary route
+export const primaryRoute:Array<RouteType>=[
+    {
+        text:"Home",
+        url:"/"
+    },
+    {
+        text:"About",
+        url:"/about"
+    },
+    {
+        text:"Events",
+        url:"/events"
+    }
+]
+
 //Education route
 export const educationRoutes:Array<RouteType>=[
     {

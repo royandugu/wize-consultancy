@@ -53,8 +53,8 @@ const MenuDisplay = () => {
                         <div className="searchBar lg+196:block hidden ml-[-50px] xl:ml-10">
                             <SearchBarDesign/>
                         </div>
-                        <div className="contactUs lg+196:block hidden">
-                            <ButtonDesign text={"Contact Us"}/>
+                        <div className="contactUs lg+196:flex gap-3 hidden ">
+                            <ButtonDesign text={"Sign up"} noArrow={true}/> 
                         </div>
                     </>
 

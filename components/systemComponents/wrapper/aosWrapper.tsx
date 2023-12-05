@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 
 import Aos from "aos";
+import MenuDisplay from "../../userComponents/primaryComponents/menuComponents/menuDisplay";
+import Footer from "../../userComponents/primaryComponents/footerComponents/footer";
 
 import "aos/dist/aos.css";
 
@@ -17,10 +19,13 @@ const AosWrapper = ({
     }, []);
 
     return (
-        <div className="overflow-x-hidden">
-            {children}
-        </div>
+        <>
+            <MenuDisplay />
+            <div className="overflow-x-hidden">
+                {children}
+            </div>
+            <Footer />
+        </>
     )
-
 }
 export default AosWrapper;

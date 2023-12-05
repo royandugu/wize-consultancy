@@ -1,0 +1,12 @@
+.loginAndRegisterForm input{
+    height:50px;
+    border:1px solid grey;
+    margin-top:10px;
+    padding-left:10px;
+}
+.loginAndRegisterForm button{
+    background:black;
+    color:white;
+    padding:20px;
+    margin-top:20px;
+}

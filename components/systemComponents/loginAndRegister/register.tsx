@@ -1,6 +1,11 @@
-const Register=()=>{
+export const Register=()=>{
     return(
-        <h1> This is user registration page </h1>
+        <form onSubmit={(e)=>e.preventDefault()}>
+            <input type="text" placeholder="Name"/>
+            <input type="text" placeholder="Email"/>
+            <input type="password" placeholder="Password"/>
+            <input type="submit"/>
+        </form>
     )
 }
 export default Register;

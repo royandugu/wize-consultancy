@@ -1,8 +1,8 @@
+require("dotenv").config();
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import MenuDisplay from '../../components/userComponents/primaryComponents/menuComponents/menuDisplay'
-import Footer from '../../components/userComponents/primaryComponents/footerComponents/footer'
 import AosWrapper from '../../components/systemComponents/wrapper/aosWrapper'
 
 import mongoose from "mongoose";
@@ -32,18 +32,17 @@ export const DbConnection = async ({
   children: React.ReactNode
 }) => {
   try {
-    const res = await mongoose.connect("mongodb+srv://wizeconsultancy117:OU5hPunzU4bS8kLg@cluster0.coe86cy.mongodb.net/");
-    return (
-      <html lang="en">
-        <body className={inter.className}>
-          <MenuDisplay />
-          <AosWrapper>
+    if (process.env.MONGO_URI) {
+      const res = await mongoose.connect(process.env.MONGO_URI);
+      return (
+        <html lang="en">
+          <body className={inter.className}>
             {children}
-          </AosWrapper>
-          <Footer />
-        </body>
-      </html>
-    )
+          </body>
+        </html>
+      )
+    }
+    else return <h5> Mongo URI not present </h5>
   }
   catch (err) {
     console.log("Error in connecting to the database ", err);

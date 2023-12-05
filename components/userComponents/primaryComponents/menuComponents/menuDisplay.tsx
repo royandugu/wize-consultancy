@@ -3,6 +3,7 @@
 import { useState , useEffect } from "react";
 import { HiMiniBars3 } from "react-icons/hi2";
 
+import Link from "next/link";
 import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
 import SearchAndContactDropDown from "./dropDownMenu/searchAndContactDropDown";
@@ -54,7 +55,7 @@ const MenuDisplay = () => {
                             <SearchBarDesign/>
                         </div>
                         <div className="contactUs lg+196:flex gap-3 hidden ">
-                            <ButtonDesign text={"Sign up"} noArrow={true}/> 
+                            <Link href="/login"><ButtonDesign text={"Sign up"} noArrow={true}/></Link>
                         </div>
                     </>
 

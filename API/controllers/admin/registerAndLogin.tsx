@@ -1,5 +1,7 @@
 import { defaultApiResponse } from "../../../components/systemComponents/types/apiResponse";
 import { StatusCodes } from "http-status-codes";
+import { login } from "../../../components/systemComponents/types/registerAndLogin";
+import { useRouter } from "next/router";
 
 import adminModel from "../../models/adminModel/adminModel";
 
@@ -7,20 +9,15 @@ const bcrypt=require("bcryptjs");
 
 let response:defaultApiResponse={message:"",status:0}
 
-type adminCredentials={
-    email:string,
-    password:string
-}
 
 const setMessageAndResponse=(message:string,status:number)=>{
     response.message=message;
     response.status=status;
 }
 
-export const registerAdmin=async (body:adminCredentials)=>{
+export const registerAdmin=async (body:login)=>{
     try{
         const {email,password}=body;
-        console.log(body);
         if(!email || !password) {
             setMessageAndResponse("Credentials incomplete",StatusCodes.BAD_REQUEST);
         }
@@ -40,7 +37,8 @@ export const registerAdmin=async (body:adminCredentials)=>{
     }    
 }
 
-export const loginAdmin=async (body:adminCredentials)=>{
+export const loginAdmin=async (body:login)=>{
+    const router=useRouter();
     try{
         const {email,password}=body;
         if(!email || !password) {
@@ -48,10 +46,15 @@ export const loginAdmin=async (body:adminCredentials)=>{
         }
         else {
             //set session
-            const adminData=adminModel.findOne({email:email});
+            const adminData:any=adminModel.findOne({email:email});
             if(!adminData) setMessageAndResponse("The email doesnot exist", StatusCodes.BAD_REQUEST);
             else{
-                setMessageAndResponse("You have sucesfully logged in", StatusCodes.OK);
+                const match=adminData.verifyPassword(password);
+                if(match) {
+                    router.push("/admin/dashboard"); 
+                    setMessageAndResponse("You have sucesfully logged in",StatusCodes.OK);
+                }
+                else setMessageAndResponse("Your password is incorrect", StatusCodes.OK);
             }
         }
         return response;

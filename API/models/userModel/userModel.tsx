@@ -5,10 +5,6 @@ const userSchema=new mongoose.Schema({
         type:String,
         required:[true, "Title field is required"]
     },
-    phoneNumber:{
-        type:Number,
-        unique:true
-    },
     email:{
         type:String,
         unique:true

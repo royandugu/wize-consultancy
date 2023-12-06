@@ -1,6 +1,9 @@
-require("dotenv").config();
+"use client"
 
-export const universalPost = async (data:any,url:string,postIndentifier:number) => {
+import { API_URL } from "../../../../API/globals/url";
+
+export const universalPost = async (data:any,url:string,identifier:number) => {
+
     const requestOptions = {
         method: 'POST',
         headers: {
@@ -9,10 +12,10 @@ export const universalPost = async (data:any,url:string,postIndentifier:number) 
         body: JSON.stringify(data)
     };
 
+    const fullUrl=`${API_URL}${url}`
+
     try {
-        const response = await fetch(`${process.env.API_URL}/${url}`, requestOptions);
-        const responseData = await response.json();
-        return responseData;
+        await fetch(fullUrl, requestOptions);
     } catch (error) {
         console.error('Error:', error);
     }

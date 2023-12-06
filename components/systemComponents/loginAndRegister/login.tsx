@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { universalPost } from "../apiConnectors/system/POST";
 
+import Link from "next/link";
+
 import "./loginAndRegister.css";
 
 type LoginProp={
@@ -19,7 +21,8 @@ const Login=(prop:LoginProp)=>{
             email:email,
             password:password
         }
-        await universalPost(data,"",0);
+        const url=`${prop.isAdmin?'/admin/login':'/login'}`
+        await universalPost(data,url,1);
     }
 
     return(
@@ -27,6 +30,7 @@ const Login=(prop:LoginProp)=>{
             <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br/>
             <button type="submit"> Login </button>
+            <h1> Don't have an account? <Link href="/register" className="text-red-400"> Register </Link> </h1>
         </form>
     )
 }

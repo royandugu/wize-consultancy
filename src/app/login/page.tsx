@@ -9,5 +9,5 @@ const Page=()=>{
 
     return <Login isAdmin={false} router={router}/>    
 }
-
+ 
 export default Page;

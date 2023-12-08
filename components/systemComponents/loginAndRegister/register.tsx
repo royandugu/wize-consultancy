@@ -6,10 +6,15 @@ import Link from "next/link";
 
 import "./loginAndRegister.css";
 
-export const Register=()=>{
+type registerProp={
+    router:any;
+}
+
+export const Register=(prop:registerProp)=>{
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+    
 
     const registerUser=async (e:any)=>{
         e.preventDefault();
@@ -18,11 +23,11 @@ export const Register=()=>{
             email:email,
             password:password
         }
-        await universalPost(body,"/register",0);
+        await universalPost(body,"/register","/user/dashbaord",prop.router);
     }
 
     return(
-        <form onSubmit={(e)=>registerUser(e)} className="loginAndRegisterForm">
+        <form className="loginAndRegisterForm" onSubmit={(e)=>registerUser(e)}>
             <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)}/><br/>
             <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br/>
@@ -31,4 +36,4 @@ export const Register=()=>{
         </form>
     )
 }
-export default Register;
+export default Register; 

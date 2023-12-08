@@ -9,9 +9,11 @@ import "./loginAndRegister.css";
 
 type LoginProp={
     isAdmin:boolean;
+    router:any;
 }
 
-const Login=(prop:LoginProp)=>{
+const Login=(props:LoginProp)=>{
+
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
 
@@ -21,8 +23,8 @@ const Login=(prop:LoginProp)=>{
             email:email,
             password:password
         }
-        const url=`${prop.isAdmin?'/admin/login':'/login'}`
-        await universalPost(data,url,1);
+        const url=`${props.isAdmin?'/admin/login':'/login'}`
+        await universalPost(data,url,"/user/dashbaord",props.router);
     }
 
     return(

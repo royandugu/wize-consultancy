@@ -1,6 +1,6 @@
 import { defaultApiResponse } from "../../../components/systemComponents/types/apiResponse";
 import { StatusCodes } from "http-status-codes";
-import { register,login } from "../../../components/systemComponents/types/registerAndLogin";
+import { login } from "../../../components/systemComponents/types/registerAndLogin";
 
 import userModel from "../../models/userModel/userModel";
 
@@ -14,7 +14,7 @@ const setMessageAndResponse=(message:string,status:number)=>{
     response.status=status;
 }
 
-export const registerUser=async (body:register)=>{
+export const registerUser=async (body:any)=>{
     try{
         const {name,email,password}=body;
         if(!name || !email ||  !password) {

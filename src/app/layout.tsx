@@ -3,8 +3,6 @@ require("dotenv").config();
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import AosWrapper from '../../components/systemComponents/wrapper/aosWrapper'
-
 import mongoose from "mongoose";
 
 import './globals.css'
@@ -26,7 +24,7 @@ export default function RootLayout({
   return <DbConnection children={children} />
 }
 
-export const DbConnection = async ({
+const DbConnection = async ({
   children,
 }: {
   children: React.ReactNode

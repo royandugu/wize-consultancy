@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react";
-import { universalPost } from "../apiConnectors/system/POST";
+import { universalFormPost } from "../apiConnectors/system/POST";
 
 import Link from "next/link";
 
@@ -11,6 +11,7 @@ type registerProp={
 }
 
 export const Register=(prop:registerProp)=>{
+    const [profile,setProfile]=useState<any>();
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -18,16 +19,18 @@ export const Register=(prop:registerProp)=>{
 
     const registerUser=async (e:any)=>{
         e.preventDefault();
-        const body={
-            name:name,
-            email:email,
-            password:password
-        }
-        await universalPost(body,"/register","/user/dashbaord",prop.router);
+        const formData=new FormData();
+        formData.set("profile",profile);
+        formData.set("name",name);
+        formData.set("email",email);
+        formData.set("password",password);
+        
+        await universalFormPost(formData,"/register","/user/dashbaord",prop.router);
     }
 
     return(
         <form className="loginAndRegisterForm" onSubmit={(e)=>registerUser(e)}>
+            <input type="file" onChange={(e)=>setProfile(e.target.files?.[0])}/>
             <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)}/><br/>
             <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br/>

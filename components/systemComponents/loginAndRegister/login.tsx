@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import { universalPost } from "../apiConnectors/system/POST";
+//import { universalPost } from "../apiConnectors/system/POST";
 
 import Link from "next/link";
 
@@ -24,7 +24,7 @@ const Login=(props:LoginProp)=>{
             password:password
         }
         const url=`${props.isAdmin?'/admin/login':'/login'}`
-        await universalPost(data,url,"/user/dashbaord",props.router);
+        //await universalPost(data,url,"/user/dashbaord",props.router);
     }
 
     return(

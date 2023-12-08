@@ -30,7 +30,7 @@ export const Register=(prop:registerProp)=>{
 
     return(
         <form className="loginAndRegisterForm" onSubmit={(e)=>registerUser(e)}>
-            <input type="file" onChange={(e)=>setProfile(e.target.files?.[0])}/>
+            <input type="file" onChange={(e)=>setProfile(e.target.files?.[0])}/><br/>
             <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)}/><br/>
             <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/><br/>
             <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br/>

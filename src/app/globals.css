@@ -54,5 +54,19 @@
     background:rgba(193,234,254,.8);
 }  
 
+.fileType>.currentImgBackground>.fileUpload--updateProfilePfp>.plusIcon{
+    color:white;
+    font-size:150px;
+}
+.fileType>.currentImgBackground>.fileUpload--updateProfilePfp{
+    height:300px;
+    width:300px;
+    margin-bottom:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(25, 135, 84,.4);
+    margin-top:20px;
+} 
 
   

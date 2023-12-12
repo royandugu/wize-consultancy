@@ -1,6 +1,10 @@
 import mongoose from "mongoose";
 
 const userSchema=new mongoose.Schema({
+    profilePicture:{
+        type:String,
+        required:[true,"You must enter your profile picture"]
+    },
     name:{
         type:String,
         required:[true, "Title field is required"]

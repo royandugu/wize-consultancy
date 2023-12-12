@@ -1,65 +1,72 @@
-"use client"
+'use client';
 
-import { useState, useRef } from "react";
-import { universalFormPost } from "../apiConnectors/system/POST";
-import { AiOutlinePlusCircle } from "react-icons/ai";
+import { useState } from 'react';
+import { useContext } from 'react';
+import { useEdgeStore } from '@/lib/edgestore';
 
-import Link from "next/link";
+import { universalPost } from '../apiConnectors/system/POST';
 
-import "./loginAndRegister.css";
+import context from '../context/context';
 
-type registerProp={
-    router:any;
+type RegisterPropType={
+  router:any
 }
 
-export const Register=(prop:registerProp)=>{
-    const [profile,setProfile]=useState<any>();
-    const [name,setName]=useState("");
-    const [email,setEmail]=useState("");
-    const [password,setPassword]=useState("");
-    const [newImage ,setNewImage]=useState<any>(null);
-    const [image,setImage]=useState<any>();
+export default function Register(prop:RegisterPropType) {
+  const [file, setFile] = useState<File>();
+  const [profilePicture, setProfilePicture] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-    const imageRef = useRef(null);
+  const contextContainer = useContext(context);
 
-    const trimmer = (path:string) => {
-        if (path) return path.replace('../public', '');
-    }  
+  const { edgestore } = useEdgeStore();
 
-    const onImageChange = (event:any) => {
-        if (event.target.files && event.target.files[0]) {
-            setNewImage(event.target.files[0]);
-            setImage(URL.createObjectURL(event.target.files[0]));
+  const registerUser = async (e: React.FormEvent) => {
+    e.preventDefault();
+    contextContainer.setLoading(0);
+    try {
+      if (file) {
+        const res = await edgestore.publicFiles.upload({
+          file,
+          onProgressChange: (progress) => {
+            console.log(progress);
+          },
+        });
+        const body = {
+          profilePicture: res.url,
+          name: name,
+          email: email,
+          password: password
         }
+        const response=await universalPost(body, "/register", "/user/dashboard", prop.router);
+        if(response?.ok) prop.router.push("/user/dashboard");
+      }
     }
-
-    const registerUser=async (e:any)=>{
-        e.preventDefault();
-        const formData=new FormData();
-        formData.set("profile",profile);
-        formData.set("name",name);
-        formData.set("email",email);
-        formData.set("password",password);
-        
-        await universalFormPost(formData,"/register","/user/dashbaord",prop.router);
+    catch(err){
+      contextContainer.setLoading(2);
     }
+  }
 
-    return(
-        <form className="loginAndRegisterForm" onSubmit={(e)=>registerUser(e)}>
-            <label className="fileType cursor-pointer">
-                <div ref={imageRef} className="currentImgBackground h-[300px] w-[300px]" style={{ background: `url(${trimmer(image)})`}}>
-                    <div className="fileUpload--updateProfilePfp">
-                        <AiOutlinePlusCircle className="plusIcon" />
-                    </div>
-                </div>
-                <input type="file" className="hidden" onChange={onImageChange} />
-            </label>
-            <input type="text" placeholder="Name" onChange={(e)=>setName(e.target.value)}/><br/>
-            <input type="text" placeholder="Email" onChange={(e)=>setEmail(e.target.value)}/><br/>
-            <input type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br/>
-            <button type="submit"> Register </button>
-            <h1> Already have an account? <Link href="/login" className=" text-red-400"> Login </Link> </h1>
-        </form>
-    )
+  if (contextContainer.loading === 0) return <h5> Registering you ... </h5>
+  else if(contextContainer.loading === 2) return <h5> Error while registering user </h5>
+  else {
+    return (
+      <form className='loginAndRegisterForm' onSubmit={registerUser}>
+        <input
+          type="file"
+          onChange={(e) => {
+            setFile(e.target.files?.[0]);
+          }}
+        />
+        <input type="text" placeholder='Enter your Name' value={name} onChange={(e) => setName(e.target.value)} /><br />
+        <input type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} /><br />
+        <input type="password" placeholder='Enter your Password' value={password} onChange={(e) => setPassword(e.target.value)} /><br />
+        <button type='submit'>
+          Upload
+        </button>
+      </form>
+    );
+  }
 }
-export default Register; 

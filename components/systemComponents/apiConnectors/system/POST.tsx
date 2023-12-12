@@ -2,17 +2,22 @@
 
 import { API_URL } from "../../../../API/globals/url";
 
-export const universalFormPost = async (data:any,url:string,destination:string,router:any) => {
+export const universalPost = async (data:any,url:string,destination:string,router:any) => {
     const requestOptions = {
         method: 'POST',
-        body: data
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
     };
 
     const fullUrl=`${API_URL}${url}`
 
+    console.log(fullUrl);
+
     try {
         const response=await fetch(fullUrl, requestOptions);
-        if(response.ok) router.push(destination);
+        return response;
     } catch (error) {
         console.error('Error:', error);
     }

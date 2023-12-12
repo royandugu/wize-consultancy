@@ -5,7 +5,7 @@ import { StatusCodes } from "http-status-codes";
 
 export const POST=async (request:NextRequest):Promise<any>=>{
     try{
-        const requestBody=await request.formData();
+        const requestBody=await request.json();
         const response=await registerUser(requestBody);
         return NextResponse.json({message:response.message},{status:StatusCodes.CREATED});
     }

@@ -1,8 +1,10 @@
 require("dotenv").config();
 
+import { EdgeStoreProvider } from '../lib/edgestore';
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
+import ContextState from '../../components/systemComponents/context/contextStates';
 import mongoose from "mongoose";
 
 import './globals.css'
@@ -25,7 +27,11 @@ export default async function RootLayout({
       return (
         <html lang="en">
           <body className={inter.className}>
-            {children}
+            <EdgeStoreProvider>
+              <ContextState>
+                {children}
+              </ContextState>
+            </EdgeStoreProvider>
           </body>
         </html>
       )

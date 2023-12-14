@@ -27,6 +27,7 @@ export const registerUser=async (body:any)=>{
             await userModel.create(body);
             setMessageAndResponse("User succesfully registered",StatusCodes.CREATED);
         }
+        console.log(response);
         return response;
     }
     catch(err:any){

@@ -2,7 +2,7 @@
 
 import { API_URL } from "../../../../API/globals/url";
 
-export const universalPost = async (data:any,url:string,destination:string,router:any) => {
+export const universalPost = async (data:any,url:string,destination:string) => {
     const requestOptions = {
         method: 'POST',
         headers: {
@@ -17,6 +17,7 @@ export const universalPost = async (data:any,url:string,destination:string,route
 
     try {
         const response=await fetch(fullUrl, requestOptions);
+        console.log(response);
         return response;
     } catch (error) {
         console.error('Error:', error);

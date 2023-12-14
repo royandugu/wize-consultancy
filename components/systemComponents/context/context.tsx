@@ -6,7 +6,7 @@ type ContextType={
 }
 
 const defaultValue:ContextType={
-    loading: 0,
+    loading: 1,
     setLoading: () => {},
 };
 

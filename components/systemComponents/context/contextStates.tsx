@@ -5,7 +5,7 @@ import { useState } from "react";
 import Context from "./context";
 
 const ContextState=(props:any)=>{
-    const [loading,setLoading]=useState(0);
+    const [loading,setLoading]=useState(1);
 
     const collection={
         loading:loading,

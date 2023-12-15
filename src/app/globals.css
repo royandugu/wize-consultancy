@@ -57,7 +57,7 @@
 .fileType{
     cursor:pointer;   
 }
-.fileType>.currentImgBackground>.fileUpload , .fileType>.fileUpload{
+.fileType>.currentImgBackground>.fileUpload{
     height:100px;
     width:100px;
     margin-bottom:20px;
@@ -69,5 +69,9 @@
 .fileType>.currentImgBackground>.fileUpload>.plusIcon , .fileType>.fileUpload>.plusIcon{
     color:white;
     font-size:60px;
+}
+.noBorder{
+    border:none !important;
+    display:none;
 }
   

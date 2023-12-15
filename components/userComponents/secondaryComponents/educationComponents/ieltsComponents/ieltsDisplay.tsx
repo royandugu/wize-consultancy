@@ -1,4 +1,4 @@
-import SecondaryTitleDesign from "../../../../systemComponents/commonDesgins/secondaryTitleDesign";
+import SecondaryTitleDesign from "../../../../systemComponents/modules/secondaryTitleDesign";
 import AosWrapper from "../../../../systemComponents/wrapper/aosWrapper";
 import MainIeltsSection from "./mainIeltsSection/mainIeltsSection";
 

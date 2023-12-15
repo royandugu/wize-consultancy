@@ -1,4 +1,4 @@
-import SecondaryTitleDesign from "../../../systemComponents/commonDesgins/secondaryTitleDesign";
+import SecondaryTitleDesign from "../../../systemComponents/modules/secondaryTitleDesign";
 import BestSolutionSection from "./bestSolutionSection/bestSolutionSection";
 import OptionSection from "../homeComponents/optionSection/optionSection";
 import OurTeamMembersSection from "./ourTeamMembersSection/ourTeamMembersSection";

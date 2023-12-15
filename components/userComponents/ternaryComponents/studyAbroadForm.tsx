@@ -17,7 +17,7 @@ const StudyAbroadForm = () => {
           <label className=" font-bold mb-2">First Name <span className="text-grad-one">*</span></label>
           <input
             type="email"
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
             placeholder="E.g. Ram Smith@gmail.com"
           />
         </div>
@@ -26,7 +26,7 @@ const StudyAbroadForm = () => {
           <label className=" font-bold mb-2">Last Name <span className="text-grad-one">*</span></label>
           <input
             type="email"
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
             placeholder="E.g. Ram Smith@gmail.com"
           />
         </div>
@@ -36,7 +36,7 @@ const StudyAbroadForm = () => {
           <label className=" font-bold mb-2">Email <span className="text-grad-one">*</span></label>
           <input
             type="email"
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
             placeholder="E.g. Ram Smith@gmail.com"
           />
         </div>
@@ -45,7 +45,7 @@ const StudyAbroadForm = () => {
           <label className=" font-bold mb-2">Mobile <span className="text-grad-one">*</span></label>
           <input
             type="tel"
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
             placeholder="+977-9841-1234567"
           />
         </div>
@@ -54,7 +54,7 @@ const StudyAbroadForm = () => {
           <label className=" font-bold mb-2">Current City <span className="text-grad-one">*</span></label>
           <input
             type="text"
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
             placeholder="E.g. Sydney"
           />
         </div>
@@ -62,7 +62,7 @@ const StudyAbroadForm = () => {
         <div className="flex flex-col my-4">
           <label className=" font-bold mb-2">Country of Residence <span className="text-grad-one">*</span></label>
           <select
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
           >
             <option value="">Country</option>
             <option value="Australia">Australia</option>
@@ -74,7 +74,7 @@ const StudyAbroadForm = () => {
         <div className="flex flex-col my-4">
           <label className=" font-bold mb-2">Study Destination <span className="text-grad-one">*</span></label>
           <select
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
           >
             <option value="">Country</option>
             <option value="Australia">Australia</option>
@@ -86,7 +86,7 @@ const StudyAbroadForm = () => {
         <div className="flex flex-col my-4">
           <label className=" font-bold mb-2">Last Education <span className="text-grad-one"> * </span></label>
           <select
-            className="border border-gray-300 rounded-md px-4 py-2"
+            className="border border-[rgb(230,230,230)] rounded-md px-4 py-2"
           >
             <option value="">12th</option>
             <option value="Australia">Bachelors</option>

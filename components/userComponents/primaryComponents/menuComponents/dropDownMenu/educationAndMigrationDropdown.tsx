@@ -20,13 +20,13 @@ const EducationAndMigrationDropDown = ({ dispNumber, showDropDown, setShowDropDo
         <ul className={`bg-white rounded-md fixed ${moveMenuUp? 'top-[110px]' : 'top-[150px]'} z-20 transform origin-top dropDownMenu shadow-lg ${showDropDown ? "scrollDown" : "scrollUp"} `} onMouseEnter={() => setShowDropDown(true)} onMouseLeave={() => setShowDropDown(false)}>
             {(dispNumber === 0 && showEducationPage) ? (
                 educationRoutes.map((route, i) => (
-                    <li key={i} className="border-b border-gray-300 px-10 p-5">
+                    <li key={i} className="border-b border-[rgb(230,230,230)] px-10 p-5">
                         <Link href={route.url}> {route.text} </Link>
                     </li>
                 ))
             ) : (dispNumber === 1 && !showEducationPage) && (
                 migrationRoutes.map((route, i) => (
-                    <li key={i} className="border-b border-gray-300 px-10 p-5">
+                    <li key={i} className="border-b border-[rgb(230,230,230)] px-10 p-5">
                         <Link href={route.url}> {route.text} </Link>
                     </li>
                 ))

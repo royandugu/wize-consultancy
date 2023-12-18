@@ -1,7 +1,8 @@
 "use client"
 
 import { useState } from "react";
-//import { universalPost } from "../apiConnectors/system/POST";
+import { universalPost } from "../apiConnectors/system/POST";
+import { useRouter } from "next/navigation";
 
 import Link from "next/link";
 
@@ -9,13 +10,14 @@ import "./loginAndRegister.css";
 
 type LoginProp={
     isAdmin:boolean;
-    router:any;
 }
 
 const Login=(props:LoginProp)=>{
 
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
+
+    const router=useRouter();
 
     const sendLoginRequest=async (e:any)=>{
         e.preventDefault();
@@ -24,7 +26,9 @@ const Login=(props:LoginProp)=>{
             password:password
         }
         const url=`${props.isAdmin?'/admin/login':'/login'}`
-        //await universalPost(data,url,"/user/dashbaord",props.router);
+        
+        const res=await universalPost(data,url,"/user/dashbaord");
+        if(res?.ok) router.push("/user/dashboard");
     }
 
     return(

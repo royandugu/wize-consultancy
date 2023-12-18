@@ -4,27 +4,25 @@ import { useState } from 'react';
 import { useContext } from 'react';
 import { useEdgeStore } from '@/lib/edgestore';
 import { universalPost } from '../apiConnectors/system/POST';
+import { useRouter } from 'next/navigation';
 
 import context from '../context/context';
 
 import "./loginAndRegister.css";
 import ImageUpload from '../modules/imageUpload';
 
-type RegisterPropType = {
-  router: any
-}
 
-export default function Register(prop: RegisterPropType) {
+export default function Register() {
   const [file, setFile] = useState<File>();
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const router=useRouter();
+
   const contextContainer = useContext(context);
 
   const { edgestore } = useEdgeStore();
-
-
 
   const registerUser = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,7 +41,7 @@ export default function Register(prop: RegisterPropType) {
           password: password
         }
         const response = await universalPost(body, "/register", "/user/dashboard");
-        if (response?.ok) prop.router.push("/user/dashboard");
+        if (response?.ok) router.push("/user/dashboard");
       }
     }
     catch (err) {

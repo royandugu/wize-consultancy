@@ -2,7 +2,6 @@
 
 import { ApexOptions } from 'apexcharts';
 import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
 
 import ReactApexChart from 'react-apexcharts';
 

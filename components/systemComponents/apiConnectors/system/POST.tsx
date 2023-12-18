@@ -13,7 +13,6 @@ export const universalPost = async (data:any,url:string,destination:string) => {
 
     const fullUrl=`${API_URL}${url}`
 
-
     try {
         const response=await fetch(fullUrl, requestOptions);
         return response;

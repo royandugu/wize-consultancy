@@ -1,3 +1,5 @@
+"use client"
+
 import DashboardLayout from "./dashboardLayout";
 
 import CardOne from "./dashboardComponents/cards/cardOne";

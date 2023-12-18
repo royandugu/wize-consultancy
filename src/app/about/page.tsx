@@ -2,4 +2,4 @@ import AboutDisplay from "../../../components/userComponents/secondaryComponents
 const About=()=>{
     return <AboutDisplay/>
 }
-export default About;
+export default About; 

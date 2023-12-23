@@ -1,10 +1,12 @@
-"use client"
-import dynamic from "next/dynamic";
+import { getServerSession } from "next-auth";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { redirect } from "next/navigation";
 
-const DashboardDisplay = dynamic(() => import('../../../../components/adminComponents/secondaryComponents/dashboardDisplay'), { ssr: false })
+import DashboardDisplay from "../../../../components/adminComponents/secondaryComponents/dashboardDisplay";
 
-const Page=()=>{
-    if(typeof window!==undefined) return <DashboardDisplay/>
-    else return <h5> Window error </h5>
+const Page=async ()=>{
+    const sessionData=await getServerSession(options);
+    if(sessionData) return <DashboardDisplay/>
+    else return redirect('api/auth/signin?callbackUrl=/server');
 }
 export default Page;

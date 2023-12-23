@@ -23,6 +23,7 @@
     "http-status-codes": "^2.3.0",
     "mongoose": "^8.0.2",
     "next": "^14.0.4",
+    "next-auth": "^4.24.5",
     "nodemailer": "^6.9.7",
     "postcss": "^8.4.30",
     "rc-progress": "^3.5.1",

@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import ContextState from '../../components/systemComponents/context/contextStates';
+import Provider from './sessionProvider';
+
 import mongoose from "mongoose";
 
 import './globals.css'
@@ -27,11 +29,13 @@ export default async function RootLayout({
       return (
         <html lang="en">
           <body className={inter.className}>
-            <EdgeStoreProvider>
-              <ContextState>
-                {children}
-              </ContextState>
-            </EdgeStoreProvider>
+            <Provider>
+              <EdgeStoreProvider>
+                <ContextState>
+                  {children}
+                </ContextState>
+              </EdgeStoreProvider>
+            </Provider>
           </body>
         </html>
       )

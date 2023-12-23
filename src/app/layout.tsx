@@ -33,7 +33,7 @@ export default async function RootLayout({
               <EdgeStoreProvider>
                 <ContextState>
                   {children}
-                </ContextState>
+                </ContextState> 
               </EdgeStoreProvider>
             </Provider>
           </body>

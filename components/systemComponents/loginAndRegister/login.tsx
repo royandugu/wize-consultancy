@@ -35,7 +35,7 @@ const Login = (props: LoginProp) => {
         if (res?.ok) router.push("/user/dashboard");
     }
 
-    if (session) return <h5> Signed in as {session.user?.email}</h5>
+    if (session) return <h5> Signed in as</h5>
     else {
         return (
             <form className="loginAndRegisterForm" onSubmit={(e) => sendLoginRequest(e)}>

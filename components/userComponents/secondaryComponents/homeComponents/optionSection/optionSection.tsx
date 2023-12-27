@@ -1,6 +1,6 @@
 import {BiPhone} from "react-icons/bi";
 
-const OptionSection=()=>{
+const OptionSection=({isAdmin}:{isAdmin?:boolean})=>{
     return(
         <div className="bg-black text-grad-one pt-10">
             <div className="flex">

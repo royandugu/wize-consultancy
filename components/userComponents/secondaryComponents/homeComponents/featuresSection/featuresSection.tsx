@@ -1,4 +1,3 @@
-
 import "./featuresSection.css";
 
 const FeaturesSection = () => {    

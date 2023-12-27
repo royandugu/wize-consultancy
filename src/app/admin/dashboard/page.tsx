@@ -3,6 +3,7 @@ import { options } from "@/app/api/auth/[...nextauth]/options";
 import { redirect } from "next/navigation";
 
 import DashboardDisplay from "../../../../components/adminComponents/secondaryComponents/dashboardDisplay";
+
 const Page=async ()=>{
     const sessionData=await getServerSession(options);
     console.log(sessionData);

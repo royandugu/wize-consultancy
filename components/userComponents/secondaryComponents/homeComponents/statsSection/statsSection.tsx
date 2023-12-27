@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react";
 import { SiSemanticscholar } from "react-icons/si";
 import { TfiCup } from "react-icons/tfi";
 import { GoNote } from "react-icons/go";
@@ -11,7 +12,31 @@ import DotAnimations from "../../../../systemComponents/animations/dotAnimations
 
 import "./statsSection.css";
 
-const StatsSection = () => {
+const StatsSection = ({ isAdmin }: { isAdmin?: boolean }) => {
+    const [personalizedGuidanceTitle, setPersonalizedGuidanceTitle] = useState("Personalized Guidance");
+    const [personalizedGuidanceBody, setPersonalizedGuidanceBody] = useState("In the ever-evolving world of consultancy, achieving success requires more than just knowledge; it demands a strategic and personalized approach.");
+    const [scholarshipGuidanceTitle, setScholarshipGuidanceTitle] = useState("Scholarship Guidance ");
+    const [scholarshipGuidanceBody, setScholarshipGuidanceBody] = useState("In the ever-evolving world of consultancy, achieving success requires more than just knowledge; it demands a strategic and personalized approach.");
+    const [streamlinedSupportTitle, setStreamlinedSupportTitle] = useState("Streamlined Support");
+    const [streamlinedSupportBody, setStreamlinedSupportBody] = useState("In the ever-evolving world of consultancy, achieving success requires more than just knowledge; it demands a strategic and personalized approach.");
+
+    const [statsPartOne,setStatsPartOne]=useState("FIND A NEW WAY FOR GROW");
+    const [statsPartTwo,setStatsPartTwo]=useState("WIZE WIZE WIZE WIZE");
+    const [statsPartThree,setStatsPartThree]=useState("AAAAAAAAAAAAAAAA");
+
+    const [numberOne,setNumberOne]=useState("9999");
+    const [numberTwo,setNumberTwo]=useState("9999");
+    const [numberThree,setNumberThree]=useState("9999");
+    const [numberFour,setNumberFour]=useState("9999");
+    
+    const [numberLabelOne,setNumberLabelOne]=useState("Happy clients");
+    const [numberLabelTwo,setNumberLabelTwo]=useState("Happy clients");
+    const [numberLabelThree,setNumberLabelThree]=useState("Happy clients");
+    const [numberLabelFour,setNumberLabelFour]=useState("Happy clients");
+
+    const cardTitleContent=useState({titleOne:"AAAAAAAAAAAAAAA",titleTwo:"AAAAAAAAAAAAAAA", titleThree:"AAAAAAAAAAAAAAA", titleFour:"AAAAAAAAAAAAAAA"})
+    const cardBodyContent=useState({bodyOne:"AAAAAAAAAAAAAAA", bodyTwo:"AAAAAAAAAAAAAAA", bodyThree:"AAAAAAAAAAAAAAA",bodyFour:"AAAAAAAAAAAAAAA"});
+    
     return (
         <div className="statsSection bg-sky-bg mb-0">
             <div className="flex flex-col md:flex-row justify-center items-center gap-10 sm:pl-20 sm:pr-20">
@@ -22,13 +47,11 @@ const StatsSection = () => {
                             <GoNote className="icon text-[40px]" />
                         </div>
                         <div className="text-left pt-5 pb-10 md:p-0">
-                            <h1 className="text-[20px] title--statsSection"> Personalized Guidance </h1>
-                            <p className="mt-2 text-sm para--statsSection">
-                                In the ever-evolving world of consultancy, achieving success
-                                requires more than just knowledge; it demands a strategic and
-                                personalized approach.
-                            </p>
-                        </div> 
+                            {isAdmin ? (<input type="text" className=" pl-2 border border-[rgb(200,200,200)] outline-none" value={personalizedGuidanceTitle} onChange={(e) => setPersonalizedGuidanceTitle(e.target.value)} />) : (<h1 className="text-[20px] title--statsSection"> {personalizedGuidanceTitle} </h1>)}
+                            {isAdmin ? <textarea className="mt-3 pl-2 border border-[rgb(200,200,200)] outline-none" value={personalizedGuidanceBody} onChange={(e) => setPersonalizedGuidanceBody(e.target.value)} /> : (<p className="mt-2 text-sm para--statsSection">
+                                {personalizedGuidanceBody}
+                            </p>)}
+                        </div>
                     </div>
                 </div>
 
@@ -39,12 +62,10 @@ const StatsSection = () => {
                             <SiSemanticscholar className="icon text-[40px]" />
                         </div>
                         <div className="text-left pt-5 pb-10 md:p-0">
-                            <h1 className="text-[20px] title--statsSection"> Scholarship Guidance </h1>
-                            <p className="mt-2 text-sm para--statsSection">
-                                In the ever-evolving world of consultancy, achieving success
-                                requires more than just knowledge; it demands a strategic and
-                                personalized approach.
-                            </p>
+                            {isAdmin ? (<input type="text" className=" pl-2 border border-[rgb(200,200,200)] outline-none" value={scholarshipGuidanceTitle} onChange={(e) => setScholarshipGuidanceTitle(e.target.value)} />) : (<h1 className="text-[20px] title--statsSection"> {scholarshipGuidanceTitle} </h1>)}
+                            {isAdmin ? <textarea className="mt-3 pl-2 border border-[rgb(200,200,200)] outline-none" value={scholarshipGuidanceBody} onChange={(e) => setScholarshipGuidanceBody(e.target.value)} /> : (<p className="mt-2 text-sm para--statsSection">
+                                {scholarshipGuidanceBody}
+                            </p>)}
                         </div>
                     </div>
                 </div>
@@ -56,12 +77,10 @@ const StatsSection = () => {
                             <TfiCup className="icon text-[40px]" />
                         </div>
                         <div className="text-left pt-5 pb-10 md:p-0">
-                            <h1 className="text-[20px] title--statsSection"> Streamlined Support </h1>
-                            <p className="mt-2 text-sm para--statsSection">
-                                In the ever-evolving world of consultancy, achieving success
-                                requires more than just knowledge; it demands a strategic and
-                                personalized approach.
-                            </p>
+                            {isAdmin ? (<input type="text" className=" pl-2 border border-[rgb(200,200,200)] outline-none" value={streamlinedSupportTitle} onChange={(e) => setStreamlinedSupportTitle(e.target.value)} />) : (<h1 className="text-[20px] title--statsSection"> {streamlinedSupportTitle} </h1>)}
+                            {isAdmin ? <textarea className="mt-3 pl-2 border border-[rgb(200,200,200)] outline-none" value={streamlinedSupportBody} onChange={(e) => setStreamlinedSupportBody(e.target.value)} /> : (<p className="mt-2 text-sm para--statsSection">
+                                {streamlinedSupportBody}
+                            </p>)}
                         </div>
                     </div>
                 </div>
@@ -72,10 +91,14 @@ const StatsSection = () => {
 
             {/* Find a new way to grow */}
             <div className="flex flex-col md:flex-row justify-center md:gap-10 mt-20 md:mt-40">
-                <div className="text-center md:text-left"  data-aos="fade-right">
-                    <h5 className="text-[13px]"> \\ FIND A NEW WAY FOR GROW \\</h5>
-                    <h1 className="text-[25px]"> WIZE WIZE WIZE WIZE </h1>
-                    <p className="text-light-black"> AAAAAAAAAAAAAAAA </p>
+                <div className="text-center md:text-left" data-aos="fade-right">
+                    
+                    {isAdmin? (<><input type="text" className="text-[13px] pl-2 border border-[rgb(200,200,200)] outline-none" value={statsPartOne} onChange={(e) => setStatsPartOne(e.target.value)} /><br/></>) :<h5 className="text-[13px]"> \\ {statsPartOne} \\</h5>}
+                    
+                    {isAdmin ? (<><input type="text" className="text-[25px] pl-2 border border-[rgb(200,200,200)] outline-none mt-2" value={statsPartTwo} onChange={(e) => setStatsPartTwo(e.target.value)} /><br/></>) : <h1 className="text-[25px]"> {statsPartTwo} </h1>}
+                    
+                    {isAdmin ? (<><input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={statsPartThree} onChange={(e) => setStatsPartThree(e.target.value)} /></>) :<p className="text-light-black"> {statsPartThree} </p>}
+                    
                     <div className="flex gap-5 justify-center pl-24 pr-24 md:pl-0 md:pr-0 md:justify-start">
                         <div className="mainGradient relative text-white top-10 p-6 w-full rounded-md md:h-[120px] md:w-[120px]">
                             <Circle percent={90} strokeWidth={10} strokeColor="#FFFFFF" />
@@ -105,29 +128,29 @@ const StatsSection = () => {
                             <div>
                                 <AiOutlineUsergroupAdd className="icon" />
                                 <div className="ml-1">
-                                    <h5> 9999+ </h5>
-                                    <p className="text-light-black"> Happy clients </p>
+                                    {isAdmin? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberOne} onChange={(e) => setNumberOne(e.target.value)} /> :<h5> {numberOne}+ </h5>}
+                                    {isAdmin ? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberLabelOne} onChange={(e) => setNumberLabelOne(e.target.value)} /> :<p className="text-light-black"> {numberLabelOne} </p>}
                                 </div>
                             </div>
                             <div>
                                 <AiOutlineUsergroupAdd className="icon" />
                                 <div className="ml-1">
-                                    <h5> 9999+ </h5>
-                                    <p className="text-light-black"> Happy clients </p>
+                                {isAdmin? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberTwo} onChange={(e) => setNumberTwo(e.target.value)} /> :<h5> {numberTwo}+ </h5>}
+                                    {isAdmin ? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberLabelTwo} onChange={(e) => setNumberLabelTwo(e.target.value)} /> :<p className="text-light-black"> {numberLabelTwo} </p>}
                                 </div>
                             </div>
                             <div>
                                 <AiOutlineUsergroupAdd className="icon" />
                                 <div className="ml-1">
-                                    <h5> 9999+ </h5>
-                                    <p className="text-light-black"> Happy clients </p>
+                                {isAdmin? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberThree} onChange={(e) => setNumberThree(e.target.value)} /> :<h5> {numberThree}+ </h5>}
+                                    {isAdmin ? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberLabelThree} onChange={(e) => setNumberLabelThree(e.target.value)} /> :<p className="text-light-black"> {numberLabelThree} </p>}
                                 </div>
                             </div>
                             <div>
                                 <AiOutlineUsergroupAdd className="text-[60px] text-grad-two icon" />
                                 <div className="ml-1">
-                                    <h5> 9999+ </h5>
-                                    <p className="text-light-black"> Happy clients </p>
+                                {isAdmin? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberFour} onChange={(e) => setNumberFour(e.target.value)} /> :<h5> {numberFour}+ </h5>}
+                                    {isAdmin ? <input type="text" className=" pl-2 border text-light-black border-[rgb(200,200,200)] outline-none mt-2" value={numberLabelFour} onChange={(e) => setNumberLabelFour(e.target.value)} /> :<p className="text-light-black"> {numberLabelFour} </p>}
                                 </div>
                             </div>
                         </div>
@@ -145,8 +168,8 @@ const StatsSection = () => {
                                     <PiUsersThreeBold />
                                 </div>
                                 <div className="pt-5 pr-10 overflow-hidden overflow-ellipsis flex-none">
-                                    <h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>
-                                    <p className="text-light-black">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+                                    {isAdmin ? <></> :<h1 className="text-[25px] text-black"> AAAAAAAAAAAAAAA </h1>}
+                                    {<p className="text-light-black">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>}
                                 </div>
                             </div>
                         </div>

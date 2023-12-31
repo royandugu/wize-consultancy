@@ -19,4 +19,5 @@ adminSchema.methods.verifyPassword=async function(candidatePassword:string){
     return match;
 } 
 
-export default mongoose.model("admin-model",adminSchema);
+const adminModel=mongoose.models.admin || mongoose.model("admin",adminSchema); 
+export default adminModel;

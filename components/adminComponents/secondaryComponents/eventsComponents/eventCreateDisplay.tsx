@@ -6,10 +6,11 @@ import ButtonDesign from "../../../systemComponents/modules/buttonDesign";
 import dynamic from "next/dynamic";
 import context from "../../../systemComponents/context/context";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useEdgeStore } from '@/lib/edgestore';
 import { useContext } from "react";
 import { uploadImage } from "../../../systemComponents/microFunctions/uploadImage";
+import { EventType } from "../../../systemComponents/types/types";
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
@@ -17,20 +18,12 @@ import 'react-quill/dist/quill.snow.css';
 import { universalJSONPost } from "../../../systemComponents/apiConnectors/system/POST";
 import PopUp from "../../../systemComponents/modules/popUp";
 
-type formBody = {
-    title: string;
-    startDate: Date;
-    endDate: Date;
-    banner: string;
-    body: string;
-}
 
 const EventCreateDisplay = () => {
     const [eventBody, setEventBody] = useState("");
-    const [file, setFile] = useState<File>();
+    const [file, setFile] = useState<File | undefined>();
     const [showPopUp, setShowPopUp] = useState(false);
-
-    const [formBody, setFormBody] = useState<formBody>({
+    const [formBody, setFormBody] = useState<EventType>({
         title: "",
         startDate: new Date(),
         endDate: new Date(),
@@ -48,28 +41,62 @@ const EventCreateDisplay = () => {
 
     const contextContainer = useContext(context);
 
+    useEffect(() => {
+        contextContainer.setLoading(1);
+    }, [])
+
     const submitForm = async (e: any) => {
         e.preventDefault();
+        contextContainer.setLoading(0);
         try {
             const { data, status } = await uploadImage(file, edgestore);
             if (status) {
                 const concatenatedStartDate = dateTimeCombo.startDate + ' ' + dateTimeCombo.startTime;
                 const concatenatedEndDate = dateTimeCombo.endDate + ' ' + dateTimeCombo.endTime;
-                setFormBody({ ...formBody, startDate: new Date(concatenatedStartDate), endDate: new Date(concatenatedEndDate), banner: data, body: eventBody });
-                const response = await universalJSONPost(formBody, "/admin/events");
-                console.log(response);
+
+                const staticFormBody = {
+                    ...formBody,
+                    startDate: new Date(concatenatedStartDate),
+                    endDate: new Date(concatenatedEndDate),
+                    banner: data,
+                    body: eventBody
+                }
+                
+                const response = await universalJSONPost(staticFormBody, "/admin/events");
+                if (response) {
+                    if (response.ok) {
+                        contextContainer.setLoading(2);
+                        discardForm(e);
+                    }
+                    else contextContainer.setLoading(3);
+                }
             }
             else if (status === false) {
-                contextContainer.setLoading(2);
+                contextContainer.setLoading(3);
             }
         }
         catch (err) {
-            contextContainer.setLoading(2);
+            contextContainer.setLoading(3);
         }
     }
 
-    const formDiscard = async (e: any) => {
+    const discardForm = async (e: any) => {
         e.preventDefault();
+        setFormBody({
+            title: "",
+            startDate: new Date(),
+            endDate: new Date(),
+            banner: "",
+            body: ""
+        })
+        setFile(undefined);
+        setEventBody("");
+        setDateTimeCombo({
+            startDate: "",
+            startTime: "",
+            endDate: "",
+            endTime: ""
+        })
     }
 
     return (
@@ -92,11 +119,11 @@ const EventCreateDisplay = () => {
                         //form validation
                         setShowPopUp(true)
                     }}><ButtonDesign text="Create event" noArrow={true} /></button>
-                    <button onClick={formDiscard}><ButtonDesign text="Discard event" noArrow={true} /></button>
+                    <button onClick={discardForm}><ButtonDesign text="Discard event" noArrow={true} /></button>
                 </div>
 
             </form>
-            <PopUp title="Event Publishment" body="Do you want to publish this event ?" buttonTexts={["Publish event"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer}/>
+            <PopUp title="Event Publishment" body="Do you want to publish this event ?" buttonTexts={["Publish event"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer} finalMessage={"Your event has been published"} errorMessage={"Error publishing your event"} finalNavigation={"/admin/events/view"}/>
 
         </>
     )

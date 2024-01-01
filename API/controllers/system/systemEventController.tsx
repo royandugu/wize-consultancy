@@ -12,8 +12,7 @@ export const getIndvEvent=async (id:string)=>{
 
 export const getAllEvents=async ()=>{
     try{
-        const events=await eventModel.find({});
-        console.log(events);
+        const events=await eventModel.find({}).sort({updatedAt: -1});
         setMessageAndResponse("All your events",events,StatusCodes.OK);
     }
     catch(err){

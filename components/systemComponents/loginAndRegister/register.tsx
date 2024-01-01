@@ -42,17 +42,17 @@ export default function Register() {
         if (response?.ok) router.push("/user/dashboard");
       }
       else if(status === false){ 
-        contextContainer.setLoading(2);
+        contextContainer.setLoading(3);
       }
     }
     catch (err) {
-      contextContainer.setLoading(2);
+      contextContainer.setLoading(3);
     }
   }
 
   if (contextContainer.loading === 0) return <Spinner/>
-  else if (contextContainer.loading === 2) return <h5> Error while registering user </h5>
-  else {
+  else if (contextContainer.loading === 3) return <h5> Error while registering user </h5>
+  else if(contextContainer.loading === 1){
     return (
       <form className='loginAndRegisterForm' onSubmit={registerUser}>
 

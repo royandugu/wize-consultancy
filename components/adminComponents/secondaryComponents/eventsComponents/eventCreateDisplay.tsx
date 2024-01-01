@@ -6,7 +6,7 @@ import ButtonDesign from "../../../systemComponents/modules/buttonDesign";
 import dynamic from "next/dynamic";
 import context from "../../../systemComponents/context/context";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useEdgeStore } from '@/lib/edgestore';
 import { useContext } from "react";
 import { uploadImage } from "../../../systemComponents/microFunctions/uploadImage";
@@ -96,7 +96,7 @@ const EventCreateDisplay = () => {
                 </div>
 
             </form>
-            <PopUp title="Event Publishment" body="Do you want to publish this event ?" buttonTexts={["Publish event"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} />
+            <PopUp title="Event Publishment" body="Do you want to publish this event ?" buttonTexts={["Publish event"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer}/>
 
         </>
     )

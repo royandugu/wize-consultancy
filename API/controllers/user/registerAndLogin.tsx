@@ -1,6 +1,6 @@
-import { defaultApiResponse } from "../../../components/systemComponents/types/apiResponse";
+import { defaultApiResponse } from "../../../components/systemComponents/types/types";
 import { StatusCodes } from "http-status-codes";
-import { login } from "../../../components/systemComponents/types/registerAndLogin";
+import { login } from "../../../components/systemComponents/types/types";
 
 import userModel from "../../models/userModel/userModel";
 

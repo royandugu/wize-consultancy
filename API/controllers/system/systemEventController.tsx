@@ -11,9 +11,15 @@ export const getIndvEvent=async (id:string)=>{
 }   
 
 export const getAllEvents=async ()=>{
-    const events=await eventModel.find();
-    console.log(events);
-    setMessageAndResponse("All your events",events,StatusCodes.OK);
+    try{
+        const events=await eventModel.find({});
+        console.log(events);
+        setMessageAndResponse("All your events",events,StatusCodes.OK);
+    }
+    catch(err){
+        setMessageAndResponse("Event fetching error",null,StatusCodes.INTERNAL_SERVER_ERROR);
+    }
     return response;
+
 }
 

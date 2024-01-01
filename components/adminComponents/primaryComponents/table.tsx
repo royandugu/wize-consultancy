@@ -1,164 +1,47 @@
-const Table = () => {
-  return (
-    <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default sm:px-7.5 xl:pb-1">
+import { FaPencilAlt } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+
+type Table = {
+  title: string;
+  tableRows: Array<string>;
+  tableCols: Array<object>;
+  dataKeys: Array<string>;
+  hasImage:boolean;
+  parseOn?:number;
+}
+
+const Table = (props: Table) => {
+  return ( 
+    <div className="rounded-sm border border-stroke bg-white px-5 pt-6 pb-2.5 shadow-default sm:px-7.5 xl:pb-5">
       <h4 className="mb-6 text-xl font-semibold text-black">
-        Your events
+        {props.title}
       </h4>
 
-      <div className="flex flex-col">
-        <div className="grid grid-cols-3 rounded-sm bg-gray-2 sm:grid-cols-5">
-          <div className="p-2.5 xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Source
-            </h5>
-          </div>
-          <div className="p-2.5 text-center xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Visitors
-            </h5>
-          </div>
-          <div className="p-2.5 text-center xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Revenues
-            </h5>
-          </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Sales
-            </h5>
-          </div>
-          <div className="hidden p-2.5 text-center sm:block xl:p-5">
-            <h5 className="text-sm font-medium uppercase xsm:text-base">
-              Conversion
-            </h5>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 border-b border-stroke sm:grid-cols-5">
-          <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-            </div>
-            <p className="hidden text-black sm:block">Google</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-black ">3.5K</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-meta-3">$5,768</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-black">590</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-meta-5">4.8%</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 border-b border-stroke sm:grid-cols-5">
-          <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-            </div>
-            <p className="hidden text-black sm:block">
-              Twitter
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-black">2.2K</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-meta-3">$4,635</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-black">467</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-meta-5">4.3%</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 border-b border-stroke sm:grid-cols-5">
-          <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-            </div>
-            <p className="hidden text-black sm:block">Github</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-black">2.1K</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-meta-3">$4,290</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-black">420</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-meta-5">3.7%</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 border-b border-stroke sm:grid-cols-5">
-          <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-            </div>
-            <p className="hidden text-black sm:block">Vimeo</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-black">1.5K</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-meta-3">$3,580</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-black">389</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-meta-5">2.5%</p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 sm:grid-cols-5">
-          <div className="flex items-center gap-3 p-2.5 xl:p-5">
-            <div className="flex-shrink-0">
-            </div>
-            <p className="hidden text-black sm:block">
-              Facebook
-            </p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-black">1.2K</p>
-          </div>
-
-          <div className="flex items-center justify-center p-2.5 xl:p-5">
-            <p className="text-meta-3">$2,740</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-black">230</p>
-          </div>
-
-          <div className="hidden items-center justify-center p-2.5 sm:flex xl:p-5">
-            <p className="text-meta-5">1.9%</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      <table className="min-w-full">
+        <tbody>
+          <tr className="rounded-sm bg-gray-2 gap-10">
+            {props.tableRows.map((tr: string, id: number) => (
+              <th key={id} className="px-10 py-5 border border-[rgb(200,200,200)]"> {tr} </th>
+            ))}
+          </tr>
+          {props.tableCols.map((item: any, index) => (
+            <tr key={index} className="p-4 mb-4">
+              {props.dataKeys.map((key,i) => (
+                <td key={i} className="p-5 border border-[rgb(200,200,200)]">
+                  {props.hasImage ? i===0 ? <img src={item[key]} className="w-full h-[100px]"/> : item[key]:item[key]}
+                </td>
+              ))}
+              <td className="p-5 border border-[rgb(200,200,200)]">
+                <div className="flex justify-center items-center gap-5">
+                  <FaPencilAlt size={25} className="text-grad-one"/>
+                  <MdDelete size={30} className="text-grad-two"/>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div> 
   );
 };
 

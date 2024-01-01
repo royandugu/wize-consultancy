@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { useEdgeStore } from '@/lib/edgestore';
 import { universalJSONPost } from '../apiConnectors/system/POST';
 import { useRouter } from 'next/navigation';
+import Spinner from '../modules/spinner';
 
 import context from '../context/context';
 
@@ -49,7 +50,7 @@ export default function Register() {
     }
   }
 
-  if (contextContainer.loading === 0) return <h5> Registering you ... </h5>
+  if (contextContainer.loading === 0) return <Spinner/>
   else if (contextContainer.loading === 2) return <h5> Error while registering user </h5>
   else {
     return (

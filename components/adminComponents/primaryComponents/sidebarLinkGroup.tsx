@@ -7,7 +7,7 @@ interface SidebarLinkGroupProps {
 const SidebarLinkGroup = ({
   children,
 }: SidebarLinkGroupProps) => {
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleClick = () => {
     setOpen(!open);

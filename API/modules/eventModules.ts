@@ -1,4 +1,4 @@
-import { defaultApiResponse } from "../../components/systemComponents/types/apiResponse";
+import { defaultApiResponse } from "../../components/systemComponents/types/types";
 
 export let response:defaultApiResponse={message:"",bodyData:null,status:0}
 

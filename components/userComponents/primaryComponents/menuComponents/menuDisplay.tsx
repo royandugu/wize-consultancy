@@ -7,8 +7,8 @@ import Link from "next/link";
 import NavigationContainer from "./navigationContainer/navigationContainer";
 import MiniMenu from "./miniMenu/miniMenu";
 import SearchAndContactDropDown from "./dropDownMenu/searchAndContactDropDown";
-import SearchBarDesign from "../../../systemComponents/staticComponents/searchBarDesgin";
-import ButtonDesign from "../../../systemComponents/staticComponents/buttonDesign";
+import SearchBarDesign from "../../../systemComponents/modules/searchBarDesgin";
+import ButtonDesign from "../../../systemComponents/modules/buttonDesign";
 
 import "./menuDisplay.css";
 

@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 
 import Provider from './sessionProvider';
 import ContextState from '../../components/systemComponents/context/contextStates';
+import { EdgeStoreProvider } from '@/lib/edgestore';
 
 import mongoose from "mongoose";
 
@@ -30,7 +31,9 @@ export default async function RootLayout({
                     <body className={inter.className}>
                         <Provider>
                             <ContextState>
-                                {children}
+                                <EdgeStoreProvider>
+                                    {children}
+                                </EdgeStoreProvider>
                             </ContextState>
                         </Provider>
                     </body>

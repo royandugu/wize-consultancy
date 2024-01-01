@@ -1,8 +1,8 @@
 
 import { AiOutlineSearch } from "react-icons/ai"
 
-import SearchBarDesign from "../../../../systemComponents/staticComponents/searchBarDesgin"
-import ButtonDesign from "../../../../systemComponents/staticComponents/buttonDesign"
+import SearchBarDesign from "../../../../systemComponents/modules/searchBarDesgin"
+import ButtonDesign from "../../../../systemComponents/modules/buttonDesign"
 import Link from "next/link"
 
 interface DropDownMenuProps {

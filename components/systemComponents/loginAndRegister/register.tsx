@@ -3,13 +3,14 @@
 import { useState } from 'react';
 import { useContext } from 'react';
 import { useEdgeStore } from '@/lib/edgestore';
-import { universalPost } from '../apiConnectors/system/POST';
+import { universalJSONPost } from '../apiConnectors/system/POST';
 import { useRouter } from 'next/navigation';
 
 import context from '../context/context';
 
 import "./loginAndRegister.css";
 import ImageUpload from '../modules/imageUpload';
+import { uploadImage } from '../microFunctions/uploadImage';
 
 
 export default function Register() {
@@ -28,20 +29,19 @@ export default function Register() {
     e.preventDefault();
     contextContainer.setLoading(0);
     try {
-      if (file) {
-        const res = await edgestore.publicFiles.upload({
-          file,
-          onProgressChange: (progress) => {
-          },
-        });
+      const {data,status}=await uploadImage(file,edgestore);
+      if(status){
         const body = {
-          profilePicture: res.url,
+          profilePicture: data,
           name: name,
           email: email,
           password: password
         }
-        const response = await universalPost(body, "/register", "/user/dashboard");
+        const response = await universalJSONPost(body, "/register");
         if (response?.ok) router.push("/user/dashboard");
+      }
+      else if(status === false){ 
+        contextContainer.setLoading(2);
       }
     }
     catch (err) {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react";
-import { universalPost } from "../apiConnectors/system/POST";
+import { universalJSONPost } from "../apiConnectors/system/POST";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
@@ -31,7 +31,7 @@ const Login = (props: LoginProp) => {
         }
         const url = `${props.isAdmin ? '/admin/login' : '/login'}`
 
-        const res = await universalPost(data, url, "/user/dashbaord");
+        const res = await universalJSONPost(data, url);
         if (res?.ok) router.push("/user/dashboard");
     }
 

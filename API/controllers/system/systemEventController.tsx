@@ -11,7 +11,8 @@ export const getIndvEvent=async (id:string)=>{
 }   
 
 export const getAllEvents=async ()=>{
-    const events=await eventModel.find({});
+    const events=await eventModel.find();
+    console.log(events);
     setMessageAndResponse("All your events",events,StatusCodes.OK);
     return response;
 }

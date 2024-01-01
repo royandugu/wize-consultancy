@@ -1,6 +1,6 @@
 "use client"
 
-import ButtonDesign from "../../../../systemComponents/staticComponents/buttonDesign";
+import ButtonDesign from "../../../../systemComponents/modules/buttonDesign";
 import "./welcomeSection.css";
 
 const WelcomePage = () => {

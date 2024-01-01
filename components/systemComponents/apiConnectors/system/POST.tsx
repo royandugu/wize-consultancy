@@ -2,7 +2,7 @@
 
 import { API_URL } from "../../../../API/globals/url";
 
-export const universalPost = async (data:any,url:string,destination:string) => {
+export const universalJSONPost = async (data:any,url:string) => {
     const requestOptions = {
         method: 'POST',
         headers: {

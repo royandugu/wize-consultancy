@@ -1,7 +1,7 @@
 import FeaturesSection from "../../../userComponents/secondaryComponents/homeComponents/featuresSection/featuresSection";
 import StatsSection from "../../../userComponents/secondaryComponents/homeComponents/statsSection/statsSection";
 import OptionSection from "../../../userComponents/secondaryComponents/homeComponents/optionSection/optionSection";
-import ButtonDesign from "../../../systemComponents/staticComponents/buttonDesign";
+import ButtonDesign from "../../../systemComponents/modules/buttonDesign";
 
 const HomeDisplay=()=>{
     return (

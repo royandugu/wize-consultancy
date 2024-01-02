@@ -10,7 +10,7 @@ import Spinner from '../modules/spinner';
 import context from '../context/context';
 
 import "./loginAndRegister.css";
-import ImageUpload from '../modules/imageUpload';
+
 import { uploadImage } from '../microFunctions/uploadImage';
 
 
@@ -56,7 +56,6 @@ export default function Register() {
     return (
       <form className='loginAndRegisterForm' onSubmit={registerUser}>
 
-        <ImageUpload setFile={setFile}/>
 
         <input type="text" placeholder='Enter your Name' value={name} onChange={(e) => setName(e.target.value)} /><br />
         <input type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} /><br />

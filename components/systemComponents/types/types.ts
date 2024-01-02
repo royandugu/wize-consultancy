@@ -1,4 +1,5 @@
 export type EventType = {
+    _id?:string;
     title: string;
     startDate: Date;
     endDate: Date;

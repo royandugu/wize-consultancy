@@ -7,7 +7,7 @@ import Spinner from "./spinner";
 import ButtonDesign from "./buttonDesign";
 
 type OneArgFunction = (arg1: any) => Promise<void>;
-type TwoArgsFunction = (arg1: any, arg2: any) => Promise<void>;
+
 type PopUp = {
     showPopUp: boolean;
     setShowPopUp: Dispatch<SetStateAction<boolean>>;

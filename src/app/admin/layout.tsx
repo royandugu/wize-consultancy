@@ -1,4 +1,21 @@
+"use client"
+
+import { QueryClientProvider, QueryClient } from 'react-query';
+
 import DashboardLayout from "../../../components/adminComponents/secondaryComponents/dashboardLayout";
+
+const queryClient = new QueryClient(
+  {
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false,
+        refetchOnMount: false,
+        refetchOnReconnect: false,
+        retry: false
+      },
+    },
+  }
+);
 
 export default function RootLayout({
   children,
@@ -8,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <DashboardLayout>
-          {children}
-        </DashboardLayout>
+        <QueryClientProvider client={queryClient}>
+          <DashboardLayout>
+            {children}
+          </DashboardLayout>
+        </QueryClientProvider>
       </body>
     </html>
   )

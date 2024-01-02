@@ -5,6 +5,7 @@ import React from "react";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { EventType } from "../../systemComponents/types/types";
+import Link from "next/link";
 
 type Table = {
   title: string;
@@ -16,6 +17,7 @@ type Table = {
   hasPopUp?:boolean;
   setShowPopUp?:React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedData:React.Dispatch<React.SetStateAction<EventType>>;
+  updateDestination?:string
 }
 
 const Table = (props: Table) => {
@@ -43,8 +45,11 @@ const Table = (props: Table) => {
                 ))}
                 <td className="p-5 border border-[rgb(200,200,200)]">
                   <div className="flex justify-center items-center gap-5">
-                    <FaPencilAlt size={25} className="text-grad-one" />
-                    <MdDelete size={30} className="text-grad-two" />
+                    <Link href={`${props.updateDestination}/${item._id}`}><FaPencilAlt size={25} className="text-grad-one cursor-pointer" /></Link>
+                    <MdDelete size={30} className="text-grad-two cursor-pointer" onClick={()=>{
+                      props.setSelectedData(item)
+                      props.setShowPopUp && props.setShowPopUp(true)
+                    }}/>
                   </div>
                 </td>
               </tr>

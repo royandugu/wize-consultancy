@@ -32,11 +32,12 @@ const EventViewDisplay = () => {
     const { edgestore } = useEdgeStore();
 
 
-    const { data, status } = useQuery("all-events", () => universalGet("/events"));
+    const { data, status, refetch } = useQuery("all-events", () => universalGet("/events"));
 
     useEffect(()=>{
         contextContainer.setLoading(1);
     },[])
+
 
     const deleteEvent=async (e:any)=>{
         e.preventDefault();
@@ -58,6 +59,9 @@ const EventViewDisplay = () => {
         }
     }
 
+    useEffect(()=>{
+        refetch();
+    },[])
 
     if (status === "loading") return <Spinner />
     else if (status === "error") return <h1> Data fetch error </h1>

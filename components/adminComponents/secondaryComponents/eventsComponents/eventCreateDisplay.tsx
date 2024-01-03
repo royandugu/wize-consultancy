@@ -22,6 +22,7 @@ import { universalIndvGet } from "../../../systemComponents/apiConnectors/system
 
 import PopUp from "../../../systemComponents/modules/popUp";
 import { deleteImage } from "../../../systemComponents/microFunctions/deleteImage";
+import { universalPatch } from "../../../systemComponents/apiConnectors/system/PATCH";
 
 type EventCreateDisplay = {
     updateId?: string
@@ -33,6 +34,7 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
     const [showPopUp, setShowPopUp] = useState(false);
     const [image,setImage]=useState("");
     const [noTrimmer,setNoTrimmer]=useState(true);
+    const [prevImage,setPrevImage]=useState("");
     const [formBody, setFormBody] = useState<EventType>({
         title: "",
         startDate: new Date(),
@@ -52,7 +54,7 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
     
     })
 
-    const { data, status } = useQuery(['myQueryKey', prop.updateId], () => universalIndvGet("/events", prop.updateId), {
+    const { data, status, refetch } = useQuery(['myQueryKey', prop.updateId], () => universalIndvGet("/events", prop.updateId), {
         enabled: !!prop.updateId, // Only enable the query when id is truthy
     });
 
@@ -64,24 +66,33 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
         contextContainer.setLoading(1);
     }, [])
 
+    useEffect(()=>{
+        refetch();
+    },[])
+
+    const commonSubmitter = async (func:(body:any,url:string)=>Promise<any>,url:string,data:string) => {
+        const concatenatedStartDate = dateTimeCombo.startDate + ' ' + dateTimeCombo.startTime;
+        const concatenatedEndDate = dateTimeCombo.endDate + ' ' + dateTimeCombo.endTime;
+
+        const staticFormBody = {
+            ...formBody,
+            startDate: new Date(concatenatedStartDate),
+            endDate: new Date(concatenatedEndDate),
+            banner:data,
+            body: eventBody
+        } 
+
+        const response = await func(staticFormBody, url);
+        return response;
+    }
+
     const submitForm = async (e: any) => {
         e.preventDefault();
         contextContainer.setLoading(0);
         try {
             const { data, status } = await uploadImage(file, edgestore);
             if (status) {
-                const concatenatedStartDate = dateTimeCombo.startDate + ' ' + dateTimeCombo.startTime;
-                const concatenatedEndDate = dateTimeCombo.endDate + ' ' + dateTimeCombo.endTime;
-
-                const staticFormBody = {
-                    ...formBody,
-                    startDate: new Date(concatenatedStartDate),
-                    endDate: new Date(concatenatedEndDate),
-                    banner: data,
-                    body: eventBody
-                }
-
-                const response = await universalJSONPost(staticFormBody, "/admin/events");
+                const response=await commonSubmitter(universalJSONPost,"/admin/events",data);
                 if (response) {
                     if (response.ok) {
                         contextContainer.setLoading(2);
@@ -100,38 +111,41 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
     }
 
     const updateForm = async (e: any) => {
-        // e.preventDefault();
-        // contextContainer.setLoading(0);
-        // try {
-        //     const { data, status } = await uploadImage(file, edgestore);
-        //     if (status) {
-        //         const concatenatedStartDate = dateTimeCombo.startDate + ' ' + dateTimeCombo.startTime;
-        //         const concatenatedEndDate = dateTimeCombo.endDate + ' ' + dateTimeCombo.endTime;
-
-        //         const staticFormBody = {
-        //             ...formBody,
-        //             startDate: new Date(concatenatedStartDate),
-        //             endDate: new Date(concatenatedEndDate),
-        //             banner: data,
-        //             body: eventBody
-        //         }
-
-        //         const response = await universalJSONPost(staticFormBody, "/admin/events");
-        //         if (response) {
-        //             if (response.ok) {
-        //                 contextContainer.setLoading(2);
-        //                 discardForm(e);
-        //             }
-        //             else contextContainer.setLoading(3);
-        //         }
-        //     }
-        //     else if (status === false) {
-        //         contextContainer.setLoading(3);
-        //     }
-        // }
-        // catch (err) {
-        //     contextContainer.setLoading(3);
-        // }
+        e.preventDefault();
+        contextContainer.setLoading(0);
+        const url=`/admin/events/${prop.updateId}`;
+        try{
+            if(file){
+                console.log(prevImage);
+                const {status:deletionStatus} = await deleteImage(prevImage,edgestore);
+                console.log(deletionStatus);
+                if(deletionStatus){
+                    const {data,status}=await uploadImage(file,edgestore);
+                    if(status) {
+                        const response=await commonSubmitter(universalPatch,url,data);
+                        if(response.ok){
+                            contextContainer.setLoading(2);
+                            discardForm(e);    
+                        }
+                        else contextContainer.setLoading(3);
+                    }
+                    else contextContainer.setLoading(3);
+                }
+                else contextContainer.setLoading(3)
+            }
+            else {
+                const response=await commonSubmitter(universalPatch,url,image);
+                console.log(response);
+                if(response.ok){
+                    contextContainer.setLoading(2);
+                    discardForm(e);    
+                }
+                else contextContainer.setLoading(3);
+            }
+        }
+        catch(err){
+            contextContainer.setLoading(3);
+        }
     }
 
     const discardForm = async (e: any) => {
@@ -158,10 +172,20 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
             formBody.title=data.title;
             setImage(data.banner);
             setEventBody(data.body);
+            setPrevImage(data.banner);
 
             const formattedStartDate = new Date(data.startDate).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12:false});
 
             const formattedEndDate = new Date(data.endDate).toLocaleString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric',hour12:false});
+
+            setDateTimeCombo(
+                {...dateTimeCombo,
+                    startDate:formattedStartDate.split(",")[0],
+                    startTime:formattedStartDate.split(",")[1],
+                    endDate:formattedEndDate.split(",")[0], 
+                    endTime:formattedEndDate.split(",")[1]
+                }
+            )
             setDateTitleLabel({startLabel:formattedStartDate, endLabel:formattedEndDate})
         }
     },[status])

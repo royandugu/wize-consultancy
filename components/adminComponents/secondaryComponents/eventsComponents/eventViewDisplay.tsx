@@ -36,6 +36,7 @@ const EventViewDisplay = () => {
 
     useEffect(()=>{
         contextContainer.setLoading(1);
+        refetch();
     },[])
 
 
@@ -58,10 +59,6 @@ const EventViewDisplay = () => {
             contextContainer.setLoading(3);
         }
     }
-
-    useEffect(()=>{
-        refetch();
-    },[])
 
     if (status === "loading") return <Spinner />
     else if (status === "error") return <h1> Data fetch error </h1>

@@ -13,6 +13,7 @@ import { useContext } from "react";
 import { uploadImage } from "../../../systemComponents/microFunctions/uploadImage";
 import { EventType } from "../../../systemComponents/types/types";
 import { useQuery } from "react-query";
+import { useQueryClient } from "react-query";
 
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false })
 
@@ -54,8 +55,8 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
     
     })
 
-    const { data, status, refetch } = useQuery(['myQueryKey', prop.updateId], () => universalIndvGet("/events", prop.updateId), {
-        enabled: !!prop.updateId, // Only enable the query when id is truthy
+    const { data, status, refetch } = useQuery(['indv-query', prop.updateId], () => universalIndvGet("/events", prop.updateId), {
+        enabled: !!prop.updateId, 
     });
 
     const { edgestore } = useEdgeStore();
@@ -64,11 +65,8 @@ const EventCreateDisplay = (prop: EventCreateDisplay) => {
 
     useEffect(() => {
         contextContainer.setLoading(1);
-    }, [])
-
-    useEffect(()=>{
         refetch();
-    },[])
+    }, [])
 
     const commonSubmitter = async (func:(body:any,url:string)=>Promise<any>,url:string,data:string) => {
         const concatenatedStartDate = dateTimeCombo.startDate + ' ' + dateTimeCombo.startTime;

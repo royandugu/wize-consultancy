@@ -1,6 +1,6 @@
-import IeltsDisplay from "../../../../../components/userComponents/secondaryComponents/educationComponents/ieltsComponents/ieltsDisplay";
+import IeltsEditDisplay from "../../../../../components/adminComponents/secondaryComponents/educationComponents/ieltsComponents/ieltsEditDisplay";
 
 const Page=()=>{
-    return <IeltsDisplay isAdmin={true}/>
+    return <IeltsEditDisplay/>
 }
 export default Page;

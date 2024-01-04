@@ -19,6 +19,7 @@ export const uploadImage=async (file:File|undefined, edgestore:any):Promise<{dat
         return returnObj;
       }
       catch (err) {
+        console.log(err);
         return returnObj;
     }
 }

@@ -6,15 +6,15 @@ import MainIeltsSection from "./mainIeltsSection/mainIeltsSection";
 type IeltsDisplay = {
     isAdmin?: boolean,
     ieltsTextSection:any,
-    setIeltsTextSection:Dispatch<SetStateAction<any>>,
-    pictureOne:File | undefined,
-    setPictureOne:Dispatch<SetStateAction<File | undefined>>,
-    pictureTwo:File | undefined,
-    setPictureTwo:Dispatch<SetStateAction<File | undefined>>,
+    setIeltsTextSection?:Dispatch<SetStateAction<any>>,
+    pictureOne?:File | undefined,
+    setPictureOne?:Dispatch<SetStateAction<File | undefined>>,
+    pictureTwo?:File | undefined,
+    setPictureTwo?:Dispatch<SetStateAction<File | undefined>>,
     imageOne:string
-    setImageOne:Dispatch<SetStateAction<string>>,
+    setImageOne?:Dispatch<SetStateAction<string>>,
     imageTwo:string
-    setImageTwo:Dispatch<SetStateAction<string>>
+    setImageTwo?:Dispatch<SetStateAction<string>>
 }
 
 const IeltsDisplay = (props: IeltsDisplay) => {

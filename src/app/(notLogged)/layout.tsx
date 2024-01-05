@@ -1,8 +1,26 @@
+"use client"
+
+import { QueryClientProvider, QueryClient } from 'react-query';
+
+
 require("dotenv").config();
 
 import AosWrapper from '../../../components/systemComponents/wrapper/aosWrapper';
 
-export default async function RootLayout({
+const queryClient = new QueryClient(
+    {
+        defaultOptions: {
+            queries: {
+                refetchOnWindowFocus: false,
+                refetchOnMount: false,
+                refetchOnReconnect: false,
+                retry: false
+            },
+        },
+    }
+);
+
+export default function RootLayout({
     children,
 }: {
     children: React.ReactNode
@@ -11,7 +29,9 @@ export default async function RootLayout({
         <html lang="en">
             <body>
                 <AosWrapper>
-                    {children}
+                    <QueryClientProvider client={queryClient}>
+                        {children}
+                    </QueryClientProvider>
                 </AosWrapper>
             </body>
         </html>

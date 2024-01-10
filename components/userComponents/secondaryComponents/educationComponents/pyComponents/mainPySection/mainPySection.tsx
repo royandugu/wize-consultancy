@@ -1,64 +1,111 @@
-import StudyAbroadForm from "../../../../ternaryComponents/studyAbroadForm";
+"use client"
 
-const MainPySection = () => {
-    
+import { useState } from "react";
+
+import StudyAbroadForm from "../../../../ternaryComponents/studyAbroadForm";
+import ButtonDesign from "../../../../../systemComponents/modules/buttonDesign";
+import ImageUpload from "../../../../../systemComponents/modules/imageUpload";
+import { educationProp } from "../../../../../systemComponents/types/types";
+
+
+const MainPySection = ({ isAdmin, textSection, setTextSection, setPictureOne, setPictureTwo, imageOne, setImageOne, imageTwo, setImageTwo }: educationProp) => {
+
+
+    const [noTrimmer, setNoTrimmer] = useState(false);
+    const [noTrimmer2, setNoTrimmer2] = useState(false);
+
     return (
         <div className="bg-sky-bg pt-10 pb-10">
-            <div className="flex flex-col md:flex-row gap-5">
-                <StudyAbroadForm/>
-                <div className="pl-10 pr-10 md:pr-20">
-                    <h1 className="font-bold text-[20px]">What is a Professional Year Program?</h1>
-                    <img alt="entrepreneurs-meeting" src="/images/entrepreneurs-meeting-office.jpg" className="w-full mt-5 mb-5" />
-                    <p className="mt-2">A Professional Year Program is a structured professional development program designed to equip international graduates with the practical skills, knowledge, and experience needed to excel in their chosen profession. These programs are specifically tailored to individual industries and are recognized by the Department of Home Affairs as an excellent pathway to permanent residency.</p>
-                    <h5 className="font-bold mt-5">Why Choose a Professional Year Program?</h5>
-                    <p className="mt-2"> Opting for a Professional Year Program through Wize Consult offers several advantages: </p>
-                    <ul className="list-disc list-inside">
-                        <li className="mb-2 mt-3">Career Readiness: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">These programs enhance your employability by providing industry-specific training, work experience, and networking opportunities.</span>
-                        </div> 
-                        <li className="mb-2 mt-3">Skilled Migration Pathway:  </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Completing a Professional Year can earn you valuable migration points, significantly increasing your chances of obtaining permanent residency in Australia.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Practical Experience: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Gain hands-on experience through internships, workshops, and projects that help you apply your academic knowledge in real-world scenarios.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Industry Insights:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Professional Year programs provide deep insights into the Australian workplace culture and professional expectations within your chosen field.</span>
-                        </div>
+            <div className="flex flex-col md:flex-row">
+                <StudyAbroadForm />
+                <div className={`pl-10 pr-10 md:pr-20 ${isAdmin && 'w-full'}`}>
+                    {isAdmin && <h1> Title one: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 bg-transparent border border-[rgb(200,200,200)]" value={textSection.titleOne} onChange={(e) => setTextSection && setTextSection({ ...textSection, titleOne: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.titleOne} </h1>}
+
+                    {(isAdmin && setPictureOne && setImageOne) ? <><div className="mt-5" /><ImageUpload setFile={setPictureOne} fullWidth={true} image={imageOne} setImage={setImageOne} noTrimmer={noTrimmer} setNoTrimmer={setNoTrimmer} /></> :
+                        <img alt="girl-reading-book" src={imageOne} className="w-full mt-5 mb-5" />
+                    }
+
+
+                    <ul className="list-disc list-inside pt-2">
+                        {isAdmin && <h1 className="mt-10"> Paragraph one: </h1>}
+                        {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraOne} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraOne: e.target.value })} /> : <h1>{textSection.paraOne}</h1>}
+                        {isAdmin && <h1 className="mt-10"> Point and paragraph list: </h1>}
+                        {textSection.pointParas.map((pp: any, id: number) => (
+                            <div key={id}>
+                                {isAdmin ? <input type="text" className="p-5 w-full mt-2 mb-3 bg-transparent border border-[rgb(200,200,200)]" value={pp.point} onChange={(e) => {
+                                    const updatedPointParas = [...textSection.pointParas];
+                                    updatedPointParas[id].point = e.target.value;
+                                    setTextSection && setTextSection({ ...textSection, pointParas: updatedPointParas });
+                                }} /> : <li className="mb-2 mt-3">{pp.point} </li>}
+                                <div className="pl-4 mt-[-5px]">
+                                    {isAdmin ? <textarea className="p-5 w-full" value={pp.para} onChange={(e) => {
+                                        const updatedPointParas = [...textSection.pointParas];
+                                        updatedPointParas[id].para = e.target.value;
+                                        setTextSection && setTextSection({ ...textSection, pointParas: updatedPointParas });
+                                    }} /> : <span className="text-[rgb(90,90,90)]">{pp.para}</span>}
+                                </div>
+                            </div>
+                        ))}
+                        <div className="mt-5" />
+                        {isAdmin && (
+                            <>
+                                <button onClick={() => setTextSection && setTextSection({ ...textSection, pointParas: [...textSection.pointParas, { point: "", para: "" }] })}><ButtonDesign text="Add points" noArrow={true} /></button>
+                                <button className="ml-5" onClick={() => {
+                                    const updatedpointParas = [...textSection.pointParas];
+                                    updatedpointParas.pop(); // Removes the last section, you can adjust this based on your requirements
+                                    setTextSection && setTextSection({ ...textSection, pointParas: updatedpointParas });
+                                }}><ButtonDesign text="Remove points" noArrow={true} /></button>
+                            </>
+                        )}
                     </ul>
-                    
-                    <h1 className="font-bold text-[20px] mt-5"> Our PY Services </h1>
-                    <img alt="cheerful-attractive-young-woman" src="/images/cheerful-attractive-young-woman-with-black-hair-walking.jpg" className="w-full mt-5 mb-5" />
-                    <p className="mt-2"> Wize Consult is your trusted partner in embarking on a Professional Year journey in Australia:</p>
-                    <ul className="list-disc list-inside">
-                        <li className="mb-2 mt-3">Program Selection: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">We guide you in choosing the most suitable Professional Year program aligned with your qualifications and career aspirations.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Application Assistance:  </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Our experts assist you throughout the application process, ensuring all required documents are accurately prepared and submitted.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Internship Placement: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">We help you secure internship opportunities, allowing you to gain practical experience in a professional setting.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Workshops and Training:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Our tailored workshops and training sessions prepare you for success in the Australian job market.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Ongoing Support:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Wize Consult provides continuous support, ensuring your transition from education to employment is seamless and successful.</span>
-                        </div>
+                    {isAdmin && <h1 className="mt-10"> Title three: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraTwo} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraTwo: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.paraTwo}  </h1>}
+
+                    {(isAdmin && setPictureTwo && setImageTwo) ? <><div className="mt-5" /><ImageUpload setFile={setPictureTwo} fullWidth={true} image={imageTwo} setImage={setImageTwo} noTrimmer={noTrimmer2} setNoTrimmer={setNoTrimmer2} /></> :
+                        <img alt="girl-reading-book" src={imageTwo} className="w-full mt-5 mb-5" />
+                    }
+                    <ul className="list-disc list-inside pt-2">
+                        {isAdmin && <h1 className="mt-10"> Paragraph two: </h1>}
+
+                        {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraTwo} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraTwo: e.target.value })} /> : <h1>{textSection.paraTwo}</h1>}
+                        {isAdmin && <h1 className="mt-10"> Point and paragraph section: </h1>}
+
+                        {textSection.pointParas2.map((pp: any, id: number) => (
+                            <div key={id}>
+                                {isAdmin ? <input type="text" className="p-5 w-full mt-2 mb-3 bg-transparent border border-[rgb(200,200,200)]" value={pp.point} onChange={(e) => {
+                                    const updatedPointParas = [...textSection.pointParas2];
+                                    updatedPointParas[id].point = e.target.value;
+                                    setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas });
+                                }} /> : <li className="mb-2 mt-3">{pp.point} </li>}
+                                <div className="pl-4 mt-[-5px]">
+                                    {isAdmin ? <textarea className="p-5 w-full" value={pp.para} onChange={(e) => {
+                                        const updatedPointParas = [...textSection.pointParas2];
+                                        updatedPointParas[id].para = e.target.value;
+                                        setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas });
+                                    }} /> : <span className="text-[rgb(90,90,90)]">{pp.para}</span>}
+                                </div>
+                            </div>
+                        ))}
+                        <div className="mt-5" />
+                        {isAdmin &&
+                            <>
+                                <button onClick={() => setTextSection && setTextSection({ ...textSection, pointParas2: [...textSection.pointParas2, { point: "", para: "" }] })}><ButtonDesign text="Add points" noArrow={true} /></button>
+
+                                <button className="ml-5" onClick={() => {
+                                    const updatedPointParas2 = [...textSection.pointParas2];
+                                    updatedPointParas2.pop(); // Removes the last section, you can adjust this based on your requirements
+                                    setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas2 });
+                                }}><ButtonDesign text="Remove points" noArrow={true} /></button>
+                            </>
+                        }
                     </ul>
-                    <h1 className="font-bold text-[20px] mt-5">Unlock Your Professional Potential in Australia </h1>
-                    <p className="mt-2"> The Professional Year program is your stepping stone to a thriving career in Australia. With Wize Consult as your guide, you can unlock your full professional potential, acquire valuable work experience, and embark on a successful career path.  </p>
-                    <p className="mt-2"> Ready to kickstart your Professional Year journey? Contact us today to explore your options, understand program specifics, and pave the way to a rewarding career in Australia. Your professional future starts here! </p>
+                    {isAdmin && <h1 className="mt-10"> Title four: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.titleThree} onChange={(e) => setTextSection && setTextSection({ ...textSection, titleThree: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.titleThree}  </h1>}
+
+                    {isAdmin && <h1 className="mt-10"> Paragraph three: </h1>}
+                    {isAdmin ? <textarea className="w-full h-[100px] p-5" value={textSection.paraThree} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraThree: e.target.value })} /> : <p className="mt-2"> {textSection.paraThree} </p>}
+
                 </div>
             </div>
         </div>

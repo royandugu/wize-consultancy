@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { response, setMessageAndResponse } from "../../modules/eventModules";
 
-import ieltsModel from "../../models/ieltsModel/ieltsModel";
+import { ieltsModel } from "../../models/commonModel/commonModel";
 
 export const updateIelts = async (id: string, body: object) => {
     try {

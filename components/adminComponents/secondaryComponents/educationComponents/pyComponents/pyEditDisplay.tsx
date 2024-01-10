@@ -1,27 +1,30 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import { useEdgeStore } from "@/lib/edgestore";
 import { useContext } from "react";
-import { uploadImage } from "../../../../systemComponents/microFunctions/uploadImage";
-import { universalGet } from "../../../../../components/systemComponents/apiConnectors/system/GET";
+import { useEdgeStore } from "@/lib/edgestore";
 import { useQuery } from "react-query";
+import { universalGet } from "../../../../systemComponents/apiConnectors/system/GET";
+import Spinner from "../../../../systemComponents/modules/spinner";
 
-import context from "../../../../systemComponents/context/context";
-import IeltsDisplay from "../../../../userComponents/secondaryComponents/educationComponents/ieltsComponents/ieltsDisplay";
+import MainPySection from "../../../../userComponents/secondaryComponents/educationComponents/pyComponents/mainPySection/mainPySection";
 import ButtonDesign from "../../../../systemComponents/modules/buttonDesign";
 import PopUp from "../../../../systemComponents/modules/popUp";
-import Spinner from "../../../../systemComponents/modules/spinner";
-import { universalPatch } from "../../../../systemComponents/apiConnectors/system/PATCH";
+import context from "../../../../systemComponents/context/context";
+import { uploadImage } from "../../../../systemComponents/microFunctions/uploadImage";
 import { deleteImage } from "../../../../systemComponents/microFunctions/deleteImage";
+import { universalPatch } from "../../../../systemComponents/apiConnectors/system/PATCH";
 
-
-const IeltsEditDisplay = () => {
-    const { edgestore } = useEdgeStore();
-    const { data, status } = useQuery("ielts-data", () => universalGet("/education/ielts"));
-
+const PyEditDisplay = () => {
     const [showPopUp, setShowPopUp] = useState(false);
-    const [ieltsTextSection, setIeltsTextSection] = useState({
+    const contextContainer = useContext(context);
+
+    const { edgestore } = useEdgeStore();
+
+    const { data, status } = useQuery("py-data", () => universalGet("/education/py"));
+
+
+    const [pyTextSection, setPyTextSection] = useState({
         titleOne: " ",
         titleTwo: " ",
         paraOne: " ",
@@ -39,18 +42,21 @@ const IeltsEditDisplay = () => {
     const [imageTwo, setImageTwo] = useState("");
     const [actualImage, setActualImage] = useState({ imageOne: "", imageTwo: "" })
 
-    const contextContainer = useContext(context);
+
+    useEffect(() => {
+        contextContainer.setLoading(1);
+    }, [])
 
     const commonSubmitter = async (func: (body: any, url: string) => Promise<any>, url: string, dataOne: string, dataTwo: string) => {
         const staticFormBody = {
-            titleOne: ieltsTextSection.titleOne,
-            paraOne: ieltsTextSection.paraOne,
-            pointParasOne: ieltsTextSection.pointParas,
-            titleTwo: ieltsTextSection.titleTwo,
-            paraTwo: ieltsTextSection.paraTwo,
-            pointParasTwo: ieltsTextSection.pointParas2,
-            titleThree: ieltsTextSection.titleThree,
-            paraThree: ieltsTextSection.paraThree,
+            titleOne: pyTextSection.titleOne,
+            paraOne: pyTextSection.paraOne,
+            pointParasOne: pyTextSection.pointParas,
+            titleTwo: pyTextSection.titleTwo,
+            paraTwo: pyTextSection.paraTwo,
+            pointParasTwo: pyTextSection.pointParas2,
+            titleThree: pyTextSection.titleThree,
+            paraThree: pyTextSection.paraThree,
             pictureOne: dataOne,
             pictureTwo: dataTwo
         }
@@ -63,7 +69,7 @@ const IeltsEditDisplay = () => {
     const submitForm = async (e: any) => {
         e.preventDefault();
         contextContainer.setLoading(0);
-    
+
         try {
             const uploadData = {
                 dataOne: actualImage.imageOne,
@@ -106,7 +112,7 @@ const IeltsEditDisplay = () => {
                 }
             }
 
-            const response = await commonSubmitter(universalPatch, `/admin/education/ielts/${data.ielts._id}`, uploadData.dataOne, uploadData.dataTwo);
+            const response = await commonSubmitter(universalPatch, `/admin/education/py/${data.py._id}`, uploadData.dataOne, uploadData.dataTwo);
             if (response) {
                 if (response.ok) {
                     contextContainer.setLoading(2);
@@ -124,43 +130,39 @@ const IeltsEditDisplay = () => {
 
     useEffect(() => {
         if (status === "success") {
-            setIeltsTextSection({
-                titleOne: data.ielts.titleOne,
-                paraOne: data.ielts.paraOne,
-                pointParas: data.ielts.pointParasOne,
-                titleTwo: data.ielts.titleTwo,
-                paraTwo: data.ielts.paraTwo,
-                pointParas2: data.ielts.pointParasTwo,
-                titleThree: data.ielts.titleThree,
-                paraThree: data.ielts.paraThree
+            setPyTextSection({
+                titleOne: data.py.titleOne,
+                paraOne: data.py.paraOne,
+                pointParas: data.py.pointParasOne,
+                titleTwo: data.py.titleTwo,
+                paraTwo: data.py.paraTwo,
+                pointParas2: data.py.pointParasTwo,
+                titleThree: data.py.titleThree,
+                paraThree: data.py.paraThree
             });
-            setImageOne(data.ielts.pictureOne);
-            setImageTwo(data.ielts.pictureTwo);
-            setActualImage({ imageOne: data.ielts.pictureOne, imageTwo: data.ielts.pictureTwo })
+            setImageOne(data.py.pictureOne);
+            setImageTwo(data.py.pictureTwo);
+            setActualImage({ imageOne: data.py.pictureOne, imageTwo: data.py.pictureTwo })
         }
     }, [status])
 
-    useEffect(() => {
-        contextContainer.setLoading(1);
-    }, [])
-
 
     if (status === "loading") return <Spinner />
-    else if (status === "error") return <h5> Error fetching IELTS data </h5>
+    else if (status === "error") return <h5> Error fetching PY data </h5>
     else if (status === "success") {
 
 
         return (
             <>
-                <IeltsDisplay isAdmin={true} textSection={ieltsTextSection} setTextSection={setIeltsTextSection} pictureOne={pictureOne} pictureTwo={pictureTwo} setPictureOne={setPictureOne} setPictureTwo={setPictureTwo} imageOne={imageOne} setImageOne={setImageOne} imageTwo={imageTwo} setImageTwo={setImageTwo} />
+                <MainPySection isAdmin={true} textSection={pyTextSection} setTextSection={setPyTextSection} pictureOne={pictureOne} pictureTwo={pictureTwo} setPictureOne={setPictureOne} setPictureTwo={setPictureTwo} imageOne={imageOne} setImageOne={setImageOne} imageTwo={imageTwo} setImageTwo={setImageTwo} />
                 <div className="flex gap-5 mt-5">
                     <button onClick={() => setShowPopUp(true)}> <ButtonDesign text="Confirm changes" noArrow={true} /></button>
                     <button> <ButtonDesign text="Discard changes" noArrow={true} /></button>
                 </div>
-                <PopUp title="IELTS update" body={"Do you want to update the IELTS page ?"} buttonTexts={["Update changes"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer} finalMessage={"The IELTS page has been updated"} errorMessage={"Error updating the IELTS page"} />
+                <PopUp title="PY update" body={"Do you want to update the PY page ?"} buttonTexts={["Update changes"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer} finalMessage={"The PY page has been updated"} errorMessage={"Error updating the Py page"} />
 
-            </>)
+            </>
+        )
     }
 }
-
-export default IeltsEditDisplay;
+export default PyEditDisplay;

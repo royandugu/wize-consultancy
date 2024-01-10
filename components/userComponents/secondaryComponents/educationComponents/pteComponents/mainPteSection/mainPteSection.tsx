@@ -1,60 +1,111 @@
-import StudyAbroadForm from "../../../../ternaryComponents/studyAbroadForm";
+"use client"
 
-const MainPteSection = () => {
+import { useState } from "react";
+
+import StudyAbroadForm from "../../../../ternaryComponents/studyAbroadForm";
+import ButtonDesign from "../../../../../systemComponents/modules/buttonDesign";
+import ImageUpload from "../../../../../systemComponents/modules/imageUpload";
+import { educationProp } from "../../../../../systemComponents/types/types";
+
+
+const MainPteSection = ({ isAdmin, textSection, setTextSection, setPictureOne, setPictureTwo, imageOne, setImageOne, imageTwo, setImageTwo }: educationProp) => {
+
+
+    const [noTrimmer, setNoTrimmer] = useState(false);
+    const [noTrimmer2, setNoTrimmer2] = useState(false);
+
     return (
         <div className="bg-sky-bg pt-10 pb-10">
             <div className="flex flex-col md:flex-row">
-                <StudyAbroadForm/>
-                <div className="pl-10 pr-10 md:pr-20">
-                    <h1 className="font-bold text-[20px]"> Why Choose PTE ?</h1>
-                    <img alt="student" src="/images/Student.jpg" className="w-full mt-5 mb-5" />
-                    <p className="mt-5"> PTE is a globally recognized English language proficiency test that opens doors to international study, employment, and immigration opportunities. Here's why PTE is the right choice for your journey: </p>
+                <StudyAbroadForm />
+                <div className={`pl-10 pr-10 md:pr-20 ${isAdmin && 'w-full'}`}>
+                    {isAdmin && <h1> Title one: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 bg-transparent border border-[rgb(200,200,200)]" value={textSection.titleOne} onChange={(e) => setTextSection && setTextSection({ ...textSection, titleOne: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.titleOne} </h1>}
+
+                    {(isAdmin && setPictureOne && setImageOne) ? <><div className="mt-5" /><ImageUpload setFile={setPictureOne} fullWidth={true} image={imageOne} setImage={setImageOne} noTrimmer={noTrimmer} setNoTrimmer={setNoTrimmer} /></> :
+                        <img alt="girl-reading-book" src={imageOne} className="w-full mt-5 mb-5" />
+                    }
+
+
                     <ul className="list-disc list-inside pt-2">
-                        <li className="mb-2 mt-3">Global Acceptance: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">PTE is accepted by thousands of universities, colleges, and organizations worldwide, making it a universally acknowledged language assessment.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Fast and Reliable Results:  </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">PTE provides rapid score results, often within just a few days, allowing you to meet tight application deadlines.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Fair and Unbiased Scoring: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">PTE employs state-of-the-art AI technology to ensure impartial and precise scoring, maintaining the highest levels of accuracy and fairness.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Comprehensive Assessment:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">PTE evaluates all aspects of your English language skills, including listening, reading, writing, and speaking, providing a well-rounded measure of your abilities.</span>
-                        </div>
+                        {isAdmin && <h1 className="mt-10"> Paragraph one: </h1>}
+                        {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraOne} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraOne: e.target.value })} /> : <h1>{textSection.paraOne}</h1>}
+                        {isAdmin && <h1 className="mt-10"> Point and paragraph list: </h1>}
+                        {textSection.pointParas.map((pp: any, id: number) => (
+                            <div key={id}>
+                                {isAdmin ? <input type="text" className="p-5 w-full mt-2 mb-3 bg-transparent border border-[rgb(200,200,200)]" value={pp.point} onChange={(e) => {
+                                    const updatedPointParas = [...textSection.pointParas];
+                                    updatedPointParas[id].point = e.target.value;
+                                    setTextSection && setTextSection({ ...textSection, pointParas: updatedPointParas });
+                                }} /> : <li className="mb-2 mt-3">{pp.point} </li>}
+                                <div className="pl-4 mt-[-5px]">
+                                    {isAdmin ? <textarea className="p-5 w-full" value={pp.para} onChange={(e) => {
+                                        const updatedPointParas = [...textSection.pointParas];
+                                        updatedPointParas[id].para = e.target.value;
+                                        setTextSection && setTextSection({ ...textSection, pointParas: updatedPointParas });
+                                    }} /> : <span className="text-[rgb(90,90,90)]">{pp.para}</span>}
+                                </div>
+                            </div>
+                        ))}
+                        <div className="mt-5" />
+                        {isAdmin && (
+                            <>
+                                <button onClick={() => setTextSection && setTextSection({ ...textSection, pointParas: [...textSection.pointParas, { point: "", para: "" }] })}><ButtonDesign text="Add points" noArrow={true} /></button>
+                                <button className="ml-5" onClick={() => {
+                                    const updatedpointParas = [...textSection.pointParas];
+                                    updatedpointParas.pop(); // Removes the last section, you can adjust this based on your requirements
+                                    setTextSection && setTextSection({ ...textSection, pointParas: updatedpointParas });
+                                }}><ButtonDesign text="Remove points" noArrow={true} /></button>
+                            </>
+                        )}
                     </ul>
-                    <h1 className="font-bold text-[20px] mt-5"> Our PTE Services </h1>
-                    <img alt="teaching" src="/images/Teaching.jpg" className="w-full mt-5 mb-5" />
-                    <p className="mt-2"> Wize Consult is your dedicated partner in PTE success. We offer a range of services designed to help you excel in the PTE examination: </p>
-                    <ul className="list-disc list-inside">
-                        <li className="mb-2 mt-3">Comprehensive Preparation: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Our expert instructors deliver comprehensive PTE preparation courses, equipping you with the skills and strategies needed to excel in each test component.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Practice Tests:  </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">We provide realistic practice tests that closely mimic the actual PTE exam conditions, allowing you to track your progress and boost your confidence.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Personalized Coaching: </li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Our tutors work closely with you, identifying your strengths and areas for improvement to create a tailored study plan that maximizes your chances of success.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Test Strategies:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">We offer valuable insights and strategies for each PTE module, empowering you to approach the test with confidence and efficiency.</span>
-                        </div>
-                        <li className="mb-2 mt-3">Flexible Learning:</li>
-                        <div className="pl-4 mt-[-5px]">
-                            <span className="text-[rgb(90,90,90)]">Our courses are designed to suit your schedule, offering both in-person and online options to accommodate your unique learning preferences and constraints.</span>
-                        </div>
+                    {isAdmin && <h1 className="mt-10"> Title three: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraTwo} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraTwo: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.paraTwo}  </h1>}
+
+                    {(isAdmin && setPictureTwo && setImageTwo) ? <><div className="mt-5" /><ImageUpload setFile={setPictureTwo} fullWidth={true} image={imageTwo} setImage={setImageTwo} noTrimmer={noTrimmer2} setNoTrimmer={setNoTrimmer2} /></> :
+                        <img alt="girl-reading-book" src={imageTwo} className="w-full mt-5 mb-5" />
+                    }
+                    <ul className="list-disc list-inside pt-2">
+                        {isAdmin && <h1 className="mt-10"> Paragraph two: </h1>}
+
+                        {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.paraTwo} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraTwo: e.target.value })} /> : <h1>{textSection.paraTwo}</h1>}
+                        {isAdmin && <h1 className="mt-10"> Point and paragraph section: </h1>}
+
+                        {textSection.pointParas2.map((pp: any, id: number) => (
+                            <div key={id}>
+                                {isAdmin ? <input type="text" className="p-5 w-full mt-2 mb-3 bg-transparent border border-[rgb(200,200,200)]" value={pp.point} onChange={(e) => {
+                                    const updatedPointParas = [...textSection.pointParas2];
+                                    updatedPointParas[id].point = e.target.value;
+                                    setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas });
+                                }} /> : <li className="mb-2 mt-3">{pp.point} </li>}
+                                <div className="pl-4 mt-[-5px]">
+                                    {isAdmin ? <textarea className="p-5 w-full" value={pp.para} onChange={(e) => {
+                                        const updatedPointParas = [...textSection.pointParas2];
+                                        updatedPointParas[id].para = e.target.value;
+                                        setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas });
+                                    }} /> : <span className="text-[rgb(90,90,90)]">{pp.para}</span>}
+                                </div>
+                            </div>
+                        ))}
+                        <div className="mt-5" />
+                        {isAdmin &&
+                            <>
+                                <button onClick={() => setTextSection && setTextSection({ ...textSection, pointParas2: [...textSection.pointParas2, { point: "", para: "" }] })}><ButtonDesign text="Add points" noArrow={true} /></button>
+
+                                <button className="ml-5" onClick={() => {
+                                    const updatedPointParas2 = [...textSection.pointParas2];
+                                    updatedPointParas2.pop(); // Removes the last section, you can adjust this based on your requirements
+                                    setTextSection && setTextSection({ ...textSection, pointParas2: updatedPointParas2 });
+                                }}><ButtonDesign text="Remove points" noArrow={true} /></button>
+                            </>
+                        }
                     </ul>
-                    <h1 className="font-bold text-[20px] mt-5"> Your PTE Success Story Starts Here </h1>
-                    <p className="mt-2">Whether you aspire to gain admission to a prestigious educational institution, pursue an international career, or embark on a journey of immigration, PTE is your key to unlocking a world of opportunities. With Wize Consult as your trusted guide, you'll not only prepare effectively but also embark on a journey towards English language proficiency and success in your endeavors.</p>
-                    <p className="mt-2">Ready to take the first step towards a brighter future? Contact us today to discover more about our PTE preparation courses and how we can help you achieve your goals. Your success in the PTE examination is our mission!</p>
+                    {isAdmin && <h1 className="mt-10"> Title four: </h1>}
+                    {isAdmin ? <input type="text" className="p-5 w-full bg-transparent border border-[rgb(200,200,200)]" value={textSection.titleThree} onChange={(e) => setTextSection && setTextSection({ ...textSection, titleThree: e.target.value })} /> : <h1 className="font-bold text-[20px] mt-5"> {textSection.titleThree}  </h1>}
+
+                    {isAdmin && <h1 className="mt-10"> Paragraph three: </h1>}
+                    {isAdmin ? <textarea className="w-full h-[100px] p-5" value={textSection.paraThree} onChange={(e) => setTextSection && setTextSection({ ...textSection, paraThree: e.target.value })} /> : <p className="mt-2"> {textSection.paraThree} </p>}
+
                 </div>
             </div>
         </div>

@@ -1,4 +1,6 @@
+import PteEditDisplay from "../../../../../components/adminComponents/secondaryComponents/educationComponents/pteComponents/pteEditDisplay";
+
 const Page=()=>{
-    return <h1> This is pte inside admin </h1>
+    return <PteEditDisplay/>
 }
 export default Page;

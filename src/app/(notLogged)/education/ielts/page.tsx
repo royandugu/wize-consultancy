@@ -26,7 +26,7 @@ const Page=()=>{
         const imageOne=data.ielts.pictureOne;
         const imageTwo=data.ielts. pictureTwo;
         
-        return <IeltsDisplay isAdmin={false} ieltsTextSection={ieltsTextSection} imageOne={imageOne} imageTwo={imageTwo}/>
+        return <IeltsDisplay isAdmin={false} textSection={ieltsTextSection} imageOne={imageOne} imageTwo={imageTwo}/>
     }
 }
 export default Page;

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ieltsSchema=new mongoose.Schema({
+const commonSchema=new mongoose.Schema({
     titleOne:{
         type:String,
         required:[true,"Title must be present"],
@@ -43,5 +43,6 @@ const ieltsSchema=new mongoose.Schema({
     }
 },{timestamps:true})
 
-const ieltsModel=mongoose.models.ielts || mongoose.model("ielts",ieltsSchema); 
-export default ieltsModel;
+export const ieltsModel=mongoose.models.ielts || mongoose.model("ielts",commonSchema); 
+export const pteModel=mongoose.models.pte || mongoose.model("pte",commonSchema); 
+export const pyModel=mongoose.models.pies || mongoose.model("pies",commonSchema); 

@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export type EventType = {
     _id?:string;
     title: string;
@@ -16,4 +18,18 @@ export type defaultApiResponse={
 export type login={
     email:string,
     password:string
+}
+
+export type educationProp = {
+    isAdmin?: boolean,
+    textSection: any,
+    setTextSection?: Dispatch<SetStateAction<any>>,
+    pictureOne?: File | undefined,
+    setPictureOne?: Dispatch<SetStateAction<File | undefined>>,
+    pictureTwo?: File | undefined,
+    setPictureTwo?: Dispatch<SetStateAction<File | undefined>>,
+    imageOne: string
+    setImageOne?: Dispatch<SetStateAction<string>>,
+    imageTwo: string
+    setImageTwo?: Dispatch<SetStateAction<string>>
 }

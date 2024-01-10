@@ -1,27 +1,32 @@
 "use client"
 
 import { useState, useEffect } from "react";
-import { useEdgeStore } from "@/lib/edgestore";
 import { useContext } from "react";
-import { uploadImage } from "../../../../systemComponents/microFunctions/uploadImage";
-import { universalGet } from "../../../../../components/systemComponents/apiConnectors/system/GET";
+import { useEdgeStore } from "@/lib/edgestore";
 import { useQuery } from "react-query";
+import { universalGet } from "../../../../systemComponents/apiConnectors/system/GET";
+import Spinner from "../../../../systemComponents/modules/spinner";
 
-import context from "../../../../systemComponents/context/context";
-import IeltsDisplay from "../../../../userComponents/secondaryComponents/educationComponents/ieltsComponents/ieltsDisplay";
+import MainPteSection from "../../../../userComponents/secondaryComponents/educationComponents/pteComponents/mainPteSection/mainPteSection";
 import ButtonDesign from "../../../../systemComponents/modules/buttonDesign";
 import PopUp from "../../../../systemComponents/modules/popUp";
-import Spinner from "../../../../systemComponents/modules/spinner";
-import { universalPatch } from "../../../../systemComponents/apiConnectors/system/PATCH";
+import context from "../../../../systemComponents/context/context";
+import { uploadImage } from "../../../../systemComponents/microFunctions/uploadImage";
 import { deleteImage } from "../../../../systemComponents/microFunctions/deleteImage";
+import { universalPatch } from "../../../../systemComponents/apiConnectors/system/PATCH";
 
-
-const IeltsEditDisplay = () => {
-    const { edgestore } = useEdgeStore();
-    const { data, status } = useQuery("ielts-data", () => universalGet("/education/ielts"));
-
+const PteEditDisplay = () => {
     const [showPopUp, setShowPopUp] = useState(false);
-    const [ieltsTextSection, setIeltsTextSection] = useState({
+    const contextContainer = useContext(context);
+
+    const { edgestore } = useEdgeStore();
+
+    const { data, status } = useQuery("pte-data", () => universalGet("/education/pte"));
+
+    console.log(data);
+
+
+    const [pteTextSection, setPteTextSection] = useState({
         titleOne: " ",
         titleTwo: " ",
         paraOne: " ",
@@ -39,18 +44,21 @@ const IeltsEditDisplay = () => {
     const [imageTwo, setImageTwo] = useState("");
     const [actualImage, setActualImage] = useState({ imageOne: "", imageTwo: "" })
 
-    const contextContainer = useContext(context);
+
+    useEffect(() => {
+        contextContainer.setLoading(1);
+    }, [])
 
     const commonSubmitter = async (func: (body: any, url: string) => Promise<any>, url: string, dataOne: string, dataTwo: string) => {
         const staticFormBody = {
-            titleOne: ieltsTextSection.titleOne,
-            paraOne: ieltsTextSection.paraOne,
-            pointParasOne: ieltsTextSection.pointParas,
-            titleTwo: ieltsTextSection.titleTwo,
-            paraTwo: ieltsTextSection.paraTwo,
-            pointParasTwo: ieltsTextSection.pointParas2,
-            titleThree: ieltsTextSection.titleThree,
-            paraThree: ieltsTextSection.paraThree,
+            titleOne: pteTextSection.titleOne,
+            paraOne: pteTextSection.paraOne,
+            pointParasOne: pteTextSection.pointParas,
+            titleTwo: pteTextSection.titleTwo,
+            paraTwo: pteTextSection.paraTwo,
+            pointParasTwo: pteTextSection.pointParas2,
+            titleThree: pteTextSection.titleThree,
+            paraThree: pteTextSection.paraThree,
             pictureOne: dataOne,
             pictureTwo: dataTwo
         }
@@ -63,7 +71,7 @@ const IeltsEditDisplay = () => {
     const submitForm = async (e: any) => {
         e.preventDefault();
         contextContainer.setLoading(0);
-    
+
         try {
             const uploadData = {
                 dataOne: actualImage.imageOne,
@@ -106,7 +114,7 @@ const IeltsEditDisplay = () => {
                 }
             }
 
-            const response = await commonSubmitter(universalPatch, `/admin/education/ielts/${data.ielts._id}`, uploadData.dataOne, uploadData.dataTwo);
+            const response = await commonSubmitter(universalPatch, `/admin/education/pte/${data.pte._id}`, uploadData.dataOne, uploadData.dataTwo);
             if (response) {
                 if (response.ok) {
                     contextContainer.setLoading(2);
@@ -124,43 +132,39 @@ const IeltsEditDisplay = () => {
 
     useEffect(() => {
         if (status === "success") {
-            setIeltsTextSection({
-                titleOne: data.ielts.titleOne,
-                paraOne: data.ielts.paraOne,
-                pointParas: data.ielts.pointParasOne,
-                titleTwo: data.ielts.titleTwo,
-                paraTwo: data.ielts.paraTwo,
-                pointParas2: data.ielts.pointParasTwo,
-                titleThree: data.ielts.titleThree,
-                paraThree: data.ielts.paraThree
+            setPteTextSection({
+                titleOne: data.pte.titleOne,
+                paraOne: data.pte.paraOne,
+                pointParas: data.pte.pointParasOne,
+                titleTwo: data.pte.titleTwo,
+                paraTwo: data.pte.paraTwo,
+                pointParas2: data.pte.pointParasTwo,
+                titleThree: data.pte.titleThree,
+                paraThree: data.pte.paraThree
             });
-            setImageOne(data.ielts.pictureOne);
-            setImageTwo(data.ielts.pictureTwo);
-            setActualImage({ imageOne: data.ielts.pictureOne, imageTwo: data.ielts.pictureTwo })
+            setImageOne(data.pte.pictureOne);
+            setImageTwo(data.pte.pictureTwo);
+            setActualImage({ imageOne: data.pte.pictureOne, imageTwo: data.pte.pictureTwo })
         }
     }, [status])
 
-    useEffect(() => {
-        contextContainer.setLoading(1);
-    }, [])
-
 
     if (status === "loading") return <Spinner />
-    else if (status === "error") return <h5> Error fetching IELTS data </h5>
+    else if (status === "error") return <h5> Error fetching PTE data </h5>
     else if (status === "success") {
 
 
         return (
             <>
-                <IeltsDisplay isAdmin={true} textSection={ieltsTextSection} setTextSection={setIeltsTextSection} pictureOne={pictureOne} pictureTwo={pictureTwo} setPictureOne={setPictureOne} setPictureTwo={setPictureTwo} imageOne={imageOne} setImageOne={setImageOne} imageTwo={imageTwo} setImageTwo={setImageTwo} />
+                <MainPteSection isAdmin={true} textSection={pteTextSection} setTextSection={setPteTextSection} pictureOne={pictureOne} pictureTwo={pictureTwo} setPictureOne={setPictureOne} setPictureTwo={setPictureTwo} imageOne={imageOne} setImageOne={setImageOne} imageTwo={imageTwo} setImageTwo={setImageTwo} />
                 <div className="flex gap-5 mt-5">
                     <button onClick={() => setShowPopUp(true)}> <ButtonDesign text="Confirm changes" noArrow={true} /></button>
                     <button> <ButtonDesign text="Discard changes" noArrow={true} /></button>
                 </div>
-                <PopUp title="IELTS update" body={"Do you want to update the IELTS page ?"} buttonTexts={["Update changes"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer} finalMessage={"The IELTS page has been updated"} errorMessage={"Error updating the IELTS page"} />
+                <PopUp title="PTE update" body={"Do you want to update the PTE page ?"} buttonTexts={["Update changes"]} showPopUp={showPopUp} setShowPopUp={setShowPopUp} functionLists={[submitForm]} contextContainer={contextContainer} finalMessage={"The PTE page has been updated"} errorMessage={"Error updating the PTE page"} />
 
-            </>)
+            </>
+        )
     }
 }
-
-export default IeltsEditDisplay;
+export default PteEditDisplay;

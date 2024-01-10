@@ -1,4 +1,5 @@
+import PyEditDisplay from "../../../../../components/adminComponents/secondaryComponents/educationComponents/pyComponents/pyEditDisplay";
 const Page=()=>{
-    return <h1> This is py inside admin </h1>
+    return <PyEditDisplay/>
 }  
 export default Page;
